@@ -10,12 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IbaShareAndroid">
         <activity
-            android:name=".MainActivity3"
+            android:name=".TownListActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".SecondActivity"
             android:exported="true" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

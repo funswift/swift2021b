@@ -13,8 +13,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     // 実行ボタンタップ時
-    fun onButtonTapped(view: View?){
-        val intent = Intent(this, SecondActivity::class.java)
+    fun onButtonTapped(view: View?) {
+        val intent = Intent(this, TownListActivity::class.java)
         startActivity(intent)
     }
 }
