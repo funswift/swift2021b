@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_townlist.*
 
 class TownListActivity : AppCompatActivity() {
 
@@ -27,79 +28,80 @@ class TownListActivity : AppCompatActivity() {
         val button13 = findViewById<Button>(R.id.town13)
 
         button1.setOnClickListener {
-            val intent = Intent(this@TownListActivity, SecondActivity::class.java)
+            val intent = Intent(this@TownListActivity, Town1Activity::class.java)
             intent.putExtra("town", 1)
+            town1.text
             startActivity(intent)
         }
 
         button2.setOnClickListener {
-            val intent = Intent(this@TownListActivity, SecondActivity::class.java)
+            val intent = Intent(this@TownListActivity, Town2Activity::class.java)
             intent.putExtra("town", 2)
             startActivity(intent)
         }
 
         button3.setOnClickListener {
-            val intent = Intent(this@TownListActivity, SecondActivity::class.java)
+            val intent = Intent(this@TownListActivity, Town3Activity::class.java)
             intent.putExtra("town", 3)
             startActivity(intent)
         }
 
         button4.setOnClickListener {
-            val intent = Intent(this@TownListActivity, SecondActivity::class.java)
+            val intent = Intent(this@TownListActivity, Town4Activity::class.java)
             intent.putExtra("town", 4)
             startActivity(intent)
         }
 
         button5.setOnClickListener {
-            val intent = Intent(this@TownListActivity, SecondActivity::class.java)
+            val intent = Intent(this@TownListActivity, Town5Activity::class.java)
             intent.putExtra("town", 5)
             startActivity(intent)
         }
 
         button6.setOnClickListener {
-            val intent = Intent(this@TownListActivity, SecondActivity::class.java)
+            val intent = Intent(this@TownListActivity, Town6Activity::class.java)
             intent.putExtra("town", 6)
             startActivity(intent)
         }
 
         button7.setOnClickListener {
-            val intent = Intent(this@TownListActivity, SecondActivity::class.java)
+            val intent = Intent(this@TownListActivity, Town7Activity::class.java)
             intent.putExtra("town", 7)
             startActivity(intent)
         }
 
         button8.setOnClickListener {
-            val intent = Intent(this@TownListActivity, SecondActivity::class.java)
+            val intent = Intent(this@TownListActivity, Town8Activity::class.java)
             intent.putExtra("town", 8)
             startActivity(intent)
         }
 
         button9.setOnClickListener {
-            val intent = Intent(this@TownListActivity, SecondActivity::class.java)
+            val intent = Intent(this@TownListActivity, Town9Activity::class.java)
             intent.putExtra("town", 9)
             startActivity(intent)
         }
 
         button10.setOnClickListener {
-            val intent = Intent(this@TownListActivity, SecondActivity::class.java)
+            val intent = Intent(this@TownListActivity, Town10Activity::class.java)
             intent.putExtra("town", 10)
             startActivity(intent)
         }
 
         button11.setOnClickListener {
-            val intent = Intent(this@TownListActivity, SecondActivity::class.java)
+            val intent = Intent(this@TownListActivity, Town11Activity::class.java)
             intent.putExtra("town", 11)
             startActivity(intent)
         }
 
         button12.setOnClickListener {
-            val intent = Intent(this@TownListActivity, SecondActivity::class.java)
+            val intent = Intent(this@TownListActivity, Town12Activity::class.java)
             intent.putExtra("town", 12)
             startActivity(intent)
         }
 
         button13.setOnClickListener {
-            val intent = Intent(this@TownListActivity, SecondActivity::class.java)
+            val intent = Intent(this@TownListActivity, Town13Activity::class.java)
             intent.putExtra("town", 13)
             startActivity(intent)
         }

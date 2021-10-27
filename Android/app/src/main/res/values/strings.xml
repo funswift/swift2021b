@@ -1,9 +1,8 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">IbaShareAndroid</string>
-    <string name="back">back</string>
-    <string name="富岡町">富岡町</string>
     <string name="他の町を見る">他の町を見る</string>
     <string name="cancel">×</string>
+    <string name="富岡町">富岡町</string>
     <string name="昭和町">昭和町</string>
     <string name="住吉町">住吉町</string>
     <string name="弁天町">弁天町</string>
@@ -16,8 +15,6 @@
     <string name="宝来町">宝来町</string>
     <string name="大町">大町</string>
     <string name="入船町">入船町</string>
-    <string name="unko">うんこ</string>
-    <string name="うんこ">うんこ</string>
-    <string name="いぇい">いぇい</string>
+    <string name="hogehoge">hogehoge</string>
 
 </resources>
