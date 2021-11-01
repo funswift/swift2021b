@@ -2,17 +2,15 @@ package com.swift2021.ibashareandroid
 
 
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
+import android.os.Handler
+import android.os.Looper
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 
 class MainActivity : AppCompatActivity() {
 
-    private var linearLayout: LinearLayout? = null
     private var imageNames = arrayOf(
         R.drawable.fun_entaku,
         R.drawable.fun_entaku,
@@ -28,7 +26,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         initView()
-        initButton()
+        timeEvent()
+
     }
 
     private fun initView() {
@@ -39,24 +38,26 @@ class MainActivity : AppCompatActivity() {
         textView.text = textNames[aryIndex]
     }
 
-    private fun initButton() {
-        val displayButton: Button = findViewById(R.id.button)
-        displayButton.setOnClickListener {
-            if (aryIndex < textNames.size) {
-                aryIndex = (aryIndex + 1) % textNames.size
+    private fun timeEvent() {
+        var handler = Handler((Looper.getMainLooper()))
+
+        val rnb = object : Runnable {
+            override fun run() {
+                handler.postDelayed(this, 5000)
                 imageChange()
             }
         }
+        handler.post(rnb)
     }
 
     private fun imageChange() {
         val imageView: ImageView = findViewById(R.id.imageViewMain)
         val textView: TextView = findViewById(R.id.textViewMain)
-        val countView: TextView = findViewById(R.id.count)
 
         imageView.setImageResource(imageNames[aryIndex])
         textView.text = textNames[aryIndex]
-        countView.text = ("" + (aryIndex + 1))
+
+        aryIndex = (aryIndex + 1) % textNames.size
     }
 
 }

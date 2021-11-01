@@ -39,23 +39,6 @@
 
         </RelativeLayout>
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="次へ"
-            android:layout_marginStart="150dp"
-            android:layout_marginTop="0dp"
-            />
-        <TextView
-            android:id="@+id/count"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="150dp"
-            android:text="1"
-            />
-
-
     </LinearLayout>
 
 
