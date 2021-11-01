@@ -7,7 +7,16 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main3.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_recommend.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_second.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_see.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_see_more.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_see_more_tag1.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_see_more_tag2.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_see_more_tag3.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_tag1.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_tag2.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_tag3.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_town1.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_town10.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_town11.xml" value="0.29583333333333334" />
@@ -31,5 +40,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.3098958333333333" />
+      </ProjectState>
+    </option>
   </component>
 </project>

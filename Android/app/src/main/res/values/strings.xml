@@ -16,5 +16,11 @@
     <string name="大町">大町</string>
     <string name="入船町">入船町</string>
     <string name="hogehoge">hogehoge</string>
+    <string name="もっとみる">もっとみる</string>
+    <string name="あなたにオススメ">あなたにオススメ</string>
+    <string name="囲碁">#囲碁</string>
+    <string name="編み物">#編み物</string>
+    <string name="将棋">#将棋</string>
+    <string name="back">BACK</string>
 
 </resources>
