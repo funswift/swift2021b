@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IbaShareAndroid">
         <activity
+            android:name=".TownActivity"
+            android:exported="true" />
+        <activity
             android:name=".Tag3Activity"
             android:exported="true" />
         <activity
@@ -76,7 +79,6 @@
         <activity
             android:name=".SecondActivity"
             android:exported="true" />
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
