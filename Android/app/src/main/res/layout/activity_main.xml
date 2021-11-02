@@ -26,13 +26,14 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/image1"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="0dp"
                     android:layout_marginRight="20dp"
                     android:src="@mipmap/place01" />
 
@@ -41,7 +42,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="居場所1"
-                    android:textAlignment="center"
+                    android:textAlignment="textStart"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -64,7 +65,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="居場所2"
-                    android:textAlignment="center"
+                    android:textAlignment="textStart"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -89,7 +90,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="居場所3"
-                    android:textAlignment="center"
+                    android:textAlignment="textStart"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -114,7 +115,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="居場所4"
-                    android:textAlignment="center"
+                    android:textAlignment="textStart"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
