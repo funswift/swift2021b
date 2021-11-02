@@ -6,6 +6,7 @@ import android.content.Intent
 import android.media.Image
 import  android.widget.Button
 import  android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
@@ -25,10 +26,13 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
         image1.setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
 
             intent.putExtra("PlaceName", placeName1.text.toString())
+            intent.putExtra("PlaceImage", 1)
             startActivity(intent)
         }
 
@@ -36,6 +40,8 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity2::class.java)
 
             intent.putExtra("PlaceName", placeName2.text.toString())
+            intent.putExtra("PlaceImage", 2)
+
             startActivity(intent)
         }
 
@@ -43,6 +49,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity2::class.java)
 
             intent.putExtra("PlaceName", placeName3.text.toString())
+            intent.putExtra("PlaceImage", 3)
             startActivity(intent)
         }
 
@@ -50,6 +57,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity2::class.java)
 
             intent.putExtra("PlaceName", placeName4.text.toString())
+            intent.putExtra("PlaceImage", 4)
             startActivity(intent)
         }
 
