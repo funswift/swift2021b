@@ -5,14 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-class MainActivity : AppCompatActivity() {
+class SeeTownActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_see_town)
     }
 
-    // 実行ボタンタップ時
+    // ボタンタップ時
     fun onButtonTapped(view: View?) {
         val intent = Intent(this, TownListActivity::class.java)
         startActivity(intent)
