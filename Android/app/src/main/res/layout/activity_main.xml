@@ -1,119 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-
-
-<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:orientation="horizontal">
+        android:text="ジャンル"
+        android:textSize="34sp" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/image1"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:src="@mipmap/place01" />
-
-            <TextView
-                android:id="@+id/place1"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="居場所1"
-                android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/image1"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/place01" />
+
+                <TextView
+                    android:id="@+id/place1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="居場所1"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/image2"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/place02" />
+
+                <TextView
+                    android:id="@+id/place2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="居場所2"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/image3"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/place03" />
+
+                <TextView
+                    android:id="@+id/place3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="居場所3"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/image4"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/place04" />
+
+                <TextView
+                    android:id="@+id/place4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="居場所4"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+            </LinearLayout>
+
+
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/image2"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginRight="20dp"
-                android:src="@mipmap/place02" />
-
-            <TextView
-                android:id="@+id/place2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="居場所2"
-                android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/image3"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginRight="20dp"
-                android:src="@mipmap/place03" />
-
-            <TextView
-                android:id="@+id/place3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="居場所3"
-                android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/image4"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginRight="20dp"
-                android:src="@mipmap/place04" />
-
-            <TextView
-                android:id="@+id/place4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="居場所4"
-                android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-
-</HorizontalScrollView>
-
+    </HorizontalScrollView>
+</LinearLayout>
