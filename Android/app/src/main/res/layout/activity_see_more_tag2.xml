@@ -10,7 +10,7 @@
         android:id="@+id/button"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        android:background="@drawable/cancel_button"
+        android:background="@drawable/round_button"
         android:onClick="onButtonTapped"
         android:text="@string/もっとみる"
         app:layout_constraintBottom_toBottomOf="parent"
