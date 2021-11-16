@@ -17,12 +17,12 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
 
     private var imageNames = arrayOf(
-        R.drawable.fun_entaku,
-        R.drawable.fun_entaku,
-        R.drawable.fun_entaku,
-        R.drawable.fun_entaku
+        R.drawable.amimono,
+        R.drawable.igo01,
+        R.drawable.shogi,
+        R.drawable.igo02
     )
-    private var textNames = arrayOf("亀田町", "美原町", "富岡町", "赤川町")
+    private var textNames = arrayOf("美原編み物クラブ", "囲碁クラブ", "将棋会館", "囲碁同好会")
     private var aryIndex = 0
 
 
