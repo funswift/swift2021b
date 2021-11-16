@@ -1,3 +1,27 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">IbaShareAndroid</string>
+    <string name="他の町を見る">他の町を見る</string>
+    <string name="cancel">×</string>
+    <string name="富岡町">富岡町</string>
+    <string name="昭和町">昭和町</string>
+    <string name="住吉町">住吉町</string>
+    <string name="弁天町">弁天町</string>
+    <string name="谷地頭町">谷地頭町</string>
+    <string name="末広町">末広町</string>
+    <string name="弥生町">弥生町</string>
+    <string name="美原町">美原町</string>
+    <string name="鍛冶町">鍛冶町</string>
+    <string name="青柳町">青柳町</string>
+    <string name="宝来町">宝来町</string>
+    <string name="大町">大町</string>
+    <string name="入船町">入船町</string>
+    <string name="もっとみる">もっとみる</string>
+    <string name="あなたにオススメ">あなたにオススメ</string>
+    <string name="囲碁">#囲碁</string>
+    <string name="編み物">#編み物</string>
+    <string name="将棋">#将棋</string>
+    <string name="back">BACK</string>
+    <string name="あなたにオススメページ">あなたにオススメページ</string>
+    <string name="あなたにおすすめページ">あなたにおすすめページ</string>
+
 </resources>

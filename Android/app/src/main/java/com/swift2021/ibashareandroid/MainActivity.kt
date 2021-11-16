@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.os.Handler
 import android.os.Looper
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -29,11 +30,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        val image1: ImageButton = findViewById(R.id.image1)
-//        val image2: ImageButton = findViewById(R.id.image2)
-//        val image3: ImageButton = findViewById(R.id.image3)
-//        val image4: ImageButton = findViewById(R.id.image4)
-
         val placeName1: TextView = findViewById(R.id.place1)
         val placeName2: TextView = findViewById(R.id.place2)
         val placeName3: TextView = findViewById(R.id.place3)
@@ -43,6 +39,9 @@ class MainActivity : AppCompatActivity() {
         val image2: ImageView = findViewById(R.id.image2)
         val image3: ImageView = findViewById(R.id.image3)
         val image4: ImageView = findViewById(R.id.image4)
+
+        val seeTownButton: Button = findViewById(R.id.seeTownButton)
+        val seeMoreButton: Button = findViewById(R.id.seeMoreButton)
 
 
         image1.setOnClickListener {
@@ -80,6 +79,18 @@ class MainActivity : AppCompatActivity() {
 
         initView()
         timeEvent()
+
+        //他の街を見る
+        seeTownButton.setOnClickListener {
+            val intent = Intent(this, TownListActivity::class.java)
+            startActivity(intent)
+        }
+
+        //もっと見る
+        seeMoreButton.setOnClickListener {
+            val intent = Intent(this, RecommendActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
