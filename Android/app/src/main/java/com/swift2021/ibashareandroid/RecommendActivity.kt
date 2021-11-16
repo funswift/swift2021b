@@ -12,7 +12,7 @@ class RecommendActivity : AppCompatActivity() {
     }
 
     fun toBackButton(view: View?) {
-        val intent = Intent(this, SeeMoreActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
 }

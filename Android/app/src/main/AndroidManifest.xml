@@ -31,12 +31,13 @@
         <activity
             android:name=".RecommendActivity"
             android:exported="true" />
-
         <activity
             android:name=".TownListActivity"
             android:exported="true" />
-
-        <activity android:name=".SeeMoreActivity">
+        <activity
+            android:name=".MainActivity2"
+            android:exported="true" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
