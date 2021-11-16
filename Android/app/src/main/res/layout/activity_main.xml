@@ -18,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="Roboto"
+            android:layout_marginTop="5dp"
             android:text="美原町の回覧板"
             android:textSize="24dp"
             android:textStyle="bold" />
@@ -26,7 +27,7 @@
             android:id="@+id/seeTownButton"
             android:layout_width="140dp"
             android:layout_height="40dp"
-            android:layout_marginStart="230dp"
+            android:layout_marginStart="222dp"
             android:background="@drawable/round_button"
             android:fontFamily="@font/roboto"
             android:onClick="onButtonTapped"
