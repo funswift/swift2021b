@@ -32,54 +32,13 @@
             android:name=".RecommendActivity"
             android:exported="true" />
         <activity
-            android:name=".SeeMoreActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Town13Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Town12Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Town11Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Town10Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Town9Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Town8Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Town7Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Town6Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Town5Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Town4Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Town3Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Town2Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Town1Activity"
-            android:exported="true" />
-        <activity
             android:name=".TownListActivity"
             android:exported="true" />
         <activity
-            android:name=".SecondActivity"
+            android:name=".MainActivity2"
             android:exported="true" />
-        <activity android:name=".SeeTownActivity">
+        <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
