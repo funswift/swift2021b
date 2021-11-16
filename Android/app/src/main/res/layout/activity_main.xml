@@ -39,17 +39,17 @@
             android:orientation="vertical">
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="329dp"
-                android:layout_height="176dp"
+                android:layout_width="379dp"
+                android:layout_height="190dp"
                 app:cardElevation="5dp"
                 app:cardUseCompatPadding="true">
 
                 <ImageView
                     android:id="@+id/imageViewMain"
-                    android:layout_width="329dp"
-                    android:layout_height="176dp"
+                    android:layout_width="379dp"
+                    android:layout_height="190dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/fun_entaku"
+                    android:src="@drawable/amimono"
                     />
 
                 <TextView
