@@ -6,21 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
+
     <Button
         android:id="@+id/seeTownButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginEnd="16dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/round_button"
+        android:fontFamily="@font/roboto"
+        android:onClick="onButtonTapped"
         android:text="@string/他の町を見る"
+        android:textSize="16dp"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499" />
-  
-   <LinearLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -48,8 +52,7 @@
                 android:layout_marginTop="155dp"
                 android:text="TextView"
                 android:textColor="@color/white"
-                android:textSize="24dp"
-                />
+                android:textSize="24dp" />
 
         </RelativeLayout>
 
@@ -176,15 +179,26 @@
 
 
     </HorizontalScrollView>
-    <Button
-        android:id="@+id/seeMoreButton"
-        android:layout_width="150dp"
-        android:layout_height="70dp"
-        android:background="@drawable/cancel_button"
-        android:text="@string/もっとみる"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/seeMoreButton"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:background="@drawable/round_button"
+            android:fontFamily="@font/roboto"
+            android:onClick="onButtonTapped"
+            android:text="@string/もっとみる"
+            android:textSize="16dp"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="center_horizontal"
+            />
+    </LinearLayout>
 </LinearLayout>
