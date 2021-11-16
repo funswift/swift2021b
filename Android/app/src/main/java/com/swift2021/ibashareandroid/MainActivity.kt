@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val image1: ImageButton = findViewById(R.id.image1)
+//        val image1: ImageButton = findViewById(R.id.image1)
         val image2: ImageButton = findViewById(R.id.image2)
         val image3: ImageButton = findViewById(R.id.image3)
         val image4: ImageButton = findViewById(R.id.image4)
@@ -43,13 +43,13 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        image1.setOnClickListener {
-            val intent = Intent(this, MainActivity2::class.java)
-
-            intent.putExtra("PlaceName", placeName1.text.toString())
-            intent.putExtra("PlaceImage", 1)
-            startActivity(intent)
-        }
+//        image1.setOnClickListener {
+//            val intent = Intent(this, MainActivity2::class.java)
+//
+//            intent.putExtra("PlaceName", placeName1.text.toString())
+//            intent.putExtra("PlaceImage", 1)
+//            startActivity(intent)
+//        }
 
         image2.setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
