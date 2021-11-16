@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.swift2021.ibashareandroid">
 
     <application
@@ -10,10 +11,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IbaShareAndroid">
         <activity
+            android:name=".TownActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Tag3Activity"
+            android:exported="true" />
+        <activity
+            android:name=".SeeMoreTag3Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Tag2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".SeeMoreTag2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Tag1Activity"
+            android:exported="true" />
+        <activity
+            android:name=".RecommendActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TownListActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity2"
             android:exported="true" />
-
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
