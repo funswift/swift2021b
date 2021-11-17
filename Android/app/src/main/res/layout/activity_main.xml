@@ -27,10 +27,11 @@
             android:id="@+id/townNameTopPage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="Roboto"
             android:layout_marginTop="5dp"
+            android:fontFamily="Roboto"
             android:text="美原町の回覧板"
             android:textSize="24dp"
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <Button
@@ -100,6 +101,7 @@
         android:fontFamily="Roboto"
         android:text="ジャンル"
         android:textSize="20dp"
+        android:textColor="@color/black"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -151,6 +153,7 @@
                                 android:text="居場所1"
                                 android:textAlignment="textStart"
                                 android:textSize="16dp"
+                                android:textColor="@color/black"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -198,6 +201,7 @@
                                 android:text="居場所2"
                                 android:textAlignment="textStart"
                                 android:textSize="16dp"
+                                android:textColor="@color/black"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -257,6 +261,7 @@
                             android:text="居場所3"
                             android:textAlignment="textStart"
                             android:textSize="16dp"
+                            android:textColor="@color/black"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent" />
 
@@ -304,6 +309,7 @@
                             android:text="居場所4"
                             android:textAlignment="textStart"
                             android:textSize="16dp"
+                            android:textColor="@color/black"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent" />
 
@@ -352,6 +358,7 @@
         android:fontFamily="Roboto"
         android:text="あなたにおすすめ"
         android:textSize="20dp"
+        android:textColor="@color/black"
         android:textStyle="bold" />
 
 </LinearLayout>
