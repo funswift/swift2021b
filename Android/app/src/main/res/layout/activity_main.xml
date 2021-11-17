@@ -7,54 +7,78 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/seeTownButton"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:background="@drawable/round_button"
-        android:fontFamily="@font/roboto"
-        android:onClick="onButtonTapped"
-        android:text="@string/他の町を見る"
-        android:textSize="16dp"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp">
+
+        <TextView
+            android:id="@+id/townNameTopPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="Roboto"
+            android:layout_marginTop="5dp"
+            android:text="美原町の回覧板"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/seeTownButton"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="222dp"
+            android:background="@drawable/round_button"
+            android:fontFamily="@font/roboto"
+            android:onClick="onButtonTapped"
+            android:text="@string/他の町を見る"
+            android:textSize="16dp"
+            app:backgroundTint="@null"
+            />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
         <RelativeLayout
             android:id="@+id/linear1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageViewMain"
-                android:layout_width="342dp"
-                android:layout_height="209dp"
-                android:src="@drawable/fun_entaku" />
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="379dp"
+                android:layout_height="190dp"
+                app:cardElevation="5dp"
+                app:cardUseCompatPadding="true">
 
-            <TextView
-                android:id="@+id/textViewMain"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="155dp"
-                android:text="TextView"
-                android:textColor="@color/white"
-                android:textSize="24dp" />
+                <ImageView
+                    android:id="@+id/imageViewMain"
+                    android:layout_width="379dp"
+                    android:layout_height="190dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/amimono" />
 
+                <TextView
+                    android:id="@+id/textViewMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="6dp"
+                    android:fontFamily="Roboto"
+                    android:text="TextView"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
         </RelativeLayout>
+
 
     </LinearLayout>
 
