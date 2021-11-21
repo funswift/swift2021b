@@ -137,12 +137,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun getData(){
 
-        db.collection("place")
+        val groupId = "WXAd20FkYZYNFMfUMjEC"
+        db.collection("place").document(groupId)
             .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    Log.d(TAG, "${document.id} => ${document.data}")
-                }
+            .addOnSuccessListener {
+
+                val title = it["title"] as String
+                val information = it["information"] as String
+                val address = it["address"] as String
+
+                Log.d("Value",title)
+                Log.d("Value",information)
+                Log.d("Value",address)
+
             }
             .addOnFailureListener { exception ->
                 Log.w(TAG, "Error getting documents.", exception)
