@@ -1,6 +1,7 @@
 package com.swift2021.ibashareandroid
 
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.content.Intent
 import android.media.Image
@@ -10,8 +11,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +28,10 @@ class MainActivity : AppCompatActivity() {
     )
     private var textNames = arrayOf("美原編み物クラブ", "囲碁クラブ", "将棋会館", "囲碁同好会")
     private var aryIndex = 0
+
+    private val db= Firebase.firestore
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +50,8 @@ class MainActivity : AppCompatActivity() {
 
         val seeTownButton: Button = findViewById(R.id.seeTownButton)
         val seeMoreButton: Button = findViewById(R.id.seeMoreButton)
+
+        getData()
 
 
         image1.setOnClickListener {
@@ -124,5 +134,22 @@ class MainActivity : AppCompatActivity() {
 
         aryIndex = (aryIndex + 1) % textNames.size
     }
+
+    private fun getData(){
+
+        db.collection("place")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    Log.d(TAG, "${document.id} => ${document.data}")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.w(TAG, "Error getting documents.", exception)
+            }
+
+    }
+
+
 
 }
