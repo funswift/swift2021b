@@ -11,116 +11,124 @@
         android:layout_height="wrap_content">
 
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="16dp">
-
-        <TextView
-            android:id="@+id/townNameTopPage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:fontFamily="Roboto"
-            android:text="美原町の回覧板"
-            android:textSize="24dp"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/seeTownButton"
-            android:layout_width="140dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="222dp"
-            android:background="@drawable/round_button"
-            android:fontFamily="@font/roboto"
-            android:onClick="onButtonTapped"
-            android:text="@string/他の町を見る"
-            android:textSize="16dp"
-            app:backgroundTint="@null"
-            />
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
 
         <RelativeLayout
-            android:id="@+id/linear1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical">
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="8dp">
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="379dp"
-                android:layout_height="190dp"
-                app:cardElevation="5dp"
-                app:cardUseCompatPadding="true">
+            <TextView
+                android:id="@+id/townNameTopPage"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_marginVertical="8dp"
+                android:layout_marginStart="16dp"
+                android:fontFamily="Roboto"
+                android:text="美原町の回覧板"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/imageViewMain"
-                    android:layout_width="379dp"
-                    android:layout_height="190dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/amimono" />
-
-                <TextView
-                    android:id="@+id/textViewMain"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginBottom="6dp"
-                    android:fontFamily="Roboto"
-                    android:text="TextView"
-                    android:textColor="@color/white"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-            </com.google.android.material.card.MaterialCardView>
+            <Button
+                android:id="@+id/seeTownButton"
+                android:layout_width="126dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:background="@drawable/button"
+                android:fontFamily="@font/roboto"
+                android:onClick="onButtonTapped"
+                android:text="町を選ぶ"
+                android:textSize="16dp"
+                app:backgroundTint="@null" />
         </RelativeLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="Roboto"
-        android:text="ジャンル"
-        android:textSize="20dp"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+            <RelativeLayout
+                android:id="@+id/linear1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="11dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true">
 
+                    <ImageView
+                        android:id="@+id/imageViewMain"
+                        android:layout_width="328dp"
+                        android:layout_height="176dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/amimono" />
+
+                    <TextView
+                        android:id="@+id/textViewMain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="141dp"
+                        android:layout_marginEnd="152dp"
+                        android:layout_marginBottom="12dp"
+                        android:fontFamily="Roboto"
+                        android:text="TextView"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </com.google.android.material.card.MaterialCardView>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="43dp">
+
+            <TextView
+                android:layout_width="162dp"
+                android:layout_height="23dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="Roboto"
+                android:text="あなたにおすすめ"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="0dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginTop="7dp"
                     android:orientation="vertical">
 
                     <com.google.android.material.card.MaterialCardView
@@ -130,16 +138,16 @@
                         app:cardUseCompatPadding="true">
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:orientation="vertical">
 
                             <ImageView
                                 android:id="@+id/image1"
-                                android:layout_width="168dp"
+                                android:layout_width="158dp"
                                 android:layout_height="117dp"
                                 android:layout_marginLeft="0dp"
-                                android:layout_marginRight="12dp"
+                                android:layout_marginRight="0dp"
                                 android:scaleType="centerCrop"
                                 android:src="@mipmap/place01"
                                 app:cardCornerRadius="30dp" />
@@ -148,12 +156,12 @@
                             <TextView
                                 android:id="@+id/place1"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:fontFamily="Roboto"
+                                android:gravity="left"
                                 android:text="居場所1"
-                                android:textAlignment="textStart"
-                                android:textSize="16dp"
                                 android:textColor="@color/black"
+                                android:textSize="16dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -168,7 +176,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="7dp"
                     android:orientation="vertical">
 
                     <com.google.android.material.card.MaterialCardView
@@ -178,8 +187,8 @@
                         app:cardUseCompatPadding="true">
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:orientation="vertical">
 
                             <ImageView
@@ -187,7 +196,7 @@
                                 android:layout_width="158dp"
                                 android:layout_height="117dp"
                                 android:layout_marginLeft="0dp"
-                                android:layout_marginRight="12dp"
+                                android:layout_marginRight="0dp"
                                 android:scaleType="centerCrop"
                                 android:src="@mipmap/place02"
                                 app:cardCornerRadius="30dp" />
@@ -196,12 +205,12 @@
                             <TextView
                                 android:id="@+id/place2"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:fontFamily="Roboto"
+                                android:gravity="left"
                                 android:text="居場所2"
-                                android:textAlignment="textStart"
-                                android:textSize="16dp"
                                 android:textColor="@color/black"
+                                android:textSize="16dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -214,158 +223,159 @@
                 </LinearLayout>
 
 
-
-
             </LinearLayout>
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:orientation="vertical">
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="168dp"
-                    android:layout_height="157dp"
-                    app:cardElevation="5dp"
-                    app:cardUseCompatPadding="true">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="11dp"
+                    android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="168dp"
+                        android:layout_height="157dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true">
 
-                        <ImageView
-                            android:id="@+id/image3"
-                            android:layout_width="158dp"
-                            android:layout_height="117dp"
-                            android:layout_marginLeft="0dp"
-                            android:layout_marginRight="12dp"
-                            android:scaleType="centerCrop"
-                            android:src="@mipmap/place03"
-                            app:cardCornerRadius="30dp" />
-
-
-                        <TextView
-                            android:id="@+id/place3"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="Roboto"
-                            android:text="居場所3"
-                            android:textAlignment="textStart"
-                            android:textSize="16dp"
-                            android:textColor="@color/black"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent" />
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:id="@+id/image3"
+                                android:layout_width="158dp"
+                                android:layout_height="117dp"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginRight="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place03"
+                                app:cardCornerRadius="30dp" />
 
 
-                </com.google.android.material.card.MaterialCardView>
+                            <TextView
+                                android:id="@+id/place3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="Roboto"
+                                android:gravity="left"
+                                android:text="居場所3"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
 
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="168dp"
+                        android:layout_height="157dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/image4"
+                                android:layout_width="158dp"
+                                android:layout_height="117dp"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginRight="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place04"
+                                app:cardCornerRadius="30dp" />
+
+
+                            <TextView
+                                android:id="@+id/place4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="Roboto"
+                                android:gravity="left"
+                                android:text="居場所4"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
 
             </LinearLayout>
+
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="11dp"
                 android:orientation="vertical">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="168dp"
-                    android:layout_height="157dp"
-                    app:cardElevation="5dp"
-                    app:cardUseCompatPadding="true">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/image4"
-                            android:layout_width="158dp"
-                            android:layout_height="117dp"
-                            android:layout_marginLeft="0dp"
-                            android:layout_marginRight="20dp"
-                            android:scaleType="centerCrop"
-                            android:src="@mipmap/place04"
-                            app:cardCornerRadius="30dp" />
-
-
-                        <TextView
-                            android:id="@+id/place4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="Roboto"
-                            android:text="居場所4"
-                            android:textAlignment="textStart"
-                            android:textSize="16dp"
-                            android:textColor="@color/black"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent" />
-
-                    </LinearLayout>
-
-
-                </com.google.android.material.card.MaterialCardView>
-
-
+                <Button
+                    android:id="@+id/seeMoreButton"
+                    android:layout_width="328dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/round_button"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="onButtonTapped"
+                    android:text="すべてみる"
+                    android:textSize="14dp"
+                    app:backgroundTint="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
             </LinearLayout>
-
         </LinearLayout>
-
-
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="27dp"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/seeMoreButton"
-                android:layout_width="300dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/round_button"
-                android:fontFamily="@font/roboto"
-                android:onClick="onButtonTapped"
-                android:text="@string/もっとみる"
-                android:textSize="16dp"
-                app:backgroundTint="@null"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="61dp"
+                android:layout_height="23dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="Roboto"
+                android:text="編み物"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
         </LinearLayout>
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="Roboto"
-        android:text="あなたにおすすめ"
-        android:textSize="20dp"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
-
-</LinearLayout>
 
     </ScrollView>
 
-    </LinearLayout>
+</LinearLayout>
 
 
 

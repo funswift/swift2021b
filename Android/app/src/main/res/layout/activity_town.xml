@@ -10,7 +10,7 @@
         android:id="@+id/cancel2"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:background="@drawable/round_button"
+        android:background="@drawable/button"
         android:onClick="onBackButtonTapped"
         android:text="@string/cancel"
         app:layout_constraintBottom_toBottomOf="parent"
