@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
+
     private var imageNames = arrayOf(
         R.drawable.amimono,
         R.drawable.igo01,
