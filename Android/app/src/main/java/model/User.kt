@@ -1,3 +1,5 @@
+package model
+
 class User(val name:String, val townToLive:String) {
 
     var tapShogi:Int? = null
