@@ -148,7 +148,7 @@ class MainActivity : AppCompatActivity() {
     private fun animationPageEvent() {
         val size = Rect()
         this.window.decorView.getWindowVisibleDisplayFrame(size)
-        val amountOfMovementX = size.width() + 1
+        val amountOfMovementX = size.width() + 3
 
         val array = IntArray(2)
         imageRandomView.getLocationInWindow(array)

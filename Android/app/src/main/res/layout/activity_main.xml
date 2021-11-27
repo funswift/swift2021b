@@ -97,48 +97,42 @@
                         </com.google.android.material.card.MaterialCardView>
                     </RelativeLayout>
 
-                    <LinearLayout
+                    <RelativeLayout
+                        android:id="@+id/linear2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center">
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="vertical">
 
-                        <RelativeLayout
-                            android:id="@+id/linear2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:orientation="vertical">
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="379dp"
+                            android:layout_height="190dp"
+                            app:cardElevation="5dp"
+                            app:cardUseCompatPadding="true">
 
-                            <com.google.android.material.card.MaterialCardView
+                            <androidx.constraintlayout.utils.widget.ImageFilterButton
+                                android:id="@+id/imageRandomViewMain2"
                                 android:layout_width="379dp"
                                 android:layout_height="190dp"
-                                app:cardElevation="5dp"
-                                app:cardUseCompatPadding="true">
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/amimono" />
 
-                                <androidx.constraintlayout.utils.widget.ImageFilterButton
-                                    android:id="@+id/imageRandomViewMain2"
-                                    android:layout_width="379dp"
-                                    android:layout_height="190dp"
-                                    android:scaleType="centerCrop"
-                                    android:src="@drawable/amimono" />
-
-                                <TextView
-                                    android:id="@+id/textViewMain2"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="bottom"
-                                    android:layout_marginStart="16dp"
-                                    android:layout_marginBottom="6dp"
-                                    android:fontFamily="Roboto"
-                                    android:text="TextView"
-                                    android:textColor="@color/white"
-                                    android:textSize="20dp"
-                                    android:textStyle="bold" />
-                            </com.google.android.material.card.MaterialCardView>
-                        </RelativeLayout>
-                    </LinearLayout>
+                            <TextView
+                                android:id="@+id/textViewMain2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginBottom="6dp"
+                                android:fontFamily="Roboto"
+                                android:text="TextView"
+                                android:textColor="@color/white"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </RelativeLayout>
 
                     <RelativeLayout
                         android:id="@+id/linear3"
