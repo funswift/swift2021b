@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+
     private var imageNames = arrayOf(
         R.drawable.amimono,
         R.drawable.igo01,
