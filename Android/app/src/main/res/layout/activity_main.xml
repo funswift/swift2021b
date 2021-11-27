@@ -17,18 +17,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -43,7 +34,7 @@
                     android:layout_marginVertical="8dp"
                     android:layout_marginStart="16dp"
                     android:fontFamily="Roboto"
-                    android:text="美原町の回覧板"
+                    android:text="@string/美原町の回覧板"
                     android:textColor="@color/black"
                     android:textSize="24dp"
                     android:textStyle="bold" />
@@ -55,7 +46,7 @@
                     android:layout_marginStart="218dp"
                     android:background="@drawable/button_template"
                     android:fontFamily="@font/roboto"
-                    android:text="町を選ぶ"
+                    android:text="@string/町を選ぶ"
                     android:textSize="16dp"
                     app:backgroundTint="@null" />
             </RelativeLayout>
@@ -68,12 +59,13 @@
 
                 <RelativeLayout
                     android:id="@+id/linear1"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
 
                     <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginHorizontal="11dp"
                         app:cardElevation="5dp"
@@ -84,7 +76,8 @@
                             android:layout_width="328dp"
                             android:layout_height="176dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/amimono" />
+                            android:src="@drawable/amimono"
+                            app:cardCornerRadius="30dp" />
 
                         <TextView
                             android:id="@+id/textViewMain"
@@ -96,7 +89,7 @@
                             android:layout_marginEnd="152dp"
                             android:layout_marginBottom="12dp"
                             android:fontFamily="Roboto"
-                            android:text="TextView"
+                            android:text="@string/textview"
                             android:textColor="@color/white"
                             android:textSize="20dp"
                             android:textStyle="bold" />
@@ -115,10 +108,10 @@
                 <TextView
                     android:layout_width="162dp"
                     android:layout_height="23dp"
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="0dp"
                     android:fontFamily="Roboto"
-                    android:text="あなたにおすすめ"
+                    android:text="@string/あなたにおすすめ"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -171,11 +164,12 @@
                                     android:layout_height="match_parent"
                                     android:fontFamily="Roboto"
                                     android:gravity="left"
-                                    android:text="居場所1"
+                                    android:text="@string/居場所1"
                                     android:textColor="@color/black"
                                     android:textSize="16dp"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent" />
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    tools:ignore="RtlHardcoded" />
 
                             </LinearLayout>
 
@@ -220,11 +214,12 @@
                                     android:layout_height="match_parent"
                                     android:fontFamily="Roboto"
                                     android:gravity="left"
-                                    android:text="居場所2"
+                                    android:text="@string/居場所2"
                                     android:textColor="@color/black"
                                     android:textSize="16dp"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent" />
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    tools:ignore="RtlHardcoded" />
 
                             </LinearLayout>
 
@@ -278,11 +273,12 @@
                                     android:layout_height="match_parent"
                                     android:fontFamily="Roboto"
                                     android:gravity="left"
-                                    android:text="居場所3"
+                                    android:text="@string/居場所3"
                                     android:textColor="@color/black"
                                     android:textSize="16dp"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent" />
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    tools:ignore="RtlHardcoded" />
 
                             </LinearLayout>
 
@@ -326,11 +322,12 @@
                                     android:layout_height="match_parent"
                                     android:fontFamily="Roboto"
                                     android:gravity="left"
-                                    android:text="居場所4"
+                                    android:text="@string/居場所4"
                                     android:textColor="@color/black"
                                     android:textSize="16dp"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent" />
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    tools:ignore="RtlHardcoded" />
 
                             </LinearLayout>
 
@@ -356,7 +353,7 @@
                         android:layout_marginStart="16dp"
                         android:background="@drawable/round_button_template"
                         android:fontFamily="@font/roboto"
-                        android:text="すべてみる"
+                        android:text="@string/すべてみる"
                         android:textSize="14dp"
                         app:backgroundTint="@null"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -376,10 +373,10 @@
                 <TextView
                     android:layout_width="61dp"
                     android:layout_height="23dp"
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="0dp"
                     android:fontFamily="Roboto"
-                    android:text="編み物"
+                    android:text="@string/amimono"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />

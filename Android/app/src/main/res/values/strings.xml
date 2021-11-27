@@ -23,5 +23,15 @@
     <string name="back">BACK</string>
     <string name="あなたにオススメページ">あなたにオススメページ</string>
     <string name="あなたにおすすめページ">あなたにおすすめページ</string>
+    <string name="美原町の回覧板">美原町の回覧板</string>
+    <string name="町を選ぶ">町を選ぶ</string>
+    <string name="textview">TextView</string>
+    <string name="あなたにおすすめ">あなたにおすすめ</string>
+    <string name="居場所1">居場所1</string>
+    <string name="居場所2">居場所2</string>
+    <string name="居場所3">居場所3</string>
+    <string name="居場所4">居場所4</string>
+    <string name="すべてみる">すべてみる</string>
+    <string name="amimono">編み物</string>
 
 </resources>
