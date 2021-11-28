@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val tanaka = User("井原翔太", "美原町")
+        val ibara = User("井原翔太", "美原町")
         val ibasyo1 = Place("富岡囲碁倶楽部","囲碁", "富岡町")
         val ibasyo2 = Place("美原あみあみもの倶楽部","編み物", "富岡町")
         val ibasyo3 = Place("昭和囲碁将棋の集い","囲碁", "富岡町")
@@ -52,12 +52,10 @@ class MainActivity : AppCompatActivity() {
         val ibasyo12 = Place("将棋名人","将棋", "富岡町")
 
 
-
-
-        val placeName1: TextView = findViewById(R.id.place1)
-        val placeName2: TextView = findViewById(R.id.place2)
-        val placeName3: TextView = findViewById(R.id.place3)
-        val placeName4: TextView = findViewById(R.id.place4)
+        place1.text = ibasyo1.name
+        place2.text = ibasyo2.name
+        place3.text = ibasyo3.name
+        place4.text = ibasyo4.name
 
         val image1: ImageView = findViewById(R.id.image1)
         val image2: ImageView = findViewById(R.id.image2)
@@ -71,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         image1.setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
 
-            intent.putExtra("PlaceName", placeName1.text.toString())
+            intent.putExtra("PlaceName", ibasyo1.name)
             intent.putExtra("PlaceImage", 1)
             startActivity(intent)
         }
@@ -79,7 +77,7 @@ class MainActivity : AppCompatActivity() {
         image2.setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
 
-            intent.putExtra("PlaceName", placeName2.text.toString())
+            intent.putExtra("PlaceName", ibasyo2.name)
             intent.putExtra("PlaceImage", 2)
 
             startActivity(intent)
@@ -88,7 +86,7 @@ class MainActivity : AppCompatActivity() {
         image3.setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
 
-            intent.putExtra("PlaceName", placeName3.text.toString())
+            intent.putExtra("PlaceName", ibasyo3.name)
             intent.putExtra("PlaceImage", 3)
             startActivity(intent)
         }
@@ -96,7 +94,7 @@ class MainActivity : AppCompatActivity() {
         image4.setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
 
-            intent.putExtra("PlaceName", placeName4.text.toString())
+            intent.putExtra("PlaceName", ibasyo4.name)
             intent.putExtra("PlaceImage", 4)
             startActivity(intent)
         }
