@@ -15,6 +15,7 @@ import android.os.Looper
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.swift2021.ibashareandroid.model.User
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -34,6 +35,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val tanaka = User("井原翔太", "美原町")
+        tanaka.tapIgo()
 
         val placeName1: TextView = findViewById(R.id.place1)
         val placeName2: TextView = findViewById(R.id.place2)
