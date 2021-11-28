@@ -5,8 +5,6 @@ class User(val name:String, val townToLive:String) {
     var tapShogi:Int? = null
     var tapIgo:Int? = null
 
-
-
 }
 
 fun main(){
