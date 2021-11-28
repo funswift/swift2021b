@@ -39,16 +39,16 @@ class MainActivity : AppCompatActivity() {
 
         val ibara = User("井原翔太", "美原町")
         val ibasyo1 = Place("富岡囲碁倶楽部","囲碁", "富岡町")
-        val ibasyo2 = Place("美原あみあみもの倶楽部","編み物", "富岡町")
-        val ibasyo3 = Place("昭和囲碁将棋の集い","囲碁", "富岡町")
+        val ibasyo2 = Place("美原あみあみもの倶楽部","編み物", "美原町")
+        val ibasyo3 = Place("昭和囲碁将棋の集い","囲碁", "昭和町")
         val ibasyo4 = Place("囲碁好きの集い","囲碁", "富岡町")
         val ibasyo5 = Place("編み物倶楽部","編み物", "富岡町")
-        val ibasyo6 = Place("美原編み物サークル","編み物", "富岡町")
-        val ibasyo7 = Place("美原編み物教室","編み物", "富岡町")
-        val ibasyo8 = Place("美原イベントサークル","イベント", "富岡町")
+        val ibasyo6 = Place("美原編み物サークル","編み物", "美原町")
+        val ibasyo7 = Place("美原編み物教室","編み物", "美原町")
+        val ibasyo8 = Place("美原イベントサークル","イベント", "美原町")
         val ibasyo9 = Place("富岡将棋","将棋", "富岡町")
         val ibasyo10 = Place("将棋所","将棋", "富岡町")
-        val ibasyo11 = Place("鍛治で将棋好き","将棋", "富岡町")
+        val ibasyo11 = Place("鍛治で将棋好き","将棋", "鍛冶町")
         val ibasyo12 = Place("将棋名人","将棋", "富岡町")
 
 
