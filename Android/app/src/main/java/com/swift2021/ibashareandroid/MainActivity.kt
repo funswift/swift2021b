@@ -2,8 +2,10 @@ package com.swift2021.ibashareandroid
 
 
 import android.content.ContentValues.TAG
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.content.Intent
+import android.graphics.Rect
 import android.media.Image
 import  android.widget.Button
 import  android.widget.ImageButton
@@ -20,6 +22,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
+
 
     private var imageNames = arrayOf(
         R.drawable.amimono,
@@ -86,7 +89,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         initView()
-        timeEvent()
+
 
         //他の街を見る
         seeTownButton.setOnClickListener {
@@ -103,11 +106,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        val imageView: ImageView = findViewById(R.id.imageViewMain)
-        val textView: TextView = findViewById(R.id.textViewMain)
+        val imageView = arrayListOf<ImageView>(
+            findViewById(R.id.imageRandomViewMain1),
+            findViewById(R.id.imageRandomViewMain2),
+            findViewById(R.id.imageRandomViewMain3),
+            findViewById(R.id.imageRandomViewMain4)
+        )
+        val textView = arrayListOf<TextView>(
+            findViewById(R.id.textViewMain1),
+            findViewById(R.id.textViewMain2),
+            findViewById(R.id.textViewMain3),
+            findViewById(R.id.textViewMain4)
+        )
+        for (i in imageNames.indices) {
+            imageView[i].setImageResource(imageNames[i])
+            textView[i].text = textNames[i]
+        }
+        scrollView.setOnTouchListener { _, _ -> true }
 
-        imageView.setImageResource(imageNames[aryIndex])
-        textView.text = textNames[aryIndex]
+        setRandomButtonEvent(imageView)
+        timeEvent()
     }
 
     private fun timeEvent() {
@@ -116,21 +134,43 @@ class MainActivity : AppCompatActivity() {
         val rnb = object : Runnable {
             override fun run() {
                 handler.postDelayed(this, 5000)
-                imageChange()
+                animationPageEvent()
             }
         }
         handler.post(rnb)
 
     }
 
-    private fun imageChange() {
-        val imageView: ImageView = findViewById(R.id.imageViewMain)
-        val textView: TextView = findViewById(R.id.textViewMain)
+    private fun setRandomButtonEvent(imageViewList: ArrayList<ImageView>) {
+        for (i in imageViewList.indices) {
+            imageViewList[i].setOnClickListener {
+                val intent = Intent(this, MainActivity2::class.java)
+                intent.putExtra("PlaceName", textNames[i])
+                intent.putExtra("PlaceImage", i)
+                startActivity(intent)
+            }
+        }
+    }
 
-        imageView.setImageResource(imageNames[aryIndex])
-        textView.text = textNames[aryIndex]
+    private fun animationPageEvent() {
+        val size = Rect()
+        this.window.decorView.getWindowVisibleDisplayFrame(size)
+        val amountOfMovementX = size.width() + 3
 
-        aryIndex = (aryIndex + 1) % textNames.size
+        val array = IntArray(2)
+        imageRandomView.getLocationInWindow(array)
+        val locationX = array[0]
+
+        var moveToX: Int = (locationX - amountOfMovementX)
+        if (locationX <= (amountOfMovementX) * (-2.5)) {
+            moveToX = 0
+        }
+        if (locationX != 0) {
+            ObjectAnimator.ofFloat(imageRandomView, "translationX", moveToX.toFloat()).apply {
+                duration = 2000
+                start()
+            }
+        }
     }
 
     private fun getData() {
