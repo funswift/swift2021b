@@ -16,6 +16,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -29,9 +30,7 @@ class MainActivity : AppCompatActivity() {
     private var textNames = arrayOf("美原編み物クラブ", "囲碁クラブ", "将棋会館", "囲碁同好会")
     private var aryIndex = 0
 
-    private val db= Firebase.firestore
-
-
+    private val db = Firebase.firestore
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,7 +51,6 @@ class MainActivity : AppCompatActivity() {
         val seeMoreButton: Button = findViewById(R.id.seeMoreButton)
 
         getData()
-
 
         image1.setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
@@ -135,28 +133,29 @@ class MainActivity : AppCompatActivity() {
         aryIndex = (aryIndex + 1) % textNames.size
     }
 
-    private fun getData(){
-
-        val groupId = "WXAd20FkYZYNFMfUMjEC"
-        db.collection("place").document(groupId)
+    private fun getData() {
+        val placeViewList = listOf<TextView>(place1, place2, place3, place4)
+        db.collection("place").limit(4)
             .get()
-            .addOnSuccessListener {
-
-                val title = it["title"] as String
-                val information = it["information"] as String
-                val address = it["address"] as String
-
-                Log.d("Value",title)
-                Log.d("Value",information)
-                Log.d("Value",address)
-
-            }
-            .addOnFailureListener { exception ->
-                Log.w(TAG, "Error getting documents.", exception)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val document = task.result
+                    if (document?.toObjects(Place::class.java) != null) {
+                        val placeList = document.toObjects(Place::class.java)
+                        Log.d(TAG, "getDataAll")
+                        Log.d(TAG, "userList.size " + placeList.size)
+                        for (i in 0 until placeList.size) {
+                            Log.d(TAG, "userList[" + i + "].title " + placeList[i].title)
+                            Log.d(TAG, "List[" + i + "].information " + placeList[i].information)
+                            Log.d(TAG, "userList[" + i + "].address " + placeList[i].address)
+                            placeViewList[i].text = placeList[i].title
+                        }
+                    }
+                } else {
+                    Log.d(TAG, "No such document")
+                }
             }
 
     }
-
-
 
 }
