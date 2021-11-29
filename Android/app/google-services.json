@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1018533915681",
+    "project_id": "ibashare-android",
+    "storage_bucket": "ibashare-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018533915681:android:97e015fca829be22cb8760",
+        "android_client_info": {
+          "package_name": "com.swift2021.ibashareandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1018533915681-vdtlb0gpnsivkjq8j75rdbjcko8lvbdf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1ojFQ6UpYzYk1z54qIarIUN6dORXOT0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1018533915681-vdtlb0gpnsivkjq8j75rdbjcko8lvbdf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
