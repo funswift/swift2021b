@@ -34,7 +34,20 @@
                     android:layout_marginVertical="8dp"
                     android:layout_marginStart="16dp"
                     android:fontFamily="Roboto"
-                    android:text="@string/美原町の回覧板"
+                    android:text="@string/美原町"
+                    android:textColor="@color/orange"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/kairanban"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_toEndOf="@+id/townNameTopPage"
+                    android:fontFamily="Roboto"
+                    android:text="@string/の回覧板"
                     android:textColor="@color/black"
                     android:textSize="24dp"
                     android:textStyle="bold" />
