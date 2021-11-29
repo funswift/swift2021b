@@ -2,6 +2,7 @@ package com.swift2021.ibashareandroid
 
 
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.content.Intent
 import android.graphics.Rect
@@ -33,23 +34,24 @@ class MainActivity : AppCompatActivity() {
     private var aryIndex = 0
 
 
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val ibara = User("井原翔太", "美原町")
-        val ibasyo1 = Place("富岡囲碁倶楽部","囲碁", "富岡町")
-        val ibasyo2 = Place("美原あみあみもの倶楽部","編み物", "美原町")
-        val ibasyo3 = Place("昭和囲碁将棋の集い","囲碁", "昭和町")
-        val ibasyo4 = Place("囲碁好きの集い","囲碁", "富岡町")
-        val ibasyo5 = Place("編み物倶楽部","編み物", "富岡町")
-        val ibasyo6 = Place("美原編み物サークル","編み物", "美原町")
-        val ibasyo7 = Place("美原編み物教室","編み物", "美原町")
-        val ibasyo8 = Place("美原イベントサークル","イベント", "美原町")
-        val ibasyo9 = Place("富岡将棋","将棋", "富岡町")
-        val ibasyo10 = Place("将棋所","将棋", "富岡町")
-        val ibasyo11 = Place("鍛治で将棋好き","将棋", "鍛冶町")
-        val ibasyo12 = Place("将棋名人","将棋", "富岡町")
+        val ibasyo1 = Place("富岡囲碁倶楽部","囲碁", "富岡町", image1)
+        val ibasyo2 = Place("美原あみあみもの倶楽部","編み物", "美原町", image2)
+        val ibasyo3 = Place("昭和囲碁将棋の集い","囲碁", "昭和町", image3)
+        val ibasyo4 = Place("囲碁好きの集い","囲碁", "富岡町", image4)
+        val ibasyo5 = Place("編み物倶楽部","編み物", "富岡町", image1)
+        val ibasyo6 = Place("美原編み物サークル","編み物", "美原町", image2)
+        val ibasyo7 = Place("美原編み物教室","編み物", "美原町", image3)
+        val ibasyo8 = Place("美原イベントサークル","イベント", "美原町", image4)
+        val ibasyo9 = Place("富岡将棋","将棋", "富岡町", image1)
+        val ibasyo10 = Place("将棋所","将棋", "富岡町", image2)
+        val ibasyo11 = Place("鍛治で将棋好き","将棋", "鍛冶町", image3)
+        val ibasyo12 = Place("将棋名人","将棋", "富岡町", image4)
 
 
         place1.text = ibasyo1.name
@@ -57,10 +59,10 @@ class MainActivity : AppCompatActivity() {
         place3.text = ibasyo3.name
         place4.text = ibasyo4.name
 
-        val image1: ImageView = findViewById(R.id.image1)
-        val image2: ImageView = findViewById(R.id.image2)
-        val image3: ImageView = findViewById(R.id.image3)
-        val image4: ImageView = findViewById(R.id.image4)
+        val image1: ImageView = findViewById(R.drawable.place01)
+        val image2: ImageView = findViewById(R.drawable.place02)
+        val image3: ImageView = findViewById(R.drawable.place03)
+        val image4: ImageView = findViewById(R.drawable.place04)
 
         val seeTownButton: Button = findViewById(R.id.seeTownButton)
         val seeMoreButton: Button = findViewById(R.id.seeMoreButton)

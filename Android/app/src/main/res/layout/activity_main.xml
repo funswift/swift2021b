@@ -257,7 +257,7 @@
                                     android:layout_marginLeft="0dp"
                                     android:layout_marginRight="12dp"
                                     android:scaleType="centerCrop"
-                                    android:src="@mipmap/place01"
+                                    android:src="@drawable/place01"
                                     app:cardCornerRadius="30dp" />
 
 
@@ -305,7 +305,7 @@
                                     android:layout_marginLeft="0dp"
                                     android:layout_marginRight="12dp"
                                     android:scaleType="centerCrop"
-                                    android:src="@mipmap/place02"
+                                    android:src="@drawable/place02"
                                     app:cardCornerRadius="30dp" />
 
 
@@ -363,7 +363,7 @@
                                     android:layout_marginLeft="0dp"
                                     android:layout_marginRight="12dp"
                                     android:scaleType="centerCrop"
-                                    android:src="@mipmap/place03"
+                                    android:src="@drawable/place03"
                                     app:cardCornerRadius="30dp" />
 
 
@@ -411,7 +411,7 @@
                                     android:layout_marginLeft="0dp"
                                     android:layout_marginRight="20dp"
                                     android:scaleType="centerCrop"
-                                    android:src="@mipmap/place04"
+                                    android:src="@drawable/place04"
                                     app:cardCornerRadius="30dp" />
 
 

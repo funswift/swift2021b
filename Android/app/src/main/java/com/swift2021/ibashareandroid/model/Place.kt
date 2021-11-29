@@ -1,4 +1,6 @@
 package com.swift2021.ibashareandroid.model
 
-class Place(val name:String, val genre:String, val town:String) {
+import android.widget.ImageView
+
+class Place(val name:String, val genre:String, val town:String, val photo:ImageView) {
 }

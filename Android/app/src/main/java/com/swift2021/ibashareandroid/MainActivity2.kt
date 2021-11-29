@@ -20,10 +20,10 @@ class MainActivity2 : AppCompatActivity() {
 
         when(placeImageInf){
             0-> placeImage.setImageResource(R.mipmap.templete)
-            1-> placeImage.setImageResource(R.mipmap.place01)
-            2-> placeImage.setImageResource(R.mipmap.place02)
-            3-> placeImage.setImageResource(R.mipmap.place03)
-            4-> placeImage.setImageResource(R.mipmap.place04)
+            1-> placeImage.setImageResource(R.drawable.place01)
+            2-> placeImage.setImageResource(R.drawable.place02)
+            3-> placeImage.setImageResource(R.drawable.place03)
+            4-> placeImage.setImageResource(R.drawable.place04)
         }
 
     }
