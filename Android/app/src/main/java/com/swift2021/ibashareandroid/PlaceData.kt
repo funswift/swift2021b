@@ -2,7 +2,7 @@ package com.swift2021.ibashareandroid
 
 import com.google.firebase.firestore.DocumentId
 
-data class Place(
+data class PlaceData(
     @DocumentId
     val id: String = "",
     val title: String = "",

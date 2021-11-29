@@ -6,15 +6,12 @@ import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.content.Intent
 import android.graphics.Rect
-import android.media.Image
 import  android.widget.Button
-import  android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -175,13 +172,31 @@ class MainActivity : AppCompatActivity() {
 
     private fun getData() {
         val placeViewList = listOf<TextView>(place1, place2, place3, place4)
+        val userGenreList = listOf<TextView>(GenreTitle)
+
+        db.collection("users").get().addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                val document = task.result
+                if (document?.toObjects(PlaceData::class.java) != null) {
+                    val genreList = document.toObjects(UserData::class.java)
+
+                    for (i in 0 until genreList.size) {
+                        Log.d(TAG, "userList[" + i + "].genre1 " + genreList[i].genre1)
+                        userGenreList[i].text = genreList[i].genre1
+                    }
+                }
+            } else {
+                Log.d(TAG, "No such document")
+            }
+        }
+
         db.collection("place").limit(4)
             .get()
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val document = task.result
-                    if (document?.toObjects(Place::class.java) != null) {
-                        val placeList = document.toObjects(Place::class.java)
+                    if (document?.toObjects(PlaceData::class.java) != null) {
+                        val placeList = document.toObjects(PlaceData::class.java)
                         Log.d(TAG, "getDataAll")
                         Log.d(TAG, "userList.size " + placeList.size)
                         for (i in 0 until placeList.size) {
