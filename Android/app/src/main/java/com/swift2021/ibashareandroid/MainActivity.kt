@@ -15,21 +15,24 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.marginEnd
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main2.*
 
 
 class MainActivity : AppCompatActivity() {
 
 
-    private var imageNames = arrayOf(
+    private val randomImagePath = listOf(
         R.drawable.amimono,
         R.drawable.igo01,
         R.drawable.shogi,
         R.drawable.igo02
     )
-    private var textNames = arrayOf("美原編み物クラブ", "囲碁クラブ", "将棋会館", "囲碁同好会")
+
+
     private var aryIndex = 0
 
     private val db = Firebase.firestore
@@ -75,75 +78,70 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
-        val placeName1: TextView = findViewById(R.id.place1)
-        val placeName2: TextView = findViewById(R.id.place2)
-        val placeName3: TextView = findViewById(R.id.place3)
-        val placeName4: TextView = findViewById(R.id.place4)
-
-        val image1: ImageView = findViewById(R.id.image1)
-        val image2: ImageView = findViewById(R.id.image2)
-        val image3: ImageView = findViewById(R.id.image3)
-        val image4: ImageView = findViewById(R.id.image4)
-
         val seeTownButton: Button = findViewById(R.id.seeTownButton)
-        val seeMoreButton: Button = findViewById(R.id.seeMoreButton)
 
-        getData()
+        // ランダム
+        val randomTextViewList = listOf<TextView>(textViewMain1, textViewMain2, textViewMain3, textViewMain4)
+        val randomImageViewList = listOf<ImageView>(imageRandomViewMain1, imageRandomViewMain2, imageRandomViewMain3, imageRandomViewMain4)
 
+//         コンフリクトで消えた箇所↓
+//         image1.setOnClickListener {
+//             val intent = Intent(this, MainActivity2::class.java)
+//             fujimon.tapAmimono()
 
+//             intent.putExtra("PlaceName", placeName1.text.toString())
+//             intent.putExtra("PlaceImage", 1)
+//             var editorAmimono = dataAmimono.edit()
+//             editorAmimono.putInt("amimono", fujimon.amimono)
+//             editorAmimono.apply()
+//             startActivity(intent)
 
+//         }
 
-        image1.setOnClickListener {
-            val intent = Intent(this, MainActivity2::class.java)
-            fujimon.tapAmimono()
+        // あなたへのおすすめ
+        val recommendTextViewList = listOf<TextView>(recommend_place1, recommend_place2, recommend_place3, recommend_place4)
+        val recommendImageViewList = listOf<ImageView>(recommend_image1, recommend_image2, recommend_image3, recommend_image4)
 
-            intent.putExtra("PlaceName", placeName1.text.toString())
-            intent.putExtra("PlaceImage", 1)
-            var editorAmimono = dataAmimono.edit()
-            editorAmimono.putInt("amimono", fujimon.amimono)
-            editorAmimono.apply()
-            startActivity(intent)
+        // 各ジャンルのTextView
+        val genre1TextViewList = listOf<TextView>(genre1_place1_name, genre1_place2_name, genre1_place3_name, genre1_place4_name)
+        val genre2TextViewList = listOf<TextView>(genre2_place1_name, genre2_place2_name, genre2_place3_name, genre2_place4_name)
+        val genre3TextViewList = listOf<TextView>(genre3_place1_name, genre3_place2_name, genre3_place3_name, genre3_place4_name)
 
-        }
-
-        image2.setOnClickListener {
-            val intent = Intent(this, MainActivity2::class.java)
-            fujimon.tapIgo()
-            var editorIgo = dataIgo.edit()
-            editorIgo.putInt("igo", fujimon.igo)
-            editorIgo.apply()
-            intent.putExtra("PlaceName", placeName2.text.toString())
-            intent.putExtra("PlaceImage", 2)
-
-            startActivity(intent)
-
-        }
-
-        image3.setOnClickListener {
-            val intent = Intent(this, MainActivity2::class.java)
-            fujimon.tapIgo()
-            var editorIgo = dataIgo.edit()
-            editorIgo.putInt("igo", fujimon.igo)
-            editorIgo.apply()
-            intent.putExtra("PlaceName", placeName3.text.toString())
-            intent.putExtra("PlaceImage", 3)
-            startActivity(intent)
-        }
-
-        image4.setOnClickListener {
-            val intent = Intent(this, MainActivity2::class.java)
-            fujimon.tapIgo()
-            var editorIgo = dataIgo.edit()
-            editorIgo.putInt("igo", fujimon.igo)
-            editorIgo.apply()
-            intent.putExtra("PlaceName", placeName4.text.toString())
-            intent.putExtra("PlaceImage", 4)
-            startActivity(intent)
-        }
+        // 各ジャンルのImageView
+        val genre1ImageViewList = listOf<ImageView>(genre1_image1, genre1_image2, genre1_image3, genre1_image4)
+        val genre2ImageViewList = listOf<ImageView>(genre2_image1, genre2_image2, genre2_image3, genre2_image4)
+        val genre3ImageViewList = listOf<ImageView>(genre3_image1, genre3_image2, genre3_image3, genre3_image4)
 
         initView()
 
+        // 各ジャンルのTitleView
+        val genre1TitleTextView = Genre1TitleName
+        val genre2TitleTextView = Genre2TitleName
+        val genre3TitleTextView = Genre3TitleName
+
+        // Firebaseから居場所名をセット
+        getPlaceName(randomTextViewList)
+        getPlaceName(recommendTextViewList)
+
+        // ジャンル名をFirestoreから
+        getGenreName(genre1TitleTextView)
+        getGenreName(genre2TitleTextView)
+        getGenreName(genre3TitleTextView)
+
+        // 居場所名をFirestoreから
+        getPlaceName(genre1TextViewList)
+        getPlaceName(genre2TextViewList)
+        getPlaceName(genre3TextViewList)
+
+        // ボタンのクリックイベント
+        setButtonEvent(randomImageViewList, randomTextViewList)
+        setButtonEvent(recommendImageViewList, recommendTextViewList)
+        setButtonEvent(genre1ImageViewList, genre1TextViewList)
+        setButtonEvent(genre2ImageViewList, genre2TextViewList)
+        setButtonEvent(genre3ImageViewList, genre3TextViewList)
+
+        // ランダム部の画像をセット
+        setRandomImage(recommendImageViewList, randomImagePath)
 
         //他の街を見る
         seeTownButton.setOnClickListener {
@@ -151,10 +149,26 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         //もっと見る
-        seeMoreButton.setOnClickListener {
-            fujimon.tapAmimono()
+        seeMoreRecommendButton.setOnClickListener {
+        // ジャンル1 → Tag1Activityへ
             val intent = Intent(this, RecommendActivity::class.java)
+            startActivity(intent)
+        }
+        seeMoreGenre1Button.setOnClickListener {
+            fujimon.tapIgo()
+            val intent = Intent(this, Tag1Activity::class.java)
+            startActivity(intent)
+        }
+        seeMoreGenre2Button.setOnClickListener {
+            fujimon.tapAmimono()
+            val intent = Intent(this, Tag2Activity::class.java)
+            startActivity(intent)
+        }
+        seeMoreGenre3Button.setOnClickListener {
+            fujimon.tapShogi()
+            val intent = Intent(this, Tag3Activity::class.java)
             startActivity(intent)
         }
 
@@ -162,26 +176,40 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun initView() {
-        val imageView = arrayListOf<ImageView>(
-            findViewById(R.id.imageRandomViewMain1),
-            findViewById(R.id.imageRandomViewMain2),
-            findViewById(R.id.imageRandomViewMain3),
-            findViewById(R.id.imageRandomViewMain4)
-        )
-        val textView = arrayListOf<TextView>(
-            findViewById(R.id.textViewMain1),
-            findViewById(R.id.textViewMain2),
-            findViewById(R.id.textViewMain3),
-            findViewById(R.id.textViewMain4)
-        )
-        for (i in imageNames.indices) {
-            imageView[i].setImageResource(imageNames[i])
-            textView[i].text = textNames[i]
-        }
-        scrollView.setOnTouchListener { _, _ -> true }
+        horizontalScrollView.setOnTouchListener { _, _ -> true }
 
-        setRandomButtonEvent(imageView)
         timeEvent()
+    }
+
+    private fun setRandomImage(randomImageViewList: List<ImageView>, randomImagePath: List<Int>){
+        for (i in randomImageViewList.indices) {
+            randomImageViewList[i].setImageResource(randomImagePath[i])
+        }
+    }
+
+    private fun setButtonEvent(imageViewList: List<ImageView>, placeNameTextViewList:List<TextView>){
+        for(i in imageViewList.indices)
+        imageViewList[i].setOnClickListener {
+          when (i) {
+                    0 -> {
+                        fujimon.tapAmimono()
+                    }
+                    1 -> {
+                        fujimon.tapIgo()
+                    }
+                    2 -> {
+                        fujimon.tapShogi()
+                    }
+                    3 -> {
+                        fujimon.tapIgo()
+                    }
+
+                }
+            val intent = Intent(this, MainActivity2::class.java)
+            intent.putExtra("PlaceName", placeNameTextViewList[i].text.toString())
+            intent.putExtra("PlaceImage", i+1)
+            startActivity(intent)
+        }
     }
 
     private fun timeEvent() {
@@ -197,36 +225,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun setRandomButtonEvent(imageViewList: ArrayList<ImageView>) {
-        for (i in imageViewList.indices) {
-            imageViewList[i].setOnClickListener {
-                when (i) {
-                    0 -> {
-                        fujimon.tapAmimono()
-                    }
-                    1 -> {
-                        fujimon.tapIgo()
-                    }
-                    2 -> {
-                        fujimon.tapShogi()
-                    }
-                    3 -> {
-                        fujimon.tapIgo()
-                    }
-
-                }
-                val intent = Intent(this, MainActivity2::class.java)
-                intent.putExtra("PlaceName", textNames[i])
-                intent.putExtra("PlaceImage", i)
-                startActivity(intent)
-            }
-        }
-    }
 
     private fun animationPageEvent() {
         val size = Rect()
         this.window.decorView.getWindowVisibleDisplayFrame(size)
-        val amountOfMovementX = size.width() + 3
+        val amountOfMovementX = size.width() + linear1.marginEnd/2
 
         val array = IntArray(2)
         imageRandomView.getLocationInWindow(array)
@@ -244,27 +247,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getData() {
-        val placeViewList = listOf<TextView>(place1, place2, place3, place4)
-        val userDataList = listOf<TextView>(GenreTitle)
-
-        db.collection("users").get().addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-                val document = task.result
-                if (document?.toObjects(PlaceData::class.java) != null) {
-                    val allUserField = document.toObjects(UserData::class.java)
-
-                    for (i in 0 until allUserField.size) {
-                        Log.d(TAG, "userList[" + i + "].genre1 " + allUserField[i].genre1)
-                        userDataList[i].text = allUserField[i].genre1
-                    }
-
-
-                }
-            } else {
-                Log.d(TAG, "No such document")
-            }
-        }
+    private fun getPlaceName(placeViewList: List<TextView>){
 
         db.collection("place").limit(4)
             .get()
@@ -286,7 +269,25 @@ class MainActivity : AppCompatActivity() {
                     Log.d(TAG, "No such document")
                 }
             }
+    }
 
+    private fun getGenreName(genreTitleTextView: TextView) {
+
+        db.collection("users").get().addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                val document = task.result
+                if (document?.toObjects(PlaceData::class.java) != null) {
+                    val genreList = document.toObjects(UserData::class.java)
+
+                    for (i in 0 until genreList.size) {
+                        Log.d(TAG, "userList[" + i + "].genre1 " + genreList[i].genre1)
+                        genreTitleTextView.text = genreList[i].genre1
+                    }
+                }
+            } else {
+                Log.d(TAG, "No such document")
+            }
+        }
     }
 
 }

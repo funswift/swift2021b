@@ -22,11 +22,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="404dp"
-        android:layout_height="356dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/templete"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="34dp" />
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
