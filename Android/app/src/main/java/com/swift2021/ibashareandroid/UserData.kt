@@ -20,16 +20,16 @@ data class UserData(
     var cook:Int = 0
 
     fun tapShogi(){
-        shogi = +1
+        shogi += 1
     }
     fun tapIgo(){
-        igo = +1
+        igo += 1
     }
     fun tapAmimono(){
-        amimono = +1
+        amimono += 1
     }
     fun tapCook(){
-        cook = +1
+        cook += 1
     }
 
 

@@ -66,13 +66,19 @@ class MainActivity : AppCompatActivity() {
         getData()
 
         val fujimon = UserData("hU5yQWM3JN2eG4rdeWfO","藤門千明", "将棋・囲碁", "編み物", "料理")
+        fujimon.tapAmimono()
+        fujimon.tapAmimono()
+        fujimon.tapAmimono()
+        seeMoreButton.text = fujimon.amimono.toString()
 
-        image1.setOnClickListener {
-            val intent = Intent(this, MainActivity2::class.java)
+        image1.setOnClickListener { val intent = Intent(this, MainActivity2::class.java)
+            fujimon.tapAmimono()
+            Log.d("AMIMONO", fujimon.amimono.toString())
 
             intent.putExtra("PlaceName", placeName1.text.toString())
             intent.putExtra("PlaceImage", 1)
             startActivity(intent)
+
         }
 
         image2.setOnClickListener {
@@ -82,6 +88,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("PlaceImage", 2)
 
             startActivity(intent)
+
         }
 
         image3.setOnClickListener {
@@ -111,11 +118,14 @@ class MainActivity : AppCompatActivity() {
 
         //もっと見る
         seeMoreButton.setOnClickListener {
+            fujimon.tapAmimono()
             val intent = Intent(this, RecommendActivity::class.java)
             startActivity(intent)
         }
 
     }
+
+
 
     private fun initView() {
         val imageView = arrayListOf<ImageView>(
