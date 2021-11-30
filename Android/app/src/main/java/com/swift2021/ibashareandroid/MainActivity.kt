@@ -37,6 +37,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        db.collection("users").get().addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                val document = task.result
+                if (document?.toObjects(PlaceData::class.java) != null) {
+                    val genreList = document.toObjects(UserData::class.java)
+
+                }
+            } else {
+                Log.d(TAG, "No such document")
+            }
+        }
+
+
         val placeName1: TextView = findViewById(R.id.place1)
         val placeName2: TextView = findViewById(R.id.place2)
         val placeName3: TextView = findViewById(R.id.place3)
@@ -51,6 +64,8 @@ class MainActivity : AppCompatActivity() {
         val seeMoreButton: Button = findViewById(R.id.seeMoreButton)
 
         getData()
+
+        val fujimon = UserData("hU5yQWM3JN2eG4rdeWfO","藤門千明", "将棋・囲碁", "編み物", "料理")
 
         image1.setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
@@ -172,18 +187,20 @@ class MainActivity : AppCompatActivity() {
 
     private fun getData() {
         val placeViewList = listOf<TextView>(place1, place2, place3, place4)
-        val userGenreList = listOf<TextView>(GenreTitle)
+        val userDataList = listOf<TextView>(GenreTitle)
 
         db.collection("users").get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 val document = task.result
                 if (document?.toObjects(PlaceData::class.java) != null) {
-                    val genreList = document.toObjects(UserData::class.java)
+                    val allUserField = document.toObjects(UserData::class.java)
 
-                    for (i in 0 until genreList.size) {
-                        Log.d(TAG, "userList[" + i + "].genre1 " + genreList[i].genre1)
-                        userGenreList[i].text = genreList[i].genre1
+                    for (i in 0 until allUserField.size) {
+                        Log.d(TAG, "userList[" + i + "].genre1 " + allUserField[i].genre1)
+                        userDataList[i].text = allUserField[i].genre1
                     }
+
+
                 }
             } else {
                 Log.d(TAG, "No such document")
