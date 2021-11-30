@@ -3,8 +3,10 @@ package com.swift2021.ibashareandroid
 
 import android.content.ContentValues.TAG
 import android.animation.ObjectAnimator
+import android.content.Context
 import android.os.Bundle
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Rect
 import  android.widget.Button
 import android.widget.ImageView
@@ -32,10 +34,34 @@ class MainActivity : AppCompatActivity() {
 
     private val db = Firebase.firestore
 
+    val fujimon = UserData(
+        "hU5yQWM3JN2eG4rdeWfO",
+        "藤門千明",
+        "将棋・囲碁",
+        "編み物",
+        "料理"
+    )
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val dataAmimono: SharedPreferences =
+            getSharedPreferences("DataAmimono", Context.MODE_PRIVATE)
+        val dataShogi: SharedPreferences = getSharedPreferences("DataShogi", Context.MODE_PRIVATE)
+        val dataIgo: SharedPreferences = getSharedPreferences("DataIgo", Context.MODE_PRIVATE)
+        val dataCook: SharedPreferences = getSharedPreferences("DataCook", Context.MODE_PRIVATE)
+
+        var amimonoTap = dataAmimono.getInt("amimono", 0)
+        var shogiTap = dataShogi.getInt("shogi", 0)
+        var igoTap = dataIgo.getInt("igo", 0)
+        var cookTap = dataCook.getInt("cook", 0)
+
+        fujimon.amimono = amimonoTap
+        fujimon.shogi = shogiTap
+        fujimon.igo = igoTap
+        fujimon.cook = cookTap
 
         db.collection("users").get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
@@ -65,25 +91,28 @@ class MainActivity : AppCompatActivity() {
 
         getData()
 
-        val fujimon = UserData("hU5yQWM3JN2eG4rdeWfO","藤門千明", "将棋・囲碁", "編み物", "料理")
-        fujimon.tapAmimono()
-        fujimon.tapAmimono()
-        fujimon.tapAmimono()
-        seeMoreButton.text = fujimon.amimono.toString()
 
-        image1.setOnClickListener { val intent = Intent(this, MainActivity2::class.java)
+
+
+        image1.setOnClickListener {
+            val intent = Intent(this, MainActivity2::class.java)
             fujimon.tapAmimono()
-            Log.d("AMIMONO", fujimon.amimono.toString())
 
             intent.putExtra("PlaceName", placeName1.text.toString())
             intent.putExtra("PlaceImage", 1)
+            var editorAmimono = dataAmimono.edit()
+            editorAmimono.putInt("amimono", fujimon.amimono)
+            editorAmimono.apply()
             startActivity(intent)
 
         }
 
         image2.setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
-
+            fujimon.tapIgo()
+            var editorIgo = dataIgo.edit()
+            editorIgo.putInt("igo", fujimon.igo)
+            editorIgo.apply()
             intent.putExtra("PlaceName", placeName2.text.toString())
             intent.putExtra("PlaceImage", 2)
 
@@ -93,7 +122,10 @@ class MainActivity : AppCompatActivity() {
 
         image3.setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
-
+            fujimon.tapIgo()
+            var editorIgo = dataIgo.edit()
+            editorIgo.putInt("igo", fujimon.igo)
+            editorIgo.apply()
             intent.putExtra("PlaceName", placeName3.text.toString())
             intent.putExtra("PlaceImage", 3)
             startActivity(intent)
@@ -101,7 +133,10 @@ class MainActivity : AppCompatActivity() {
 
         image4.setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
-
+            fujimon.tapIgo()
+            var editorIgo = dataIgo.edit()
+            editorIgo.putInt("igo", fujimon.igo)
+            editorIgo.apply()
             intent.putExtra("PlaceName", placeName4.text.toString())
             intent.putExtra("PlaceImage", 4)
             startActivity(intent)
@@ -124,7 +159,6 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
 
 
     private fun initView() {
@@ -166,6 +200,21 @@ class MainActivity : AppCompatActivity() {
     private fun setRandomButtonEvent(imageViewList: ArrayList<ImageView>) {
         for (i in imageViewList.indices) {
             imageViewList[i].setOnClickListener {
+                when (i) {
+                    0 -> {
+                        fujimon.tapAmimono()
+                    }
+                    1 -> {
+                        fujimon.tapIgo()
+                    }
+                    2 -> {
+                        fujimon.tapShogi()
+                    }
+                    3 -> {
+                        fujimon.tapIgo()
+                    }
+
+                }
                 val intent = Intent(this, MainActivity2::class.java)
                 intent.putExtra("PlaceName", textNames[i])
                 intent.putExtra("PlaceImage", i)
