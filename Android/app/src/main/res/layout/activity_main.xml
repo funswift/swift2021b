@@ -70,267 +70,271 @@
                 android:layout_marginStart="0dp"
                 android:scrollbars="none">
 
-            <LinearLayout
-                android:id="@+id/horizontalScrollView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/imageRandomView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
 
-                <RelativeLayout
-                    android:id="@+id/linear1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    tools:ignore="UselessParent">
-
-                    <com.google.android.material.card.MaterialCardView
+                    <RelativeLayout
+                        android:id="@+id/linear1"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="11dp"
-                        app:cardElevation="5dp"
-                        app:cardUseCompatPadding="true">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        tools:ignore="UselessParent">
 
-                        <androidx.constraintlayout.utils.widget.ImageFilterButton
-                            android:id="@+id/imageRandomViewMain1"
-                            android:layout_width="334dp"
-                            android:layout_height="250dp"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginEnd="0dp"
-                            android:layout_marginBottom="0dp"
-                            android:adjustViewBounds="true"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/amimono"
-                            app:cardCornerRadius="4dp" />
-
-                        <TextView
-                            android:id="@+id/textViewMain"
+                        <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="141dp"
-                            android:layout_marginEnd="152dp"
-                            android:layout_marginBottom="12dp"
-                            android:fontFamily="Roboto"
-                            android:text="@string/textview"
-                            android:textColor="@color/white"
-                            android:textSize="20dp"
-                            android:textStyle="bold" />
-                    </com.google.android.material.card.MaterialCardView>
-                </RelativeLayout>
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="11dp"
+                            app:cardElevation="5dp"
+                            app:cardUseCompatPadding="true">
 
-                <RelativeLayout
-                    android:id="@+id/linear2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    tools:ignore="UselessParent">
+                            <androidx.constraintlayout.utils.widget.ImageFilterButton
+                                android:id="@+id/imageRandomViewMain1"
+                                android:layout_width="334dp"
+                                android:layout_height="250dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/amimono"
+                                app:cardCornerRadius="4dp" />
 
-                    <com.google.android.material.card.MaterialCardView
+                            <TextView
+                                android:id="@+id/textViewMain1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="141dp"
+                                android:layout_marginEnd="152dp"
+                                android:layout_marginBottom="12dp"
+                                android:fontFamily="Roboto"
+                                android:text="@string/textview"
+                                android:textColor="@color/white"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/linear2"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="11dp"
-                        app:cardElevation="5dp"
-                        app:cardUseCompatPadding="true">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        tools:ignore="UselessParent">
 
-                        <androidx.constraintlayout.utils.widget.ImageFilterButton
-                            android:id="@+id/imageRandomViewMain2"
-                            android:layout_width="334dp"
-                            android:layout_height="250dp"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginEnd="0dp"
-                            android:layout_marginBottom="0dp"
-                            android:adjustViewBounds="true"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/amimono"
-                            app:cardCornerRadius="4dp" />
-
-                        <TextView
-                            android:id="@+id/textViewMain2"
+                        <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="141dp"
-                            android:layout_marginEnd="152dp"
-                            android:layout_marginBottom="12dp"
-                            android:fontFamily="Roboto"
-                            android:text="@string/textview"
-                            android:textColor="@color/white"
-                            android:textSize="20dp"
-                            android:textStyle="bold" />
-                    </com.google.android.material.card.MaterialCardView>
-                </RelativeLayout>
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="11dp"
+                            app:cardElevation="5dp"
+                            app:cardUseCompatPadding="true">
 
-                <RelativeLayout
-                    android:id="@+id/linear3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    tools:ignore="UselessParent">
+                            <androidx.constraintlayout.utils.widget.ImageFilterButton
+                                android:id="@+id/imageRandomViewMain2"
+                                android:layout_width="334dp"
+                                android:layout_height="250dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/amimono"
+                                app:cardCornerRadius="4dp" />
 
-                    <com.google.android.material.card.MaterialCardView
+                            <TextView
+                                android:id="@+id/textViewMain2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="141dp"
+                                android:layout_marginEnd="152dp"
+                                android:layout_marginBottom="12dp"
+                                android:fontFamily="Roboto"
+                                android:text="@string/textview"
+                                android:textColor="@color/white"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/linear3"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="11dp"
-                        app:cardElevation="5dp"
-                        app:cardUseCompatPadding="true">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        tools:ignore="UselessParent">
 
-                        <androidx.constraintlayout.utils.widget.ImageFilterButton
-                            android:id="@+id/imageRandomViewMain3"
-                            android:layout_width="334dp"
-                            android:layout_height="250dp"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginEnd="0dp"
-                            android:layout_marginBottom="0dp"
-                            android:adjustViewBounds="true"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/amimono"
-                            app:cardCornerRadius="4dp" />
-
-                        <TextView
-                            android:id="@+id/textViewMain3"
+                        <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="141dp"
-                            android:layout_marginEnd="152dp"
-                            android:layout_marginBottom="12dp"
-                            android:fontFamily="Roboto"
-                            android:text="@string/textview"
-                            android:textColor="@color/white"
-                            android:textSize="20dp"
-                            android:textStyle="bold" />
-                    </com.google.android.material.card.MaterialCardView>
-                </RelativeLayout>
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="11dp"
+                            app:cardElevation="5dp"
+                            app:cardUseCompatPadding="true">
 
-                <RelativeLayout
-                    android:id="@+id/linear4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    tools:ignore="UselessParent">
+                            <androidx.constraintlayout.utils.widget.ImageFilterButton
+                                android:id="@+id/imageRandomViewMain3"
+                                android:layout_width="334dp"
+                                android:layout_height="250dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/amimono"
+                                app:cardCornerRadius="4dp" />
 
-                    <com.google.android.material.card.MaterialCardView
+                            <TextView
+                                android:id="@+id/textViewMain3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="141dp"
+                                android:layout_marginEnd="152dp"
+                                android:layout_marginBottom="12dp"
+                                android:fontFamily="Roboto"
+                                android:text="@string/textview"
+                                android:textColor="@color/white"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/linear4"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="11dp"
-                        app:cardElevation="5dp"
-                        app:cardUseCompatPadding="true">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        tools:ignore="UselessParent">
 
-                        <androidx.constraintlayout.utils.widget.ImageFilterButton
-                            android:id="@+id/imageRandomViewMain4"
-                            android:layout_width="334dp"
-                            android:layout_height="250dp"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginEnd="0dp"
-                            android:layout_marginBottom="0dp"
-                            android:adjustViewBounds="true"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/amimono"
-                            app:cardCornerRadius="4dp" />
-
-                        <TextView
-                            android:id="@+id/textViewMai4"
+                        <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="141dp"
-                            android:layout_marginEnd="152dp"
-                            android:layout_marginBottom="12dp"
-                            android:fontFamily="Roboto"
-                            android:text="@string/textview"
-                            android:textColor="@color/white"
-                            android:textSize="20dp"
-                            android:textStyle="bold" />
-                    </com.google.android.material.card.MaterialCardView>
-                </RelativeLayout>
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="11dp"
+                            app:cardElevation="5dp"
+                            app:cardUseCompatPadding="true">
 
+                            <androidx.constraintlayout.utils.widget.ImageFilterButton
+                                android:id="@+id/imageRandomViewMain4"
+                                android:layout_width="334dp"
+                                android:layout_height="250dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/amimono"
+                                app:cardCornerRadius="4dp" />
 
-            </LinearLayout>
-
+                            <TextView
+                                android:id="@+id/textViewMain4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="141dp"
+                                android:layout_marginEnd="152dp"
+                                android:layout_marginBottom="12dp"
+                                android:fontFamily="Roboto"
+                                android:text="@string/textview"
+                                android:textColor="@color/white"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </RelativeLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="43dp">
-
-                <TextView
-                    android:id="@+id/GenreTitle"
-                    android:layout_width="162dp"
-                    android:layout_height="23dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="0dp"
-                    android:fontFamily="Roboto"
-                    android:text="@string/あなたにおすすめ"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
-                    android:orientation="horizontal">
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="43dp">
+
+                    <TextView
+                        android:id="@+id/GenreTitle"
+                        android:layout_width="162dp"
+                        android:layout_height="23dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="0dp"
+                        android:fontFamily="Roboto"
+                        android:text="@string/あなたにおすすめ"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="11dp"
-                        android:layout_marginTop="7dp"
-                        android:orientation="vertical">
+                        android:layout_marginTop="0dp"
+                        android:orientation="horizontal">
 
-                        <com.google.android.material.card.MaterialCardView
-                            android:layout_width="168dp"
-                            android:layout_height="157dp"
-                            app:cardElevation="5dp"
-                            app:cardUseCompatPadding="true">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="11dp"
+                            android:layout_marginTop="7dp"
+                            android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="168dp"
+                                android:layout_height="157dp"
+                                app:cardElevation="5dp"
+                                app:cardUseCompatPadding="true">
 
-                                <ImageView
-                                    android:id="@+id/image1"
-                                    android:layout_width="158dp"
-                                    android:layout_height="117dp"
-                                    android:layout_marginLeft="0dp"
-                                    android:layout_marginRight="0dp"
-                                    android:scaleType="centerCrop"
-                                    android:src="@mipmap/place01"
-                                    app:cardCornerRadius="30dp" />
-
-
-                                <TextView
-                                    android:id="@+id/place1"
+                                <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:fontFamily="Roboto"
-                                    android:gravity="left"
-                                    android:text="@string/居場所1"
-                                    android:textColor="@color/black"
-                                    android:textSize="16dp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    tools:ignore="RtlHardcoded" />
+                                    android:orientation="vertical">
 
-                            </LinearLayout>
+                                    <ImageView
+                                        android:id="@+id/image1"
+                                        android:layout_width="158dp"
+                                        android:layout_height="117dp"
+                                        android:layout_marginLeft="0dp"
+                                        android:layout_marginRight="0dp"
+                                        android:scaleType="centerCrop"
+                                        android:src="@mipmap/place01"
+                                        app:cardCornerRadius="30dp" />
 
-                        </com.google.android.material.card.MaterialCardView>
+
+                                    <TextView
+                                        android:id="@+id/place1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:fontFamily="Roboto"
+                                        android:gravity="left"
+                                        android:text="@string/居場所1"
+                                        android:textColor="@color/black"
+                                        android:textSize="16dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        tools:ignore="RtlHardcoded" />
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+                        </LinearLayout>
 
 
                         <LinearLayout
@@ -362,150 +366,152 @@
                                         app:cardCornerRadius="30dp" />
 
                                     <TextView
-                                    android:id="@+id/place2"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:fontFamily="Roboto"
-                                    android:gravity="left"
-                                    android:text="@string/居場所2"
-                                    android:textColor="@color/black"
-                                    android:textSize="16dp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    tools:ignore="RtlHardcoded" />
+                                        android:id="@+id/place2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:fontFamily="Roboto"
+                                        android:gravity="left"
+                                        android:text="@string/居場所2"
+                                        android:textColor="@color/black"
+                                        android:textSize="16dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        tools:ignore="RtlHardcoded" />
 
-                            </LinearLayout>
+                                </LinearLayout>
 
 
-                        </com.google.android.material.card.MaterialCardView>
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="11dp"
-                        android:orientation="vertical">
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal">
 
-                        <com.google.android.material.card.MaterialCardView
-                            android:layout_width="168dp"
-                            android:layout_height="157dp"
-                            app:cardElevation="5dp"
-                            app:cardUseCompatPadding="true">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="11dp"
+                            android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="168dp"
+                                android:layout_height="157dp"
+                                app:cardElevation="5dp"
+                                app:cardUseCompatPadding="true">
 
-                                <ImageView
-                                    android:id="@+id/image3"
-                                    android:layout_width="158dp"
-                                    android:layout_height="117dp"
-                                    android:layout_marginLeft="0dp"
-                                    android:layout_marginRight="0dp"
-                                    android:scaleType="centerCrop"
-                                    android:src="@mipmap/place03"
-                                    app:cardCornerRadius="30dp" />
-
-
-                                <TextView
-                                    android:id="@+id/place3"
+                                <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:fontFamily="Roboto"
-                                    android:gravity="left"
-                                    android:text="@string/居場所3"
-                                    android:textColor="@color/black"
-                                    android:textSize="16dp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    tools:ignore="RtlHardcoded" />
+                                    android:orientation="vertical">
 
-                            </LinearLayout>
+                                    <ImageView
+                                        android:id="@+id/image3"
+                                        android:layout_width="158dp"
+                                        android:layout_height="117dp"
+                                        android:layout_marginLeft="0dp"
+                                        android:layout_marginRight="0dp"
+                                        android:scaleType="centerCrop"
+                                        android:src="@mipmap/place03"
+                                        app:cardCornerRadius="30dp" />
 
-                        </com.google.android.material.card.MaterialCardView>
 
+                                    <TextView
+                                        android:id="@+id/place3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:fontFamily="Roboto"
+                                        android:gravity="left"
+                                        android:text="@string/居場所3"
+                                        android:textColor="@color/black"
+                                        android:textSize="16dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        tools:ignore="RtlHardcoded" />
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="168dp"
+                                android:layout_height="157dp"
+                                app:cardElevation="5dp"
+                                app:cardUseCompatPadding="true">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/image4"
+                                        android:layout_width="158dp"
+                                        android:layout_height="117dp"
+                                        android:layout_marginLeft="0dp"
+                                        android:layout_marginRight="0dp"
+                                        android:scaleType="centerCrop"
+                                        android:src="@mipmap/place04"
+                                        app:cardCornerRadius="30dp" />
+
+
+                                    <TextView
+                                        android:id="@+id/place4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:fontFamily="Roboto"
+                                        android:gravity="left"
+                                        android:text="@string/居場所4"
+                                        android:textColor="@color/black"
+                                        android:textSize="16dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        tools:ignore="RtlHardcoded" />
+
+                                </LinearLayout>
+                            </com.google.android.material.card.MaterialCardView>
+                        </LinearLayout>
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="2dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="11dp"
                         android:orientation="vertical">
 
-                        <com.google.android.material.card.MaterialCardView
-                            android:layout_width="168dp"
-                            android:layout_height="157dp"
-                            app:cardElevation="5dp"
-                            app:cardUseCompatPadding="true">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:id="@+id/image4"
-                                    android:layout_width="158dp"
-                                    android:layout_height="117dp"
-                                    android:layout_marginLeft="0dp"
-                                    android:layout_marginRight="0dp"
-                                    android:scaleType="centerCrop"
-                                    android:src="@mipmap/place04"
-                                    app:cardCornerRadius="30dp" />
-
-
-                                <TextView
-                                    android:id="@+id/place4"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:fontFamily="Roboto"
-                                    android:gravity="left"
-                                    android:text="@string/居場所4"
-                                    android:textColor="@color/black"
-                                    android:textSize="16dp"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    tools:ignore="RtlHardcoded" />
-
-                            </LinearLayout>
-                        </com.google.android.material.card.MaterialCardView>
+                        <Button
+                            android:id="@+id/seeMoreButton"
+                            android:layout_width="328dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="16dp"
+                            android:background="@drawable/round_button_template"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/すべて見る"
+                            android:textColor="@color/orange"
+                            android:textSize="14dp"
+                            app:backgroundTint="@null"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="TouchTargetSizeCheck" />
                     </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="11dp"
-                    android:orientation="vertical">
-
-                    <Button
-                        android:id="@+id/seeMoreButton"
-                        android:layout_width="328dp"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="16dp"
-                        android:background="@drawable/round_button_template"
-                        android:fontFamily="@font/roboto"
-                        android:text="@string/すべて見る"
-                        android:textColor="@color/orange"
-                        android:textSize="14dp"
-                        app:backgroundTint="@null"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="TouchTargetSizeCheck" />
-                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout

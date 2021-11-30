@@ -119,7 +119,7 @@ class MainActivity : AppCompatActivity() {
             imageView[i].setImageResource(imageNames[i])
             textView[i].text = textNames[i]
         }
-        scrollView.setOnTouchListener { _, _ -> true }
+        horizontalScrollView.setOnTouchListener { _, _ -> true }
 
         setRandomButtonEvent(imageView)
         timeEvent()
