@@ -13,6 +13,7 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.marginEnd
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
@@ -22,7 +23,7 @@ import kotlinx.android.synthetic.main.activity_main2.*
 class MainActivity : AppCompatActivity() {
 
 
-    private var randomImagePath = arrayOf(
+    private val randomImagePath = listOf(
         R.drawable.amimono,
         R.drawable.igo01,
         R.drawable.shogi,
@@ -123,8 +124,8 @@ class MainActivity : AppCompatActivity() {
         timeEvent()
     }
 
-    private fun setRandomImage(randomImageViewList: List<ImageView>, randomImagePath: Array<Int>){
-        for (i in randomImagePath.indices) {
+    private fun setRandomImage(randomImageViewList: List<ImageView>, randomImagePath: List<Int>){
+        for (i in randomImageViewList.indices) {
             randomImageViewList[i].setImageResource(randomImagePath[i])
         }
     }
@@ -156,7 +157,7 @@ class MainActivity : AppCompatActivity() {
     private fun animationPageEvent() {
         val size = Rect()
         this.window.decorView.getWindowVisibleDisplayFrame(size)
-        val amountOfMovementX = size.width() + 3
+        val amountOfMovementX = size.width() + linear1.marginEnd/2
 
         val array = IntArray(2)
         imageRandomView.getLocationInWindow(array)
