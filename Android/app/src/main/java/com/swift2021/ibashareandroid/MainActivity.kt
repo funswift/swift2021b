@@ -3,8 +3,10 @@ package com.swift2021.ibashareandroid
 
 import android.content.ContentValues.TAG
 import android.animation.ObjectAnimator
+import android.content.Context
 import android.os.Bundle
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Rect
 import  android.widget.Button
 import android.widget.ImageView
@@ -35,16 +37,66 @@ class MainActivity : AppCompatActivity() {
 
     private val db = Firebase.firestore
 
+    val fujimon = UserData(
+        "hU5yQWM3JN2eG4rdeWfO",
+        "藤門千明",
+        "将棋・囲碁",
+        "編み物",
+        "料理"
+    )
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val dataAmimono: SharedPreferences =
+            getSharedPreferences("DataAmimono", Context.MODE_PRIVATE)
+        val dataShogi: SharedPreferences = getSharedPreferences("DataShogi", Context.MODE_PRIVATE)
+        val dataIgo: SharedPreferences = getSharedPreferences("DataIgo", Context.MODE_PRIVATE)
+        val dataCook: SharedPreferences = getSharedPreferences("DataCook", Context.MODE_PRIVATE)
+
+        var amimonoTap = dataAmimono.getInt("amimono", 0)
+        var shogiTap = dataShogi.getInt("shogi", 0)
+        var igoTap = dataIgo.getInt("igo", 0)
+        var cookTap = dataCook.getInt("cook", 0)
+
+        fujimon.amimono = amimonoTap
+        fujimon.shogi = shogiTap
+        fujimon.igo = igoTap
+        fujimon.cook = cookTap
+
+        db.collection("users").get().addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                val document = task.result
+                if (document?.toObjects(PlaceData::class.java) != null) {
+                    val genreList = document.toObjects(UserData::class.java)
+
+                }
+            } else {
+                Log.d(TAG, "No such document")
+            }
+        }
 
         val seeTownButton: Button = findViewById(R.id.seeTownButton)
 
         // ランダム
         val randomTextViewList = listOf<TextView>(textViewMain1, textViewMain2, textViewMain3, textViewMain4)
         val randomImageViewList = listOf<ImageView>(imageRandomViewMain1, imageRandomViewMain2, imageRandomViewMain3, imageRandomViewMain4)
+
+//         コンフリクトで消えた箇所↓
+//         image1.setOnClickListener {
+//             val intent = Intent(this, MainActivity2::class.java)
+//             fujimon.tapAmimono()
+
+//             intent.putExtra("PlaceName", placeName1.text.toString())
+//             intent.putExtra("PlaceImage", 1)
+//             var editorAmimono = dataAmimono.edit()
+//             editorAmimono.putInt("amimono", fujimon.amimono)
+//             editorAmimono.apply()
+//             startActivity(intent)
+
+//         }
 
         // あなたへのおすすめ
         val recommendTextViewList = listOf<TextView>(recommend_place1, recommend_place2, recommend_place3, recommend_place4)
@@ -97,26 +149,31 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // もっと見る
-        // ジャンル1 → Tag1Activityへ
+
+        //もっと見る
         seeMoreRecommendButton.setOnClickListener {
+        // ジャンル1 → Tag1Activityへ
             val intent = Intent(this, RecommendActivity::class.java)
             startActivity(intent)
         }
         seeMoreGenre1Button.setOnClickListener {
+            fujimon.tapIgo()
             val intent = Intent(this, Tag1Activity::class.java)
             startActivity(intent)
         }
         seeMoreGenre2Button.setOnClickListener {
+            fujimon.tapAmimono()
             val intent = Intent(this, Tag2Activity::class.java)
             startActivity(intent)
         }
         seeMoreGenre3Button.setOnClickListener {
+            fujimon.tapShogi()
             val intent = Intent(this, Tag3Activity::class.java)
             startActivity(intent)
         }
 
     }
+
 
     private fun initView() {
         horizontalScrollView.setOnTouchListener { _, _ -> true }
@@ -133,6 +190,21 @@ class MainActivity : AppCompatActivity() {
     private fun setButtonEvent(imageViewList: List<ImageView>, placeNameTextViewList:List<TextView>){
         for(i in imageViewList.indices)
         imageViewList[i].setOnClickListener {
+          when (i) {
+                    0 -> {
+                        fujimon.tapAmimono()
+                    }
+                    1 -> {
+                        fujimon.tapIgo()
+                    }
+                    2 -> {
+                        fujimon.tapShogi()
+                    }
+                    3 -> {
+                        fujimon.tapIgo()
+                    }
+
+                }
             val intent = Intent(this, MainActivity2::class.java)
             intent.putExtra("PlaceName", placeNameTextViewList[i].text.toString())
             intent.putExtra("PlaceImage", i+1)
@@ -176,6 +248,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getPlaceName(placeViewList: List<TextView>){
+
         db.collection("place").limit(4)
             .get()
             .addOnCompleteListener { task ->
