@@ -1,20 +1,25 @@
 package com.swift2021.ibashareandroid
 
 
+import android.content.ContentValues.TAG
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.content.Intent
-import android.media.Image
+import android.graphics.Rect
 import  android.widget.Button
-import  android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.os.Handler
 import android.os.Looper
-import android.view.View
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
+
 
     private var imageNames = arrayOf(
         R.drawable.amimono,
@@ -24,6 +29,8 @@ class MainActivity : AppCompatActivity() {
     )
     private var textNames = arrayOf("美原編み物クラブ", "囲碁クラブ", "将棋会館", "囲碁同好会")
     private var aryIndex = 0
+
+    private val db = Firebase.firestore
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +50,7 @@ class MainActivity : AppCompatActivity() {
         val seeTownButton: Button = findViewById(R.id.seeTownButton)
         val seeMoreButton: Button = findViewById(R.id.seeMoreButton)
 
+        getData()
 
         image1.setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
@@ -78,7 +86,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         initView()
-        timeEvent()
+
 
         //他の街を見る
         seeTownButton.setOnClickListener {
@@ -95,11 +103,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        val imageView: ImageView = findViewById(R.id.imageViewMain)
-        val textView: TextView = findViewById(R.id.textViewMain)
+        val imageView = arrayListOf<ImageView>(
+            findViewById(R.id.imageRandomViewMain1),
+            findViewById(R.id.imageRandomViewMain2),
+            findViewById(R.id.imageRandomViewMain3),
+            findViewById(R.id.imageRandomViewMain4)
+        )
+        val textView = arrayListOf<TextView>(
+            findViewById(R.id.textViewMain1),
+            findViewById(R.id.textViewMain2),
+            findViewById(R.id.textViewMain3),
+            findViewById(R.id.textViewMain4)
+        )
+        for (i in imageNames.indices) {
+            imageView[i].setImageResource(imageNames[i])
+            textView[i].text = textNames[i]
+        }
+        scrollView.setOnTouchListener { _, _ -> true }
 
-        imageView.setImageResource(imageNames[aryIndex])
-        textView.text = textNames[aryIndex]
+        setRandomButtonEvent(imageView)
+        timeEvent()
     }
 
     private fun timeEvent() {
@@ -108,21 +131,86 @@ class MainActivity : AppCompatActivity() {
         val rnb = object : Runnable {
             override fun run() {
                 handler.postDelayed(this, 5000)
-                imageChange()
+                animationPageEvent()
             }
         }
         handler.post(rnb)
 
     }
 
-    private fun imageChange() {
-        val imageView: ImageView = findViewById(R.id.imageViewMain)
-        val textView: TextView = findViewById(R.id.textViewMain)
+    private fun setRandomButtonEvent(imageViewList: ArrayList<ImageView>) {
+        for (i in imageViewList.indices) {
+            imageViewList[i].setOnClickListener {
+                val intent = Intent(this, MainActivity2::class.java)
+                intent.putExtra("PlaceName", textNames[i])
+                intent.putExtra("PlaceImage", i)
+                startActivity(intent)
+            }
+        }
+    }
 
-        imageView.setImageResource(imageNames[aryIndex])
-        textView.text = textNames[aryIndex]
+    private fun animationPageEvent() {
+        val size = Rect()
+        this.window.decorView.getWindowVisibleDisplayFrame(size)
+        val amountOfMovementX = size.width() + 3
 
-        aryIndex = (aryIndex + 1) % textNames.size
+        val array = IntArray(2)
+        imageRandomView.getLocationInWindow(array)
+        val locationX = array[0]
+
+        var moveToX: Int = (locationX - amountOfMovementX)
+        if (locationX <= (amountOfMovementX) * (-2.5)) {
+            moveToX = 0
+        }
+        if (locationX != 0) {
+            ObjectAnimator.ofFloat(imageRandomView, "translationX", moveToX.toFloat()).apply {
+                duration = 2000
+                start()
+            }
+        }
+    }
+
+    private fun getData() {
+        val placeViewList = listOf<TextView>(place1, place2, place3, place4)
+        val userGenreList = listOf<TextView>(GenreTitle)
+
+        db.collection("users").get().addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                val document = task.result
+                if (document?.toObjects(PlaceData::class.java) != null) {
+                    val genreList = document.toObjects(UserData::class.java)
+
+                    for (i in 0 until genreList.size) {
+                        Log.d(TAG, "userList[" + i + "].genre1 " + genreList[i].genre1)
+                        userGenreList[i].text = genreList[i].genre1
+                    }
+                }
+            } else {
+                Log.d(TAG, "No such document")
+            }
+        }
+
+        db.collection("place").limit(4)
+            .get()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val document = task.result
+                    if (document?.toObjects(PlaceData::class.java) != null) {
+                        val placeList = document.toObjects(PlaceData::class.java)
+                        Log.d(TAG, "getDataAll")
+                        Log.d(TAG, "userList.size " + placeList.size)
+                        for (i in 0 until placeList.size) {
+                            Log.d(TAG, "userList[" + i + "].title " + placeList[i].title)
+                            Log.d(TAG, "List[" + i + "].information " + placeList[i].information)
+                            Log.d(TAG, "userList[" + i + "].address " + placeList[i].address)
+                            placeViewList[i].text = placeList[i].title
+                        }
+                    }
+                } else {
+                    Log.d(TAG, "No such document")
+                }
+            }
+
     }
 
 }
