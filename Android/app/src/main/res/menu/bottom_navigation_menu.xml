@@ -2,11 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/top_page_activity"
+        android:icon="@drawable/home"
         android:title="回覧板" />
     <item
         android:id="@+id/search_page_activity"
+        android:icon="@drawable/search"
         android:title="検索" />
     <item
         android:id="@+id/user_page_activity"
+        android:icon="@drawable/user"
         android:title="マイページ" />
 </menu>

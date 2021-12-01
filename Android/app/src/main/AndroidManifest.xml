@@ -40,6 +40,12 @@
         <activity
             android:name=".MainActivity2"
             android:exported="true" />
+        <activity
+            android:name=".SearchPageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".UserPageActivity"
+            android:exported="true" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
