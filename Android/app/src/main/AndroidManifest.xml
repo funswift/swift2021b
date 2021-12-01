@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IbaShareAndroid">
         <activity
+            android:name=".TopPageActivity"
+            android:exported="false" />
+        <activity
             android:name=".TownActivity"
             android:exported="true" />
         <activity

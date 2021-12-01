@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/top_page_activity">
+
+    <activity
+        android:id="@+id/top_page_activity"
+        android:name="com.swift2021.ibashareandroid.TopPageActivity"
+        android:label="TopPageActivity"
+        tools:layout="@layout/activity_top_page" />
+    <activity
+        android:id="@+id/search_page_activity"
+        android:name="com.swift2021.ibashareandroid.SearchPageActivity"
+        android:label="SearchPageActivity"
+        tools:layout="@layout/activity_search_page" />
+    <activity
+        android:id="@+id/user_page_activity"
+        android:name="com.swift2021.ibashareandroid.UserPageActivity"
+        android:label="UserPageActivity"
+        tools:layout="@layout/activity_user_page" />
+</navigation>
