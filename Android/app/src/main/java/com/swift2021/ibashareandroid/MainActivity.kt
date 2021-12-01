@@ -118,20 +118,19 @@ class MainActivity : AppCompatActivity() {
         val genre1TitleTextView = Genre1TitleName
         val genre2TitleTextView = Genre2TitleName
         val genre3TitleTextView = Genre3TitleName
+        val genreTitleList : List<TextView> = listOf(genre1TitleTextView, genre2TitleTextView, genre3TitleTextView)
 
         // Firebaseから居場所名をセット
-        getPlaceName(randomTextViewList)
-        getPlaceName(recommendTextViewList)
+        getPlaceName(randomTextViewList, "編み物")
+        getPlaceName(recommendTextViewList, "将棋")
 
         // ジャンル名をFirestoreから
-        getGenreName(genre1TitleTextView)
-        getGenreName(genre2TitleTextView)
-        getGenreName(genre3TitleTextView)
+        getGenreName(genreTitleList)
 
         // 居場所名をFirestoreから
-        getPlaceName(genre1TextViewList)
-        getPlaceName(genre2TextViewList)
-        getPlaceName(genre3TextViewList)
+        getPlaceName(genre1TextViewList, "囲碁")
+        getPlaceName(genre2TextViewList, "編み物")
+        getPlaceName(genre3TextViewList, "将棋")
 
         // ボタンのクリックイベント
         setButtonEvent(randomImageViewList, randomTextViewList)
@@ -247,9 +246,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getPlaceName(placeViewList: List<TextView>){
-
-        db.collection("place").limit(4)
+    private fun getPlaceName(placeViewList: List<TextView>, genreName: String){
+        db.collection("place").whereEqualTo("genre", genreName).limit(4)
             .get()
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -257,11 +255,11 @@ class MainActivity : AppCompatActivity() {
                     if (document?.toObjects(PlaceData::class.java) != null) {
                         val placeList = document.toObjects(PlaceData::class.java)
                         Log.d(TAG, "getDataAll")
-                        Log.d(TAG, "userList.size " + placeList.size)
+                        Log.d(TAG, "placeList.size " + placeList.size)
                         for (i in 0 until placeList.size) {
                             Log.d(TAG, "userList[" + i + "].title " + placeList[i].title)
-                            Log.d(TAG, "List[" + i + "].information " + placeList[i].information)
-                            Log.d(TAG, "userList[" + i + "].address " + placeList[i].address)
+//                            Log.d(TAG, "List[" + i + "].information " + placeList[i].information)
+//                            Log.d(TAG, "userList[" + i + "].address " + placeList[i].address)
                             placeViewList[i].text = placeList[i].title
                         }
                     }
@@ -271,18 +269,20 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-    private fun getGenreName(genreTitleTextView: TextView) {
+    private fun getGenreName(genreTitleTextViewList: List<TextView>) {
 
         db.collection("users").get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 val document = task.result
                 if (document?.toObjects(PlaceData::class.java) != null) {
-                    val genreList = document.toObjects(UserData::class.java)
+                    val userList = document.toObjects(UserData::class.java)
 
-                    for (i in 0 until genreList.size) {
-                        Log.d(TAG, "userList[" + i + "].genre1 " + genreList[i].genre1)
-                        genreTitleTextView.text = genreList[i].genre1
-                    }
+//                    for (i in 0 until genreList.size) {
+//                        Log.d(TAG, "userList[" + i + "].genre1 " + userList[i].genre1)
+                        genreTitleTextViewList[0].text = userList[0].genre1
+                        genreTitleTextViewList[1].text = userList[0].genre2
+                        genreTitleTextViewList[2].text = userList[0].genre3
+//                    }
                 }
             } else {
                 Log.d(TAG, "No such document")
