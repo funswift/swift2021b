@@ -50,19 +50,26 @@
         android:text="くちコミ"
         android:textColor="@color/black"
         android:fontFamily="Roboto"
+        android:textStyle="bold"
         android:textSize="20dp"
         tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="528dp" />
+        tools:layout_editor_absoluteY="528dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/usericon" />
+                app:srcCompat="@drawable/usericon"
+                android:layout_marginLeft="10dp"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -71,6 +78,8 @@
                 android:textColor="@color/black"
                 android:fontFamily="Roboto"
                 android:textSize="16dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 />
 
         </LinearLayout>
@@ -78,12 +87,14 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/usericon" />
+                app:srcCompat="@drawable/usericon"
+                android:layout_marginLeft="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -92,6 +103,8 @@
                 android:textColor="@color/black"
                 android:fontFamily="Roboto"
                 android:textSize="16dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 />
 
         </LinearLayout>
@@ -99,12 +112,14 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/usericon" />
+                app:srcCompat="@drawable/usericon"
+                android:layout_marginLeft="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -113,6 +128,8 @@
                 android:textColor="@color/black"
                 android:fontFamily="Roboto"
                 android:textSize="16dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 />
 
         </LinearLayout>
@@ -120,12 +137,14 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/usericon" />
+                app:srcCompat="@drawable/usericon"
+                android:layout_marginLeft="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -134,6 +153,8 @@
                 android:textColor="@color/black"
                 android:fontFamily="Roboto"
                 android:textSize="16dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 />
 
         </LinearLayout>
@@ -141,12 +162,14 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/usericon" />
+                app:srcCompat="@drawable/usericon"
+                android:layout_marginLeft="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -155,6 +178,8 @@
                 android:textColor="@color/black"
                 android:fontFamily="Roboto"
                 android:textSize="16dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 />
 
         </LinearLayout>
