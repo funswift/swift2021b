@@ -10,14 +10,15 @@
         android:id="@+id/scrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/navigation_bar"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="72dp"
             >
 
             <LinearLayout
@@ -1312,13 +1313,15 @@
     </ScrollView>
 
     <ImageView
+        android:id="@+id/navigation_bar"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="140dp"
         android:layout_marginStart="-4dp"
         android:layout_marginEnd="-4dp"
         android:layout_marginBottom="-4dp"
         android:src="@drawable/navi_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
