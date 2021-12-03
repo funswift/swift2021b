@@ -18,7 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="16dp">
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -28,6 +28,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="28dp"
                     android:layout_marginBottom="8dp">
 
@@ -72,13 +73,13 @@
                     android:id="@+id/horizontalScrollView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
                     android:scrollbars="none">
 
                     <LinearLayout
                         android:id="@+id/imageRandomView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginStart="16dp"
                         android:orientation="horizontal">
 
 
@@ -86,8 +87,8 @@
                             android:id="@+id/linear1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
                             android:layout_marginEnd="16dp"
+                            android:orientation="vertical"
                             tools:ignore="UselessParent">
 
                             <com.google.android.material.card.MaterialCardView
@@ -131,8 +132,8 @@
                             android:id="@+id/linear2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
                             android:layout_marginEnd="16dp"
+                            android:orientation="vertical"
                             tools:ignore="UselessParent">
 
                             <com.google.android.material.card.MaterialCardView
@@ -176,8 +177,8 @@
                             android:id="@+id/linear3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
                             android:layout_marginEnd="16dp"
+                            android:orientation="vertical"
                             tools:ignore="UselessParent">
 
                             <com.google.android.material.card.MaterialCardView
@@ -221,8 +222,8 @@
                             android:id="@+id/linear4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
                             android:layout_marginEnd="16dp"
+                            android:orientation="vertical"
                             tools:ignore="UselessParent">
 
                             <com.google.android.material.card.MaterialCardView
@@ -268,6 +269,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -528,6 +530,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -787,6 +790,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -1046,6 +1050,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -1279,6 +1284,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginTop="11dp"
+                            android:layout_marginBottom="164dp"
                             android:orientation="vertical">
 
                             <Button
@@ -1304,4 +1310,15 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="-4dp"
+        android:layout_marginEnd="-4dp"
+        android:layout_marginBottom="-4dp"
+        android:src="@drawable/navi_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
