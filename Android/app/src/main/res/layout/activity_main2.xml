@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,10 +28,10 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="4dp"
-            android:text="美原将棋センター"
-            android:textSize="24dp"
-            android:textColor="@color/black"
             android:fontFamily="Roboto"
+            android:text="美原将棋センター"
+            android:textColor="@color/black"
+            android:textSize="24dp"
             android:textStyle="bold" />
 
         <TextView
@@ -39,10 +40,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="24dp"
+            android:fontFamily="Roboto"
             android:text="1日座席料500円です。指導は優しく丁寧です。ネットで将棋は出来ますが実際に駒と様々な人に触れながら指した方が強さと礼儀、人間力に繋がるのではないでしょうか。是非お子さんと親御さんご一緒にどうぞ。"
-            android:textSize="16dp"
             android:textColor="@color/black"
-            android:fontFamily="Roboto" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/address"
@@ -50,10 +51,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="4dp"
-            android:text="住所"
-            android:textSize="16dp"
-            android:textColor="@color/black"
             android:fontFamily="Roboto"
+            android:text="住所"
+            android:textColor="@color/black"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
         <TextView
@@ -62,26 +63,37 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="0dp"
+            android:fontFamily="Roboto"
             android:text="041-0806 北海道函館市美原町17-40-134"
-            android:textSize="16dp"
             android:textColor="@color/black"
-            android:fontFamily="Roboto" />
+            android:textSize="16dp" />
 
         <ImageView
             android:id="@+id/map"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="24dp"
-            app:srcCompat="@drawable/map"
-             />
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/map" />
+
+        <TextView
+            android:id="@+id/participant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="Roboto"
+            android:text="参加者"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
         <View
             android:id="@+id/line_horizontal_center"
             android:layout_width="wrap_content"
             android:layout_height="1dp"
             android:background="@color/black"
-            android:visibility="visible"
-            />
+            android:visibility="visible" />
 
         <TextView
             android:id="@+id/kutikomi_title"
