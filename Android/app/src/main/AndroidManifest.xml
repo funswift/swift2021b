@@ -11,6 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IbaShareAndroid">
         <activity
+            android:name=".MyPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TalkPageActivity"
+            android:exported="false" />
+        <activity
             android:name=".TownActivity"
             android:exported="true" />
         <activity
