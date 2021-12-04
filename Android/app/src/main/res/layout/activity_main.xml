@@ -105,7 +105,7 @@
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_marginStart="-8dp"
+                            android:layout_marginStart="-5dp"
                             app:cardElevation="5dp"
                             app:cardUseCompatPadding="true"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -113,14 +113,14 @@
 
                             <androidx.constraintlayout.utils.widget.ImageFilterButton
                                 android:id="@+id/imageRandomViewMain1"
-                                android:layout_width="0dp"
+                                android:layout_width="355dp"
                                 android:layout_height="180dp"
                                 android:adjustViewBounds="true"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/amimono"
+                                app:cardCornerRadius="4dp"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:cardCornerRadius="4dp" />
+                                app:layout_constraintStart_toStartOf="parent" />
 
                             <TextView
                                 android:id="@+id/textViewMain1"
