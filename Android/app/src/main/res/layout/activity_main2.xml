@@ -9,11 +9,7 @@
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content" >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -28,25 +24,22 @@
 
                 <Button
                     android:id="@+id/button_send"
+                    style="?android:attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:drawableTop="@drawable/back_button"
-                    app:backgroundTint="@color/white"
                     android:drawablePadding="0dp"
+                    android:layout_marginStart="-10dp"
                     android:onClick="onBackButton"
                     android:text="戻る"
                     android:textColor="@color/black"
-                    android:textSize="12dp"
-                    />
+                    android:textSize="12dp" />
 
                 <TextView
                     android:id="@+id/townNameTopPage"
                     android:layout_width="wrap_content"
                     android:layout_height="28dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="7dp"
-                    android:layout_marginBottom="9dp"
+                    android:layout_marginStart="0dp"
                     android:fontFamily="Roboto"
                     android:text="@string/美原町"
                     android:textColor="@color/orange"
@@ -58,8 +51,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="28dp"
                     android:layout_marginStart="0dp"
-                    android:layout_marginTop="7dp"
-                    android:layout_marginBottom="9dp"
                     android:layout_toEndOf="@+id/townNameTopPage"
                     android:fontFamily="Roboto"
                     android:text="@string/の回覧板"

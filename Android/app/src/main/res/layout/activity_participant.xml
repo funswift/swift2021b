@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:drawableTop="@drawable/back_button"
-            app:backgroundTint="@color/white"
+            style="?android:attr/borderlessButtonStyle"
             android:onClick="onBackPageButton"
             android:text="戻る"
             android:textSize="12dp"
