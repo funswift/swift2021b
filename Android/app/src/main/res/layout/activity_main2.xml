@@ -71,8 +71,6 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/templete"
         tools:ignore="MissingConstraints" />
 
@@ -301,83 +299,7 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/usericon"
-                android:layout_marginLeft="10dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="コロナ禍になり暇だったので、いばしぇあで見つけて来てみました。非常に楽しく今後も行きたいと思える場所でした。"
-                android:textColor="@color/black"
-                android:fontFamily="Roboto"
-                android:textSize="16dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/usericon"
-                android:layout_marginLeft="10dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="よく将棋は男性がやっているイメージですが、ここでは女性の方もちらほら見えます。また、初心者も多く見えるので、新規の方も入りやすいと思います。"
-                android:textColor="@color/black"
-                android:fontFamily="Roboto"
-                android:textSize="16dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/usericon"
-                android:layout_marginLeft="10dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="これまでさまざまな場所に出向いて来ましたが、ここが一番良かったです。リピ確定です。"
-                android:textColor="@color/black"
-                android:fontFamily="Roboto"
-                android:textSize="16dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                />
-
-
-
-
-        </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"

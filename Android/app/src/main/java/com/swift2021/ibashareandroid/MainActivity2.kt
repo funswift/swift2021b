@@ -6,12 +6,15 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import android.view.View
+import android.widget.Button
 
 
 class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
+
+        val seeMoreKutikomi:Button = findViewById(R.id.seeMoreKutikomiButton)
 
         val placeName: TextView = findViewById(R.id.placeName)
         val placeImage: ImageView = findViewById(R.id.imageView)
@@ -29,7 +32,14 @@ class MainActivity2 : AppCompatActivity() {
             4 -> placeImage.setImageResource(R.mipmap.place04)
         }
 
+        seeMoreKutikomi.setOnClickListener{
+            val intent = Intent(this,AllReviewPage::class.java)
+                    startActivity(intent)
+        }
+
     }
+
+
 
     fun onButtonTapped(view: View?) {
         val intent = Intent(this, ParticipantActivity::class.java)
