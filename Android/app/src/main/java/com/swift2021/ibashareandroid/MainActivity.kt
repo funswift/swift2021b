@@ -15,6 +15,7 @@ import android.widget.TextView
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.marginEnd
@@ -82,6 +83,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val seeTownButton: Button = findViewById(R.id.seeTownButton)
+        val seeMoreRecommendButton: Button = findViewById(R.id.seeMoreRecommendButton)
 
         // ランダム
         val randomTextViewList =
@@ -341,6 +343,10 @@ class MainActivity : AppCompatActivity() {
                 Log.d(TAG, "No such document")
             }
         }
+    }
+
+    fun onBackButton(view: View?){
+        finish()
     }
 
 }

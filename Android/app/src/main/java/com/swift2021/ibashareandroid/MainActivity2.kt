@@ -1,9 +1,12 @@
 package com.swift2021.ibashareandroid
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import android.view.View
+
 
 class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,13 +21,27 @@ class MainActivity2 : AppCompatActivity() {
         val getPlaceName = intent.getStringExtra("PlaceName")
         placeName.text = getPlaceName
 
-        when(placeImageInf){
-            0-> placeImage.setImageResource(R.mipmap.templete)
-            1-> placeImage.setImageResource(R.mipmap.place01)
-            2-> placeImage.setImageResource(R.mipmap.place02)
-            3-> placeImage.setImageResource(R.mipmap.place03)
-            4-> placeImage.setImageResource(R.mipmap.place04)
+        when (placeImageInf) {
+            0 -> placeImage.setImageResource(R.mipmap.templete)
+            1 -> placeImage.setImageResource(R.mipmap.place01)
+            2 -> placeImage.setImageResource(R.mipmap.place02)
+            3 -> placeImage.setImageResource(R.mipmap.place03)
+            4 -> placeImage.setImageResource(R.mipmap.place04)
         }
 
+    }
+
+    fun onButtonTapped(view: View?) {
+        val intent = Intent(this, ParticipantActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun onBackButton(view: View?) {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun onBackPageButton(view: View?){
+        finish()
     }
 }
