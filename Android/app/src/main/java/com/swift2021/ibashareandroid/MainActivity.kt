@@ -7,6 +7,7 @@ import android.content.Context
 import android.os.Bundle
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.PorterDuff
 import android.graphics.Rect
 import  android.widget.Button
 import android.widget.ImageView
@@ -16,6 +17,7 @@ import android.os.Looper
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.marginEnd
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -45,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         "編み物",
         "料理"
     )
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,8 +86,14 @@ class MainActivity : AppCompatActivity() {
         val seeMoreRecommendButton: Button = findViewById(R.id.seeMoreRecommendButton)
 
         // ランダム
-        val randomTextViewList = listOf<TextView>(textViewMain1, textViewMain2, textViewMain3, textViewMain4)
-        val randomImageViewList = listOf<ImageView>(imageRandomViewMain1, imageRandomViewMain2, imageRandomViewMain3, imageRandomViewMain4)
+        val randomTextViewList =
+            listOf<TextView>(textViewMain1, textViewMain2, textViewMain3, textViewMain4)
+        val randomImageViewList = listOf<ImageView>(
+            imageRandomViewMain1,
+            imageRandomViewMain2,
+            imageRandomViewMain3,
+            imageRandomViewMain4
+        )
 
 //         コンフリクトで消えた箇所↓
 //         image1.setOnClickListener {
@@ -101,18 +110,42 @@ class MainActivity : AppCompatActivity() {
 //         }
 
         // あなたへのおすすめ
-        val recommendTextViewList = listOf<TextView>(recommend_place1, recommend_place2, recommend_place3, recommend_place4)
-        val recommendImageViewList = listOf<ImageView>(recommend_image1, recommend_image2, recommend_image3, recommend_image4)
+        val recommendTextViewList =
+            listOf<TextView>(recommend_place1, recommend_place2, recommend_place3, recommend_place4)
+        val recommendImageViewList = listOf<ImageView>(
+            recommend_image1,
+            recommend_image2,
+            recommend_image3,
+            recommend_image4
+        )
 
         // 各ジャンルのTextView
-        val genre1TextViewList = listOf<TextView>(genre1_place1_name, genre1_place2_name, genre1_place3_name, genre1_place4_name)
-        val genre2TextViewList = listOf<TextView>(genre2_place1_name, genre2_place2_name, genre2_place3_name, genre2_place4_name)
-        val genre3TextViewList = listOf<TextView>(genre3_place1_name, genre3_place2_name, genre3_place3_name, genre3_place4_name)
+        val genre1TextViewList = listOf<TextView>(
+            genre1_place1_name,
+            genre1_place2_name,
+            genre1_place3_name,
+            genre1_place4_name
+        )
+        val genre2TextViewList = listOf<TextView>(
+            genre2_place1_name,
+            genre2_place2_name,
+            genre2_place3_name,
+            genre2_place4_name
+        )
+        val genre3TextViewList = listOf<TextView>(
+            genre3_place1_name,
+            genre3_place2_name,
+            genre3_place3_name,
+            genre3_place4_name
+        )
 
         // 各ジャンルのImageView
-        val genre1ImageViewList = listOf<ImageView>(genre1_image1, genre1_image2, genre1_image3, genre1_image4)
-        val genre2ImageViewList = listOf<ImageView>(genre2_image1, genre2_image2, genre2_image3, genre2_image4)
-        val genre3ImageViewList = listOf<ImageView>(genre3_image1, genre3_image2, genre3_image3, genre3_image4)
+        val genre1ImageViewList =
+            listOf<ImageView>(genre1_image1, genre1_image2, genre1_image3, genre1_image4)
+        val genre2ImageViewList =
+            listOf<ImageView>(genre2_image1, genre2_image2, genre2_image3, genre2_image4)
+        val genre3ImageViewList =
+            listOf<ImageView>(genre3_image1, genre3_image2, genre3_image3, genre3_image4)
 
         initView()
 
@@ -120,7 +153,8 @@ class MainActivity : AppCompatActivity() {
         val genre1TitleTextView = Genre1TitleName
         val genre2TitleTextView = Genre2TitleName
         val genre3TitleTextView = Genre3TitleName
-        val genreTitleList : List<TextView> = listOf(genre1TitleTextView, genre2TitleTextView, genre3TitleTextView)
+        val genreTitleList: List<TextView> =
+            listOf(genre1TitleTextView, genre2TitleTextView, genre3TitleTextView)
 
         // Firebaseから居場所名をセット
         getPlaceName(randomTextViewList, "編み物")
@@ -153,7 +187,7 @@ class MainActivity : AppCompatActivity() {
 
         //もっと見る
         seeMoreRecommendButton.setOnClickListener {
-        // ジャンル1 → Tag1Activityへ
+            // ジャンル1 → Tag1Activityへ
             val intent = Intent(this, RecommendActivity::class.java)
             startActivity(intent)
         }
@@ -173,6 +207,22 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //ナビゲーション
+        navigation_icon_search_button.setOnClickListener {
+            val intent = Intent(this, SearchPageActivity::class.java)
+            startActivity(intent)
+        }
+        navigation_icon_talk_button.setOnClickListener {
+            val intent = Intent(this, TalkPageActivity::class.java)
+            startActivity(intent)
+        }
+        navigation_icon_my_page_button.setOnClickListener {
+            val intent = Intent(this, MyPageActivity::class.java)
+            startActivity(intent)
+        }
+        navigation_icon_top_name.setTextColor(getColor(R.color.orange))
+
+
     }
 
 
@@ -182,16 +232,19 @@ class MainActivity : AppCompatActivity() {
         timeEvent()
     }
 
-    private fun setRandomImage(randomImageViewList: List<ImageView>, randomImagePath: List<Int>){
+    private fun setRandomImage(randomImageViewList: List<ImageView>, randomImagePath: List<Int>) {
         for (i in randomImageViewList.indices) {
             randomImageViewList[i].setImageResource(randomImagePath[i])
         }
     }
 
-    private fun setButtonEvent(imageViewList: List<ImageView>, placeNameTextViewList:List<TextView>){
-        for(i in imageViewList.indices)
-        imageViewList[i].setOnClickListener {
-          when (i) {
+    private fun setButtonEvent(
+        imageViewList: List<ImageView>,
+        placeNameTextViewList: List<TextView>
+    ) {
+        for (i in imageViewList.indices)
+            imageViewList[i].setOnClickListener {
+                when (i) {
                     0 -> {
                         fujimon.tapAmimono()
                     }
@@ -206,11 +259,11 @@ class MainActivity : AppCompatActivity() {
                     }
 
                 }
-            val intent = Intent(this, MainActivity2::class.java)
-            intent.putExtra("PlaceName", placeNameTextViewList[i].text.toString())
-            intent.putExtra("PlaceImage", i+1)
-            startActivity(intent)
-        }
+                val intent = Intent(this, MainActivity2::class.java)
+                intent.putExtra("PlaceName", placeNameTextViewList[i].text.toString())
+                intent.putExtra("PlaceImage", i + 1)
+                startActivity(intent)
+            }
     }
 
     private fun timeEvent() {
@@ -230,7 +283,7 @@ class MainActivity : AppCompatActivity() {
     private fun animationPageEvent() {
         val size = Rect()
         this.window.decorView.getWindowVisibleDisplayFrame(size)
-        val amountOfMovementX = size.width() + linear1.marginEnd/2
+        val amountOfMovementX = size.width() + linear1.marginEnd / 2
 
         val array = IntArray(2)
         imageRandomView.getLocationInWindow(array)
@@ -248,7 +301,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getPlaceName(placeViewList: List<TextView>, genreName: String){
+    private fun getPlaceName(placeViewList: List<TextView>, genreName: String) {
         db.collection("place").whereEqualTo("genre", genreName).limit(4)
             .get()
             .addOnCompleteListener { task ->
@@ -281,9 +334,9 @@ class MainActivity : AppCompatActivity() {
 
 //                    for (i in 0 until genreList.size) {
 //                        Log.d(TAG, "userList[" + i + "].genre1 " + userList[i].genre1)
-                        genreTitleTextViewList[0].text = userList[0].genre1
-                        genreTitleTextViewList[1].text = userList[0].genre2
-                        genreTitleTextViewList[2].text = userList[0].genre3
+                    genreTitleTextViewList[0].text = userList[0].genre1
+                    genreTitleTextViewList[1].text = userList[0].genre2
+                    genreTitleTextViewList[2].text = userList[0].genre3
 //                    }
                 }
             } else {

@@ -8,17 +8,16 @@
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="16dp">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -28,6 +27,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="28dp"
                     android:layout_marginBottom="8dp">
 
@@ -72,13 +72,13 @@
                     android:id="@+id/horizontalScrollView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
                     android:scrollbars="none">
 
                     <LinearLayout
                         android:id="@+id/imageRandomView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginStart="16dp"
                         android:orientation="horizontal">
 
 
@@ -86,8 +86,8 @@
                             android:id="@+id/linear1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
                             android:layout_marginEnd="16dp"
+                            android:orientation="vertical"
                             tools:ignore="UselessParent">
 
                             <com.google.android.material.card.MaterialCardView
@@ -131,8 +131,8 @@
                             android:id="@+id/linear2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
                             android:layout_marginEnd="16dp"
+                            android:orientation="vertical"
                             tools:ignore="UselessParent">
 
                             <com.google.android.material.card.MaterialCardView
@@ -176,8 +176,8 @@
                             android:id="@+id/linear3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
                             android:layout_marginEnd="16dp"
+                            android:orientation="vertical"
                             tools:ignore="UselessParent">
 
                             <com.google.android.material.card.MaterialCardView
@@ -221,8 +221,8 @@
                             android:id="@+id/linear4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
                             android:layout_marginEnd="16dp"
+                            android:orientation="vertical"
                             tools:ignore="UselessParent">
 
                             <com.google.android.material.card.MaterialCardView
@@ -268,6 +268,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -528,6 +529,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -787,6 +789,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -1046,6 +1049,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -1279,6 +1283,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginTop="11dp"
+                            android:layout_marginBottom="64dp"
                             android:orientation="vertical">
 
                             <Button
@@ -1304,4 +1309,178 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_imageview_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_imageview_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <ImageView
+        android:id="@+id/navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="-4dp"
+        android:layout_marginEnd="-4dp"
+        android:layout_marginBottom="-4dp"
+        android:src="@drawable/navi_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/navigation_icon_top_button"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/navigation_icon_search_button"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@id/guideline_imageview_start"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView">
+
+        <ImageView
+            android:id="@+id/navigation_icon_top"
+            android:layout_width="28dp"
+            android:layout_height="19dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_top_page_icon"
+            app:layout_constraintBottom_toTopOf="@id/navigation_icon_top_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/navigation_icon_top_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="Roboto"
+            android:text="回覧板"
+            android:textColor="#747474"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/navigation_icon_top"
+            app:layout_constraintStart_toStartOf="@id/navigation_icon_top"
+            app:layout_constraintTop_toBottomOf="@id/navigation_icon_top" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/navigation_icon_search_button"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/navigation_icon_talk_button"
+        app:layout_constraintStart_toEndOf="@id/navigation_icon_top_button"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView">
+
+        <ImageView
+            android:id="@+id/navigation_icon_search"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="2dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_search_page_icon"
+            app:layout_constraintBottom_toTopOf="@id/navigation_icon_search_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/navigation_icon_search_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="Roboto"
+            android:text="検索"
+            android:textColor="#747474"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/navigation_icon_search" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/navigation_icon_talk_button"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/navigation_icon_my_page_button"
+        app:layout_constraintStart_toEndOf="@id/navigation_icon_search_button"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView">
+
+        <ImageView
+            android:id="@+id/navigation_icon_talk"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="3dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_talk_page_icon"
+            app:layout_constraintBottom_toTopOf="@id/navigation_icon_talk_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/navigation_icon_talk_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="Roboto"
+            android:text="トーク"
+            android:textColor="#747474"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/navigation_icon_talk" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/navigation_icon_my_page_button"
+        android:layout_width="71dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_imageview_end"
+        app:layout_constraintStart_toEndOf="@id/navigation_icon_talk_button"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView">
+
+        <ImageView
+            android:id="@+id/navigation_icon_my_page"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_my_page_icon"
+            app:layout_constraintBottom_toTopOf="@id/navigation_icon_my_page_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/navigation_icon_my_page_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="Roboto"
+            android:text="マイページ"
+            android:textColor="#747474"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/navigation_icon_my_page" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
