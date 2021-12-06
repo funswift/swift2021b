@@ -302,7 +302,7 @@
 
 
             <Button
-                android:id="@+id/seeMoreRecommendButton"
+                android:id="@+id/seeMoreKutikomiButton"
                 android:layout_width="328dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="4dp"
@@ -379,24 +379,6 @@
 
 
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/seeMoreKutikomiButton"
-                    android:layout_width="328dp"
-                    android:layout_height="36dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="24dp"
-                    android:background="@drawable/round_button_template"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/すべて見る"
-                    android:textColor="@color/orange"
-                    android:textSize="14dp"
-                    app:backgroundTint="@null" />
-            </LinearLayout>
 
         </LinearLayout>
 
