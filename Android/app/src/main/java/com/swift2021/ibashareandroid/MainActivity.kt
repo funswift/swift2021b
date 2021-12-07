@@ -17,6 +17,7 @@ import android.os.Looper
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.utils.widget.ImageFilterButton
 import androidx.core.content.ContextCompat
 import androidx.core.view.marginEnd
 import com.google.firebase.firestore.ktx.firestore
@@ -24,19 +25,13 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main2.*
 
+import android.graphics.drawable.Drawable
+
+
+
+
 
 class MainActivity : AppCompatActivity() {
-
-
-    private val randomImagePath = listOf(
-        R.drawable.amimono,
-        R.drawable.igo01,
-        R.drawable.shogi,
-        R.drawable.igo02
-    )
-
-
-    private var aryIndex = 0
 
     private val db = Firebase.firestore
 
@@ -49,16 +44,15 @@ class MainActivity : AppCompatActivity() {
     )
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val dataAmimono: SharedPreferences =
-            getSharedPreferences("DataAmimono", Context.MODE_PRIVATE)
-        val dataShogi: SharedPreferences = getSharedPreferences("DataShogi", Context.MODE_PRIVATE)
-        val dataIgo: SharedPreferences = getSharedPreferences("DataIgo", Context.MODE_PRIVATE)
-        val dataCook: SharedPreferences = getSharedPreferences("DataCook", Context.MODE_PRIVATE)
+            getSharedPreferences("DataAmimono", MODE_PRIVATE)
+        val dataShogi: SharedPreferences = getSharedPreferences("DataShogi", MODE_PRIVATE)
+        val dataIgo: SharedPreferences = getSharedPreferences("DataIgo", MODE_PRIVATE)
+        val dataCook: SharedPreferences = getSharedPreferences("DataCook", MODE_PRIVATE)
 
         var amimonoTap = dataAmimono.getInt("amimono", 0)
         var shogiTap = dataShogi.getInt("shogi", 0)
@@ -88,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         // ランダム
         val randomTextViewList =
             listOf<TextView>(textViewMain1, textViewMain2, textViewMain3, textViewMain4)
-        val randomImageViewList = listOf<ImageView>(
+        val randomImageViewList = listOf<ImageFilterButton>(
             imageRandomViewMain1,
             imageRandomViewMain2,
             imageRandomViewMain3,
@@ -176,7 +170,7 @@ class MainActivity : AppCompatActivity() {
         setButtonEvent(genre3ImageViewList, genre3TextViewList)
 
         // ランダム部の画像をセット
-        setRandomImage(recommendImageViewList, randomImagePath)
+        //setRandomImage(recommendImageViewList, randomImagePath)
 
         //他の街を見る
         seeTownButton.setOnClickListener {
@@ -235,6 +229,8 @@ class MainActivity : AppCompatActivity() {
     private fun setRandomImage(randomImageViewList: List<ImageView>, randomImagePath: List<Int>) {
         for (i in randomImageViewList.indices) {
             randomImageViewList[i].setImageResource(randomImagePath[i])
+            Log.d("randomImage:", i.toString())
+            Log.d("randomImage:", randomImagePath[i].toString())
         }
     }
 

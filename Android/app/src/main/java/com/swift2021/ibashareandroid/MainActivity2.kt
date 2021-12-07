@@ -1,12 +1,20 @@
 package com.swift2021.ibashareandroid
 
+import android.animation.ObjectAnimator
 import android.content.Intent
+import android.graphics.Rect
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.ImageView
 import android.widget.TextView
 import android.view.View
 import android.widget.Button
+import androidx.core.view.marginEnd
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.imageRandomView
+import kotlinx.android.synthetic.main.activity_main2.*
 
 
 class MainActivity2 : AppCompatActivity() {
@@ -26,10 +34,10 @@ class MainActivity2 : AppCompatActivity() {
 
         when (placeImageInf) {
             0 -> placeImage.setImageResource(R.mipmap.templete)
-            1 -> placeImage.setImageResource(R.mipmap.place01)
-            2 -> placeImage.setImageResource(R.mipmap.place02)
-            3 -> placeImage.setImageResource(R.mipmap.place03)
-            4 -> placeImage.setImageResource(R.mipmap.place04)
+            1 -> placeImage.setImageResource(R.mipmap.shogi01)
+            2 -> placeImage.setImageResource(R.mipmap.shogi02)
+            3 -> placeImage.setImageResource(R.mipmap.shogi03)
+            4 -> placeImage.setImageResource(R.mipmap.shogi04)
         }
 
         seeMoreKutikomi.setOnClickListener{
