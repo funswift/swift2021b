@@ -107,7 +107,7 @@
                                     android:layout_marginBottom="0dp"
                                     android:adjustViewBounds="true"
                                     android:scaleType="fitXY"
-                                    android:src="@drawable/amimono"
+                                    android:src="@mipmap/amimono02"
                                     app:cardCornerRadius="4dp" />
 
                                 <TextView
@@ -152,7 +152,7 @@
                                     android:layout_marginBottom="0dp"
                                     android:adjustViewBounds="true"
                                     android:scaleType="fitXY"
-                                    android:src="@drawable/amimono"
+                                    android:src="@mipmap/amimono04"
                                     app:cardCornerRadius="4dp" />
 
                                 <TextView
@@ -197,7 +197,7 @@
                                     android:layout_marginBottom="0dp"
                                     android:adjustViewBounds="true"
                                     android:scaleType="fitXY"
-                                    android:src="@drawable/amimono"
+                                    android:src="@mipmap/amimono04"
                                     app:cardCornerRadius="4dp" />
 
                                 <TextView
@@ -242,7 +242,7 @@
                                     android:layout_marginBottom="0dp"
                                     android:adjustViewBounds="true"
                                     android:scaleType="fitXY"
-                                    android:src="@drawable/amimono"
+                                    android:src="@mipmap/amimono03"
                                     app:cardCornerRadius="4dp" />
 
                                 <TextView
@@ -325,7 +325,7 @@
                                             android:layout_marginLeft="0dp"
                                             android:layout_marginRight="0dp"
                                             android:scaleType="centerCrop"
-                                            android:src="@mipmap/place01"
+                                            android:src="@mipmap/shogi03"
                                             app:cardCornerRadius="30dp" />
 
 
@@ -373,7 +373,7 @@
                                             android:layout_marginLeft="0dp"
                                             android:layout_marginRight="0dp"
                                             android:scaleType="centerCrop"
-                                            android:src="@mipmap/place02"
+                                            android:src="@mipmap/shogi05"
                                             app:cardCornerRadius="30dp" />
 
                                         <TextView
@@ -429,7 +429,7 @@
                                             android:layout_marginLeft="0dp"
                                             android:layout_marginRight="0dp"
                                             android:scaleType="centerCrop"
-                                            android:src="@mipmap/place03"
+                                            android:src="@mipmap/shogi04"
                                             app:cardCornerRadius="30dp" />
 
 
@@ -476,7 +476,7 @@
                                             android:layout_marginLeft="0dp"
                                             android:layout_marginRight="0dp"
                                             android:scaleType="centerCrop"
-                                            android:src="@mipmap/place04"
+                                            android:src="@mipmap/shogi01"
                                             app:cardCornerRadius="30dp" />
 
 
@@ -586,7 +586,7 @@
                                             android:layout_marginLeft="0dp"
                                             android:layout_marginRight="0dp"
                                             android:scaleType="centerCrop"
-                                            android:src="@mipmap/place01"
+                                            android:src="@mipmap/igo01"
                                             app:cardCornerRadius="30dp" />
 
 
@@ -634,7 +634,7 @@
                                             android:layout_marginLeft="0dp"
                                             android:layout_marginRight="0dp"
                                             android:scaleType="centerCrop"
-                                            android:src="@mipmap/place02"
+                                            android:src="@mipmap/igo02"
                                             app:cardCornerRadius="30dp" />
 
                                         <TextView
@@ -690,7 +690,7 @@
                                             android:layout_marginLeft="0dp"
                                             android:layout_marginRight="0dp"
                                             android:scaleType="centerCrop"
-                                            android:src="@mipmap/place03"
+                                            android:src="@mipmap/igo03"
                                             app:cardCornerRadius="30dp" />
 
 
@@ -737,7 +737,7 @@
                                             android:layout_marginLeft="0dp"
                                             android:layout_marginRight="0dp"
                                             android:scaleType="centerCrop"
-                                            android:src="@mipmap/place04"
+                                            android:src="@mipmap/igo04"
                                             app:cardCornerRadius="30dp" />
 
 
@@ -846,7 +846,7 @@
                                             android:layout_marginLeft="0dp"
                                             android:layout_marginRight="0dp"
                                             android:scaleType="centerCrop"
-                                            android:src="@mipmap/place01"
+                                            android:src="@mipmap/amimono01"
                                             app:cardCornerRadius="30dp" />
 
 
@@ -894,7 +894,7 @@
                                             android:layout_marginLeft="0dp"
                                             android:layout_marginRight="0dp"
                                             android:scaleType="centerCrop"
-                                            android:src="@mipmap/place02"
+                                            android:src="@mipmap/amimono02"
                                             app:cardCornerRadius="30dp" />
 
                                         <TextView
@@ -950,7 +950,7 @@
                                             android:layout_marginLeft="0dp"
                                             android:layout_marginRight="0dp"
                                             android:scaleType="centerCrop"
-                                            android:src="@mipmap/place03"
+                                            android:src="@mipmap/amimono03"
                                             app:cardCornerRadius="30dp" />
 
 
@@ -997,7 +997,7 @@
                                             android:layout_marginLeft="0dp"
                                             android:layout_marginRight="0dp"
                                             android:scaleType="centerCrop"
-                                            android:src="@mipmap/place04"
+                                            android:src="@mipmap/amimono04"
                                             app:cardCornerRadius="30dp" />
 
 
@@ -1106,7 +1106,7 @@
                                             android:layout_marginLeft="0dp"
                                             android:layout_marginRight="0dp"
                                             android:scaleType="centerCrop"
-                                            android:src="@mipmap/place01"
+                                            android:src="@mipmap/shogi01"
                                             app:cardCornerRadius="30dp" />
 
 
@@ -1154,7 +1154,7 @@
                                             android:layout_marginLeft="0dp"
                                             android:layout_marginRight="0dp"
                                             android:scaleType="centerCrop"
-                                            android:src="@mipmap/place02"
+                                            android:src="@mipmap/shogi02"
                                             app:cardCornerRadius="30dp" />
 
                                         <TextView
@@ -1210,7 +1210,7 @@
                                             android:layout_marginLeft="0dp"
                                             android:layout_marginRight="0dp"
                                             android:scaleType="centerCrop"
-                                            android:src="@mipmap/place03"
+                                            android:src="@mipmap/shogi03"
                                             app:cardCornerRadius="30dp" />
 
 
@@ -1257,7 +1257,7 @@
                                             android:layout_marginLeft="0dp"
                                             android:layout_marginRight="0dp"
                                             android:scaleType="centerCrop"
-                                            android:src="@mipmap/place04"
+                                            android:src="@mipmap/shogi04"
                                             app:cardCornerRadius="30dp" />
 
 
