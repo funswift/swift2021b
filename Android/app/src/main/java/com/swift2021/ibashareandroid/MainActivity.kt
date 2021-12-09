@@ -98,79 +98,79 @@ class MainActivity : AppCompatActivity() {
 
 //         }
 
-        // あなたへのおすすめ
-        val recommendTextViewList = listOf<TextView>(recommend_place1, recommend_place2, recommend_place3, recommend_place4)
-        val recommendImageViewList = listOf<ImageView>(recommend_image1, recommend_image2, recommend_image3, recommend_image4)
-
-        // 各ジャンルのTextView
-        val genre1TextViewList = listOf<TextView>(genre1_place1_name, genre1_place2_name, genre1_place3_name, genre1_place4_name)
-        val genre2TextViewList = listOf<TextView>(genre2_place1_name, genre2_place2_name, genre2_place3_name, genre2_place4_name)
-        val genre3TextViewList = listOf<TextView>(genre3_place1_name, genre3_place2_name, genre3_place3_name, genre3_place4_name)
-
-        // 各ジャンルのImageView
-        val genre1ImageViewList = listOf<ImageView>(genre1_image1, genre1_image2, genre1_image3, genre1_image4)
-        val genre2ImageViewList = listOf<ImageView>(genre2_image1, genre2_image2, genre2_image3, genre2_image4)
-        val genre3ImageViewList = listOf<ImageView>(genre3_image1, genre3_image2, genre3_image3, genre3_image4)
+//        // あなたへのおすすめ
+//        val recommendTextViewList = listOf<TextView>(recommend_place1, recommend_place2, recommend_place3, recommend_place4)
+//        val recommendImageViewList = listOf<ImageView>(recommend_image1, recommend_image2, recommend_image3, recommend_image4)
+//
+//        // 各ジャンルのTextView
+//        val genre1TextViewList = listOf<TextView>(genre1_place1_name, genre1_place2_name, genre1_place3_name, genre1_place4_name)
+//        val genre2TextViewList = listOf<TextView>(genre2_place1_name, genre2_place2_name, genre2_place3_name, genre2_place4_name)
+//        val genre3TextViewList = listOf<TextView>(genre3_place1_name, genre3_place2_name, genre3_place3_name, genre3_place4_name)
+//
+//        // 各ジャンルのImageView
+//        val genre1ImageViewList = listOf<ImageView>(genre1_image1, genre1_image2, genre1_image3, genre1_image4)
+//        val genre2ImageViewList = listOf<ImageView>(genre2_image1, genre2_image2, genre2_image3, genre2_image4)
+//        val genre3ImageViewList = listOf<ImageView>(genre3_image1, genre3_image2, genre3_image3, genre3_image4)
 
         initView()
 
-        // 各ジャンルのTitleView
-        val genre1TitleTextView = Genre1TitleName
-        val genre2TitleTextView = Genre2TitleName
-        val genre3TitleTextView = Genre3TitleName
-        val genreTitleList : List<TextView> = listOf(genre1TitleTextView, genre2TitleTextView, genre3TitleTextView)
-
-        // Firebaseから居場所名をセット
-        getPlaceName(randomTextViewList, "編み物")
-        getPlaceName(recommendTextViewList, "将棋")
-
-        // ジャンル名をFirestoreから
-        getGenreName(genreTitleList)
-
-        // 居場所名をFirestoreから
-        getPlaceName(genre1TextViewList, "囲碁")
-        getPlaceName(genre2TextViewList, "編み物")
-        getPlaceName(genre3TextViewList, "将棋")
-
-        // ボタンのクリックイベント
-        setButtonEvent(randomImageViewList, randomTextViewList)
-        setButtonEvent(recommendImageViewList, recommendTextViewList)
-        setButtonEvent(genre1ImageViewList, genre1TextViewList)
-        setButtonEvent(genre2ImageViewList, genre2TextViewList)
-        setButtonEvent(genre3ImageViewList, genre3TextViewList)
-
-        // ランダム部の画像をセット
-        setRandomImage(recommendImageViewList, randomImagePath)
-
-        //他の街を見る
-        seeTownButton.setOnClickListener {
-            val intent = Intent(this, TownListActivity::class.java)
-            startActivity(intent)
-        }
-
-
-        //もっと見る
-        seeMoreRecommendButton.setOnClickListener {
-        // ジャンル1 → Tag1Activityへ
-            val intent = Intent(this, RecommendActivity::class.java)
-            startActivity(intent)
-        }
-        seeMoreGenre1Button.setOnClickListener {
-            fujimon.tapIgo()
-            val intent = Intent(this, Tag1Activity::class.java)
-            startActivity(intent)
-        }
-        seeMoreGenre2Button.setOnClickListener {
-            fujimon.tapAmimono()
-            val intent = Intent(this, Tag2Activity::class.java)
-            startActivity(intent)
-        }
-        seeMoreGenre3Button.setOnClickListener {
-            fujimon.tapShogi()
-            val intent = Intent(this, Tag3Activity::class.java)
-            startActivity(intent)
-        }
-
+//        // 各ジャンルのTitleView
+//        val genre1TitleTextView = Genre1TitleName
+//        val genre2TitleTextView = Genre2TitleName
+//        val genre3TitleTextView = Genre3TitleName
+//        val genreTitleList : List<TextView> = listOf(genre1TitleTextView, genre2TitleTextView, genre3TitleTextView)
+//
+//        // Firebaseから居場所名をセット
+//        getPlaceName(randomTextViewList, "編み物")
+//        getPlaceName(recommendTextViewList, "将棋")
+//
+//        // ジャンル名をFirestoreから
+//        getGenreName(genreTitleList)
+//
+//        // 居場所名をFirestoreから
+//        getPlaceName(genre1TextViewList, "囲碁")
+//        getPlaceName(genre2TextViewList, "編み物")
+//        getPlaceName(genre3TextViewList, "将棋")
+//
+//        // ボタンのクリックイベント
+//        setButtonEvent(randomImageViewList, randomTextViewList)
+//        setButtonEvent(recommendImageViewList, recommendTextViewList)
+//        setButtonEvent(genre1ImageViewList, genre1TextViewList)
+//        setButtonEvent(genre2ImageViewList, genre2TextViewList)
+//        setButtonEvent(genre3ImageViewList, genre3TextViewList)
+//
+//        // ランダム部の画像をセット
+//        setRandomImage(recommendImageViewList, randomImagePath)
+//
+//        //他の街を見る
+//        seeTownButton.setOnClickListener {
+//            val intent = Intent(this, TownListActivity::class.java)
+//            startActivity(intent)
+//        }
+//
+//
+//        //もっと見る
+//        seeMoreRecommendButton.setOnClickListener {
+//        // ジャンル1 → Tag1Activityへ
+//            val intent = Intent(this, RecommendActivity::class.java)
+//            startActivity(intent)
+//        }
+//        seeMoreGenre1Button.setOnClickListener {
+//            fujimon.tapIgo()
+//            val intent = Intent(this, Tag1Activity::class.java)
+//            startActivity(intent)
+//        }
+//        seeMoreGenre2Button.setOnClickListener {
+//            fujimon.tapAmimono()
+//            val intent = Intent(this, Tag2Activity::class.java)
+//            startActivity(intent)
+//        }
+//        seeMoreGenre3Button.setOnClickListener {
+//            fujimon.tapShogi()
+//            val intent = Intent(this, Tag3Activity::class.java)
+//            startActivity(intent)
+//        }
+//
     }
 
 
