@@ -76,7 +76,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="28dp"
                         android:layout_marginVertical="8dp"
-                        android:layout_marginStart="0dp"
                         android:layout_toEndOf="@+id/townNameTopPage"
                         android:fontFamily="Roboto"
                         android:text="@string/の回覧板"
@@ -114,7 +113,6 @@
                         android:id="@+id/horizontalScrollView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
                         android:scrollbars="none"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -193,10 +191,6 @@
                                         android:id="@+id/imageRandomViewMain2"
                                         android:layout_width="334dp"
                                         android:layout_height="250dp"
-                                        android:layout_marginStart="0dp"
-                                        android:layout_marginTop="0dp"
-                                        android:layout_marginEnd="0dp"
-                                        android:layout_marginBottom="0dp"
                                         android:adjustViewBounds="true"
                                         android:scaleType="fitXY"
                                         android:src="@drawable/amimono"
@@ -237,10 +231,6 @@
                                         android:id="@+id/imageRandomViewMain3"
                                         android:layout_width="334dp"
                                         android:layout_height="250dp"
-                                        android:layout_marginStart="0dp"
-                                        android:layout_marginTop="0dp"
-                                        android:layout_marginEnd="0dp"
-                                        android:layout_marginBottom="0dp"
                                         android:adjustViewBounds="true"
                                         android:scaleType="fitXY"
                                         android:src="@drawable/amimono"
@@ -281,10 +271,6 @@
                                         android:id="@+id/imageRandomViewMain4"
                                         android:layout_width="334dp"
                                         android:layout_height="250dp"
-                                        android:layout_marginStart="0dp"
-                                        android:layout_marginTop="0dp"
-                                        android:layout_marginEnd="0dp"
-                                        android:layout_marginBottom="0dp"
                                         android:adjustViewBounds="true"
                                         android:scaleType="fitXY"
                                         android:src="@drawable/amimono"
@@ -371,8 +357,6 @@
                                 android:id="@+id/recommend_image1"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
-                                android:layout_marginLeft="0dp"
-                                android:layout_marginRight="0dp"
                                 android:scaleType="centerCrop"
                                 android:src="@mipmap/place01"
                                 app:cardCornerRadius="30dp"
@@ -424,8 +408,6 @@
                                 android:id="@+id/recommend_image2"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
-                                android:layout_marginLeft="0dp"
-                                android:layout_marginRight="0dp"
                                 android:scaleType="centerCrop"
                                 android:src="@mipmap/place02"
                                 app:cardCornerRadius="30dp"
@@ -478,8 +460,6 @@
                                 android:id="@+id/recommend_image3"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
-                                android:layout_marginLeft="0dp"
-                                android:layout_marginRight="0dp"
                                 android:scaleType="centerCrop"
                                 android:src="@mipmap/place03"
                                 app:cardCornerRadius="30dp"
@@ -532,8 +512,6 @@
                                 android:id="@+id/recommend_image4"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
-                                android:layout_marginLeft="0dp"
-                                android:layout_marginRight="0dp"
                                 android:scaleType="centerCrop"
                                 android:src="@mipmap/place04"
                                 app:cardCornerRadius="30dp"
@@ -1321,25 +1299,6 @@
             android:text="ここにナビゲーションバー" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <!--<androidx.constraintlayout.widget.ConstraintLayout-->
-    <!--android:id="@+id/center_contents"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_weight="0.5"-->
-    <!--android:layout_marginStart="16dp"-->
-    <!--android:layout_marginTop="16dp"-->
-    <!--android:layout_marginEnd="16dp"-->
-    <!--app:layout_constraintEnd_toStartOf="parent"-->
-    <!--app:layout_constraintStart_toEndOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent">-->
-
-
-    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
-
-
-    <!--            &lt;!&ndash;あなたにおすすめ&ndash;&gt;-->
 
 
 
