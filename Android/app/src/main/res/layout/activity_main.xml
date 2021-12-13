@@ -6,98 +6,1322 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!--    <ScrollView-->
-    <!--        android:id="@+id/scrollView"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="0dp"-->
-    <!--        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_layout"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent">-->
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/contents_main_layout"
+        android:id="@+id/scrollViewLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/center_layout"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/right_margin_layout"
-            app:layout_constraintStart_toEndOf="@id/left_margin_layout"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="center" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/left_margin_layout"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/center_layout"
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contents_main_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="left" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/right_margin_layout"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/center_layout"
-            app:layout_constraintTop_toTopOf="parent">
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/left_margin_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.04"
+                    app:layout_constraintTop_toTopOf="@+id/center_layout" />
 
-            <TextView
-                android:id="@+id/text01"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:gravity="center"
-                android:text="right0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/text02"
-                />
-            <TextView
-                android:id="@+id/text02"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:gravity="center"
-                android:text="right1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text01" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/right_margin_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.96"
+                    app:layout_constraintTop_toTopOf="@+id/center_layout" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/page_title_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    app:layout_constraintBottom_toTopOf="@+id/random_image_layout"
+                    app:layout_constraintEnd_toEndOf="@id/right_margin_guide"
+                    app:layout_constraintStart_toStartOf="@id/left_margin_guide"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/townNameTopPage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginTop="28dp"
+                        android:fontFamily="Roboto"
+                        android:text="@string/美原町"
+                        android:textColor="@color/orange"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/kairanban"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/kairanban"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_toEndOf="@+id/townNameTopPage"
+                        android:fontFamily="Roboto"
+                        android:text="@string/の回覧板"
+                        android:textColor="@color/black"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/townNameTopPage"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/seeTownButton"
+                        android:layout_width="126dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_template"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/町を選ぶ"
+                        android:textSize="16dp"
+                        app:backgroundTint="@null"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/random_image_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="250dp"
+                    app:layout_constraintBottom_toTopOf="@+id/center_layout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/page_title_layout">
+
+                    <HorizontalScrollView
+                        android:id="@+id/horizontalScrollView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:scrollbars="none"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:id="@+id/imageRandomView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
 
 
+                            <RelativeLayout
+                                android:id="@+id/linear1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:orientation="vertical"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:ignore="UselessParent">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    app:cardElevation="5dp"
+                                    app:cardUseCompatPadding="true"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent">
+
+                                    <androidx.constraintlayout.utils.widget.ImageFilterButton
+                                        android:id="@+id/imageRandomViewMain1"
+                                        android:layout_width="355dp"
+                                        android:layout_height="180dp"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/amimono"
+                                        app:cardCornerRadius="4dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/textViewMain1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="bottom"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginTop="141dp"
+                                        android:layout_marginEnd="152dp"
+                                        android:layout_marginBottom="12dp"
+                                        android:text="@string/textview"
+                                        android:textColor="@color/white"
+                                        android:textSize="20dp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/linear2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:orientation="vertical"
+                                tools:ignore="UselessParent">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginHorizontal="11dp"
+                                    app:cardElevation="5dp"
+                                    app:cardUseCompatPadding="true">
+
+                                    <androidx.constraintlayout.utils.widget.ImageFilterButton
+                                        android:id="@+id/imageRandomViewMain2"
+                                        android:layout_width="334dp"
+                                        android:layout_height="250dp"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="0dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:layout_marginBottom="0dp"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/amimono"
+                                        app:cardCornerRadius="4dp" />
+
+                                    <TextView
+                                        android:id="@+id/textViewMain2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="bottom"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginTop="141dp"
+                                        android:layout_marginEnd="152dp"
+                                        android:layout_marginBottom="12dp"
+                                        android:text="@string/textview"
+                                        android:textColor="@color/white"
+                                        android:textSize="20dp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/linear3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:orientation="vertical"
+                                tools:ignore="UselessParent">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginHorizontal="11dp"
+                                    app:cardElevation="5dp"
+                                    app:cardUseCompatPadding="true">
+
+                                    <androidx.constraintlayout.utils.widget.ImageFilterButton
+                                        android:id="@+id/imageRandomViewMain3"
+                                        android:layout_width="334dp"
+                                        android:layout_height="250dp"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="0dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:layout_marginBottom="0dp"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/amimono"
+                                        app:cardCornerRadius="4dp" />
+
+                                    <TextView
+                                        android:id="@+id/textViewMain3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="bottom"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginTop="141dp"
+                                        android:layout_marginEnd="152dp"
+                                        android:layout_marginBottom="12dp"
+                                        android:text="@string/textview"
+                                        android:textColor="@color/white"
+                                        android:textSize="20dp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/linear4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:orientation="vertical"
+                                tools:ignore="UselessParent">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginHorizontal="11dp"
+                                    app:cardElevation="5dp"
+                                    app:cardUseCompatPadding="true">
+
+                                    <androidx.constraintlayout.utils.widget.ImageFilterButton
+                                        android:id="@+id/imageRandomViewMain4"
+                                        android:layout_width="334dp"
+                                        android:layout_height="250dp"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="0dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:layout_marginBottom="0dp"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/amimono"
+                                        app:cardCornerRadius="4dp" />
+
+                                    <TextView
+                                        android:id="@+id/textViewMain4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="bottom"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginTop="141dp"
+                                        android:layout_marginEnd="152dp"
+                                        android:layout_marginBottom="12dp"
+                                        android:text="@string/textview"
+                                        android:textColor="@color/white"
+                                        android:textSize="20dp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/center_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/right_margin_guide"
+                    app:layout_constraintStart_toEndOf="@id/left_margin_guide"
+                    app:layout_constraintTop_toBottomOf="@id/random_image_layout">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/center_left_margin_guide"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.495"
+                        app:layout_constraintTop_toTopOf="@+id/center_layout" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/center_right_margin_guide"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.505"
+                        app:layout_constraintTop_toTopOf="@+id/center_layout" />
+
+                    <TextView
+                        android:id="@+id/RecommendTitleName"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="43dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/あなたにおすすめ"
+                        android:textColor="@color/black"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/recommend_place1_card"
+                        android:layout_width="0dp"
+                        android:layout_height="157dp"
+                        android:layout_marginStart="-5dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintBottom_toTopOf="@id/recommend_place3_card"
+                        app:layout_constraintEnd_toStartOf="@id/center_left_margin_guide"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/RecommendTitleName">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/recommend_image1"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginRight="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place01"
+                                app:cardCornerRadius="30dp"
+                                app:layout_constraintBottom_toTopOf="@+id/recommend_place1"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_weight="0.8" />
+
+                            <TextView
+                                android:id="@+id/recommend_place1"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="5dp"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:singleLine="true"
+                                android:text="@string/居場所1"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/recommend_image1"
+                                app:layout_constraintVertical_weight="0.2"
+                                tools:ignore="RtlHardcoded" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/recommend_place2_card"
+                        android:layout_width="0dp"
+                        android:layout_height="157dp"
+                        android:layout_marginEnd="-5dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/center_right_margin_guide"
+                        app:layout_constraintTop_toTopOf="@id/recommend_place1_card">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/recommend_image2"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginRight="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place02"
+                                app:cardCornerRadius="30dp"
+                                app:layout_constraintBottom_toTopOf="@+id/recommend_place2"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_weight="0.8" />
+
+                            <TextView
+                                android:id="@+id/recommend_place2"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="5dp"
+                                android:ellipsize="end"
+                                android:fontFamily="Roboto"
+                                android:gravity="center_vertical"
+                                android:singleLine="true"
+                                android:text="@string/居場所2"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/recommend_image2"
+                                app:layout_constraintVertical_weight="0.2"
+                                tools:ignore="RtlHardcoded" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/recommend_place3_card"
+                        android:layout_width="0dp"
+                        android:layout_height="157dp"
+                        android:layout_marginStart="-5dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintEnd_toStartOf="@id/center_left_margin_guide"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/recommend_place1_card">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/recommend_image3"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginRight="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place03"
+                                app:cardCornerRadius="30dp"
+                                app:layout_constraintBottom_toTopOf="@+id/recommend_place3"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_weight="0.8" />
+
+                            <TextView
+                                android:id="@+id/recommend_place3"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="5dp"
+                                android:ellipsize="end"
+                                android:fontFamily="Roboto"
+                                android:gravity="center_vertical"
+                                android:singleLine="true"
+                                android:text="@string/居場所3"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/recommend_image3"
+                                app:layout_constraintVertical_weight="0.2"
+                                tools:ignore="RtlHardcoded" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/recommend_place4_card"
+                        android:layout_width="0dp"
+                        android:layout_height="157dp"
+                        android:layout_marginEnd="-5dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/center_right_margin_guide"
+                        app:layout_constraintTop_toTopOf="@id/recommend_place3_card">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/recommend_image4"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginRight="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place04"
+                                app:cardCornerRadius="30dp"
+                                app:layout_constraintBottom_toTopOf="@+id/recommend_place4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_weight="0.8" />
+
+                            <TextView
+                                android:id="@+id/recommend_place4"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="5dp"
+                                android:ellipsize="end"
+                                android:fontFamily="Roboto"
+                                android:gravity="center_vertical"
+                                android:singleLine="true"
+                                android:text="@string/居場所4"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/recommend_image4"
+                                app:layout_constraintVertical_weight="0.2"
+                                tools:ignore="RtlHardcoded" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <Button
+                        android:id="@+id/seeMoreRecommendButton"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/round_button_template"
+                        android:gravity="center"
+                        android:text="@string/すべて見る"
+                        android:textColor="@color/orange"
+                        android:textSize="14dp"
+                        app:backgroundTint="@null"
+                        app:layout_constraintBottom_toTopOf="@id/Genre1TitleName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recommend_place3_card"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+
+                    <TextView
+                        android:id="@+id/Genre1TitleName"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="ジャンル"
+                        android:textColor="@color/black"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/seeMoreRecommendButton" />
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/genre1_place1_card"
+                        android:layout_width="0dp"
+                        android:layout_height="157dp"
+                        android:layout_marginStart="-5dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintBottom_toTopOf="@id/genre1_place3_card"
+                        app:layout_constraintEnd_toStartOf="@id/center_left_margin_guide"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Genre1TitleName">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/genre1_image1"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place01"
+                                app:cardCornerRadius="30dp"
+                                app:layout_constraintBottom_toTopOf="@+id/genre1_place1_name"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_weight="0.8" />
+
+
+                            <TextView
+                                android:id="@+id/genre1_place1_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="5dp"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:singleLine="true"
+                                android:text="@string/居場所1"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/genre1_image1"
+                                app:layout_constraintVertical_weight="0.2"
+                                tools:ignore="RtlHardcoded" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/genre1_place2_card"
+                        android:layout_width="0dp"
+                        android:layout_height="157dp"
+                        android:layout_marginEnd="-5dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/center_right_margin_guide"
+                        app:layout_constraintTop_toTopOf="@id/genre1_place1_card">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/genre1_image2"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place02"
+                                app:cardCornerRadius="30dp"
+                                app:layout_constraintBottom_toTopOf="@+id/genre1_place2_name"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_weight="0.8" />
+
+                            <TextView
+                                android:id="@+id/genre1_place2_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="5dp"
+                                android:ellipsize="end"
+                                android:fontFamily="Roboto"
+                                android:gravity="center_vertical"
+                                android:singleLine="true"
+                                android:text="@string/居場所2"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/genre1_image2"
+                                app:layout_constraintVertical_weight="0.2"
+                                tools:ignore="RtlHardcoded" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/genre1_place3_card"
+                        android:layout_width="0dp"
+                        android:layout_height="157dp"
+                        android:layout_marginStart="-5dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintEnd_toStartOf="@id/center_left_margin_guide"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/genre1_place1_card">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/genre1_image3"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place03"
+                                app:cardCornerRadius="30dp"
+                                app:layout_constraintBottom_toTopOf="@+id/genre1_place3_name"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_weight="0.8" />
+
+                            <TextView
+                                android:id="@+id/genre1_place3_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="5dp"
+                                android:ellipsize="end"
+                                android:fontFamily="Roboto"
+                                android:gravity="center_vertical"
+                                android:singleLine="true"
+                                android:text="@string/居場所3"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/genre1_image3"
+                                app:layout_constraintVertical_weight="0.2"
+                                tools:ignore="RtlHardcoded" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/genre1_place4_card"
+                        android:layout_width="0dp"
+                        android:layout_height="157dp"
+                        android:layout_marginEnd="-5dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/center_right_margin_guide"
+                        app:layout_constraintTop_toTopOf="@id/genre1_place3_card">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/genre1_image4"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place04"
+                                app:cardCornerRadius="30dp"
+                                app:layout_constraintBottom_toTopOf="@+id/genre1_place4_name"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_weight="0.8" />
+
+                            <TextView
+                                android:id="@+id/genre1_place4_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="5dp"
+                                android:ellipsize="end"
+                                android:fontFamily="Roboto"
+                                android:gravity="center_vertical"
+                                android:singleLine="true"
+                                android:text="@string/居場所4"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/genre1_image4"
+                                app:layout_constraintVertical_weight="0.2"
+                                tools:ignore="RtlHardcoded" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <Button
+                        android:id="@+id/seeMoreGenre1Button"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@drawable/round_button_template"
+                        android:gravity="center"
+                        android:text="@string/すべて見る"
+                        android:textColor="@color/orange"
+                        android:textSize="14dp"
+                        app:backgroundTint="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/genre1_place3_card"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <TextView
+                        android:id="@+id/Genre2TitleName"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="ジャンル"
+                        android:textColor="@color/black"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/seeMoreGenre1Button" />
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/genre2_place1_card"
+                        android:layout_width="0dp"
+                        android:layout_height="157dp"
+                        android:layout_marginStart="-5dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintBottom_toTopOf="@id/genre2_place3_card"
+                        app:layout_constraintEnd_toStartOf="@id/center_left_margin_guide"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Genre2TitleName">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/genre2_image1"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place01"
+                                app:cardCornerRadius="30dp"
+                                app:layout_constraintBottom_toTopOf="@+id/genre2_place1_name"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_weight="0.8" />
+
+
+                            <TextView
+                                android:id="@+id/genre2_place1_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="5dp"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:singleLine="true"
+                                android:text="@string/居場所1"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/genre2_image1"
+                                app:layout_constraintVertical_weight="0.2"
+                                tools:ignore="RtlHardcoded" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/genre2_place2_card"
+                        android:layout_width="0dp"
+                        android:layout_height="157dp"
+                        android:layout_marginEnd="-5dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/center_right_margin_guide"
+                        app:layout_constraintTop_toTopOf="@id/genre2_place1_card">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/genre2_image2"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place02"
+                                app:cardCornerRadius="30dp"
+                                app:layout_constraintBottom_toTopOf="@+id/genre2_place2_name"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_weight="0.8" />
+
+                            <TextView
+                                android:id="@+id/genre2_place2_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="5dp"
+                                android:ellipsize="end"
+                                android:fontFamily="Roboto"
+                                android:gravity="center_vertical"
+                                android:singleLine="true"
+                                android:text="@string/居場所2"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/genre2_image2"
+                                app:layout_constraintVertical_weight="0.2"
+                                tools:ignore="RtlHardcoded" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/genre2_place3_card"
+                        android:layout_width="0dp"
+                        android:layout_height="157dp"
+                        android:layout_marginStart="-5dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintEnd_toStartOf="@id/center_left_margin_guide"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/genre2_place1_card">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/genre2_image3"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place03"
+                                app:cardCornerRadius="30dp"
+                                app:layout_constraintBottom_toTopOf="@+id/genre2_place3_name"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_weight="0.8" />
+
+                            <TextView
+                                android:id="@+id/genre2_place3_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="5dp"
+                                android:ellipsize="end"
+                                android:fontFamily="Roboto"
+                                android:gravity="center_vertical"
+                                android:singleLine="true"
+                                android:text="@string/居場所3"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/genre2_image3"
+                                app:layout_constraintVertical_weight="0.2"
+                                tools:ignore="RtlHardcoded" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/genre2_place4_card"
+                        android:layout_width="0dp"
+                        android:layout_height="157dp"
+                        android:layout_marginEnd="-5dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/center_right_margin_guide"
+                        app:layout_constraintTop_toTopOf="@id/genre2_place3_card">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/genre2_image4"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place04"
+                                app:cardCornerRadius="30dp"
+                                app:layout_constraintBottom_toTopOf="@+id/genre2_place4_name"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_weight="0.8" />
+
+                            <TextView
+                                android:id="@+id/genre2_place4_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="5dp"
+                                android:ellipsize="end"
+                                android:fontFamily="Roboto"
+                                android:gravity="center_vertical"
+                                android:singleLine="true"
+                                android:text="@string/居場所4"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/genre2_image4"
+                                app:layout_constraintVertical_weight="0.2"
+                                tools:ignore="RtlHardcoded" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <Button
+                        android:id="@+id/seeMoreGenre2Button"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@drawable/round_button_template"
+                        android:gravity="center"
+                        android:text="@string/すべて見る"
+                        android:textColor="@color/orange"
+                        android:textSize="14dp"
+                        app:backgroundTint="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/genre2_place3_card"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <TextView
+                        android:id="@+id/Genre3TitleName"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="ジャンル"
+                        android:textColor="@color/black"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/seeMoreGenre2Button" />
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/genre3_place1_card"
+                        android:layout_width="0dp"
+                        android:layout_height="157dp"
+                        android:layout_marginStart="-5dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintBottom_toTopOf="@id/genre3_place3_card"
+                        app:layout_constraintEnd_toStartOf="@id/center_left_margin_guide"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Genre3TitleName">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/genre3_image1"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place01"
+                                app:cardCornerRadius="30dp"
+                                app:layout_constraintBottom_toTopOf="@+id/genre3_place1_name"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_weight="0.8" />
+
+
+                            <TextView
+                                android:id="@+id/genre3_place1_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="5dp"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:singleLine="true"
+                                android:text="@string/居場所1"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/genre3_image1"
+                                app:layout_constraintVertical_weight="0.2"
+                                tools:ignore="RtlHardcoded" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/genre3_place2_card"
+                        android:layout_width="0dp"
+                        android:layout_height="157dp"
+                        android:layout_marginEnd="-5dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/center_right_margin_guide"
+                        app:layout_constraintTop_toTopOf="@id/genre3_place1_card">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/genre3_image2"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place02"
+                                app:cardCornerRadius="30dp"
+                                app:layout_constraintBottom_toTopOf="@+id/genre3_place2_name"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_weight="0.8" />
+
+                            <TextView
+                                android:id="@+id/genre3_place2_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="5dp"
+                                android:ellipsize="end"
+                                android:fontFamily="Roboto"
+                                android:gravity="center_vertical"
+                                android:singleLine="true"
+                                android:text="@string/居場所2"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/genre3_image2"
+                                app:layout_constraintVertical_weight="0.2"
+                                tools:ignore="RtlHardcoded" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/genre3_place3_card"
+                        android:layout_width="0dp"
+                        android:layout_height="157dp"
+                        android:layout_marginStart="-5dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintEnd_toStartOf="@id/center_left_margin_guide"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/genre3_place1_card">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/genre3_image3"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place03"
+                                app:cardCornerRadius="30dp"
+                                app:layout_constraintBottom_toTopOf="@+id/genre3_place3_name"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_weight="0.8" />
+
+                            <TextView
+                                android:id="@+id/genre3_place3_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="5dp"
+                                android:ellipsize="end"
+                                android:fontFamily="Roboto"
+                                android:gravity="center_vertical"
+                                android:singleLine="true"
+                                android:text="@string/居場所3"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/genre3_image3"
+                                app:layout_constraintVertical_weight="0.2"
+                                tools:ignore="RtlHardcoded" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/genre3_place4_card"
+                        android:layout_width="0dp"
+                        android:layout_height="157dp"
+                        android:layout_marginEnd="-5dp"
+                        app:cardElevation="5dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/center_right_margin_guide"
+                        app:layout_constraintTop_toTopOf="@id/genre3_place3_card">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/genre3_image4"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/place04"
+                                app:cardCornerRadius="30dp"
+                                app:layout_constraintBottom_toTopOf="@+id/genre3_place4_name"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_weight="0.8" />
+
+                            <TextView
+                                android:id="@+id/genre3_place4_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="5dp"
+                                android:ellipsize="end"
+                                android:fontFamily="Roboto"
+                                android:gravity="center_vertical"
+                                android:singleLine="true"
+                                android:text="@string/居場所4"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/genre3_image4"
+                                app:layout_constraintVertical_weight="0.2"
+                                tools:ignore="RtlHardcoded" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <Button
+                        android:id="@+id/seeMoreGenre3Button"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@drawable/round_button_template"
+                        android:gravity="center"
+                        android:text="@string/すべて見る"
+                        android:textColor="@color/orange"
+                        android:textSize="14dp"
+                        app:backgroundTint="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/genre3_place3_card"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!--    </ScrollView>-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_navigation_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:outlineSpotShadowColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollViewLayout">
 
-
-    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-    <!--        android:id="@+id/bottom_navigation_layout"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="60dp"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toStartOf="parent"-->
-    <!--        app:layout_constraintStart_toEndOf="parent" />-->
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="ここにナビゲーションバー" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <!--<androidx.constraintlayout.widget.ConstraintLayout-->
     <!--android:id="@+id/center_contents"-->
@@ -111,249 +1335,6 @@
     <!--app:layout_constraintStart_toEndOf="parent"-->
     <!--app:layout_constraintTop_toTopOf="parent">-->
 
-    <!--<TextView-->
-    <!--    android:id="@+id/townNameTopPage"-->
-    <!--    android:layout_width="wrap_content"-->
-    <!--    android:layout_height="wrap_content"-->
-    <!--    android:layout_marginVertical="8dp"-->
-    <!--    android:layout_marginTop="28dp"-->
-    <!--    android:fontFamily="Roboto"-->
-    <!--    android:text="@string/美原町"-->
-    <!--    android:textColor="@color/orange"-->
-    <!--    android:textSize="24dp"-->
-    <!--    android:textStyle="bold"-->
-    <!--    app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--    app:layout_constraintEnd_toStartOf="@+id/kairanban"-->
-    <!--    app:layout_constraintStart_toStartOf="parent"-->
-    <!--    app:layout_constraintTop_toTopOf="parent" />-->
-
-    <!--<TextView-->
-    <!--    android:id="@+id/kairanban"-->
-    <!--    android:layout_width="wrap_content"-->
-    <!--    android:layout_height="28dp"-->
-    <!--    android:layout_marginVertical="8dp"-->
-    <!--    android:layout_marginStart="0dp"-->
-    <!--    android:layout_toEndOf="@+id/townNameTopPage"-->
-    <!--    android:fontFamily="Roboto"-->
-    <!--    android:text="@string/の回覧板"-->
-    <!--    android:textColor="@color/black"-->
-    <!--    android:textSize="24dp"-->
-    <!--    android:textStyle="bold"-->
-    <!--    app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--    app:layout_constraintStart_toEndOf="@+id/townNameTopPage"-->
-    <!--    app:layout_constraintTop_toTopOf="parent" />-->
-
-    <!--<Button-->
-    <!--    android:id="@+id/seeTownButton"-->
-    <!--    android:layout_width="126dp"-->
-    <!--    android:layout_height="wrap_content"-->
-    <!--    android:background="@drawable/button_template"-->
-    <!--    android:fontFamily="@font/roboto"-->
-    <!--    android:text="@string/町を選ぶ"-->
-    <!--    android:textSize="16dp"-->
-    <!--    app:backgroundTint="@null"-->
-    <!--    app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--    app:layout_constraintEnd_toEndOf="parent"-->
-    <!--    app:layout_constraintTop_toTopOf="parent" />-->
-
-    <!--<HorizontalScrollView-->
-    <!--    android:id="@+id/horizontalScrollView"-->
-    <!--    android:layout_width="wrap_content"-->
-    <!--    android:layout_height="wrap_content"-->
-    <!--    android:layout_marginStart="0dp"-->
-    <!--    android:scrollbars="none"-->
-    <!--    app:layout_constraintEnd_toEndOf="parent"-->
-    <!--    app:layout_constraintStart_toStartOf="parent"-->
-    <!--    app:layout_constraintTop_toBottomOf="@+id/seeTownButton">-->
-
-    <!--    <LinearLayout-->
-    <!--        android:id="@+id/imageRandomView"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        android:orientation="horizontal"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent">-->
-
-
-    <!--        <RelativeLayout-->
-    <!--            android:id="@+id/linear1"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_marginEnd="16dp"-->
-    <!--            android:orientation="vertical"-->
-    <!--            app:layout_constraintEnd_toEndOf="parent"-->
-    <!--            app:layout_constraintStart_toStartOf="parent"-->
-    <!--            tools:ignore="UselessParent">-->
-
-    <!--            <com.google.android.material.card.MaterialCardView-->
-    <!--                android:layout_width="wrap_content"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:layout_marginStart="-5dp"-->
-    <!--                app:cardElevation="5dp"-->
-    <!--                app:cardUseCompatPadding="true"-->
-    <!--                app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                app:layout_constraintStart_toStartOf="parent">-->
-
-    <!--                <androidx.constraintlayout.utils.widget.ImageFilterButton-->
-    <!--                    android:id="@+id/imageRandomViewMain1"-->
-    <!--                    android:layout_width="355dp"-->
-    <!--                    android:layout_height="180dp"-->
-    <!--                    android:adjustViewBounds="true"-->
-    <!--                    android:scaleType="centerCrop"-->
-    <!--                    android:src="@drawable/amimono"-->
-    <!--                    app:cardCornerRadius="4dp"-->
-    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                    app:layout_constraintStart_toStartOf="parent" />-->
-
-    <!--                <TextView-->
-    <!--                    android:id="@+id/textViewMain1"-->
-    <!--                    android:layout_width="wrap_content"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:layout_gravity="bottom"-->
-    <!--                    android:layout_marginStart="16dp"-->
-    <!--                    android:layout_marginTop="141dp"-->
-    <!--                    android:layout_marginEnd="152dp"-->
-    <!--                    android:layout_marginBottom="12dp"-->
-    <!--                    android:text="@string/textview"-->
-    <!--                    android:textColor="@color/white"-->
-    <!--                    android:textSize="20dp"-->
-    <!--                    android:textStyle="bold" />-->
-    <!--            </com.google.android.material.card.MaterialCardView>-->
-    <!--        </RelativeLayout>-->
-
-    <!--        <RelativeLayout-->
-    <!--            android:id="@+id/linear2"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_marginEnd="16dp"-->
-    <!--            android:orientation="vertical"-->
-    <!--            tools:ignore="UselessParent">-->
-
-    <!--            <com.google.android.material.card.MaterialCardView-->
-    <!--                android:layout_width="wrap_content"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:layout_marginHorizontal="11dp"-->
-    <!--                app:cardElevation="5dp"-->
-    <!--                app:cardUseCompatPadding="true">-->
-
-    <!--                <androidx.constraintlayout.utils.widget.ImageFilterButton-->
-    <!--                    android:id="@+id/imageRandomViewMain2"-->
-    <!--                    android:layout_width="334dp"-->
-    <!--                    android:layout_height="250dp"-->
-    <!--                    android:layout_marginStart="0dp"-->
-    <!--                    android:layout_marginTop="0dp"-->
-    <!--                    android:layout_marginEnd="0dp"-->
-    <!--                    android:layout_marginBottom="0dp"-->
-    <!--                    android:adjustViewBounds="true"-->
-    <!--                    android:scaleType="fitXY"-->
-    <!--                    android:src="@drawable/amimono"-->
-    <!--                    app:cardCornerRadius="4dp" />-->
-
-    <!--                <TextView-->
-    <!--                    android:id="@+id/textViewMain2"-->
-    <!--                    android:layout_width="wrap_content"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:layout_gravity="bottom"-->
-    <!--                    android:layout_marginStart="16dp"-->
-    <!--                    android:layout_marginTop="141dp"-->
-    <!--                    android:layout_marginEnd="152dp"-->
-    <!--                    android:layout_marginBottom="12dp"-->
-    <!--                    android:text="@string/textview"-->
-    <!--                    android:textColor="@color/white"-->
-    <!--                    android:textSize="20dp"-->
-    <!--                    android:textStyle="bold" />-->
-    <!--            </com.google.android.material.card.MaterialCardView>-->
-    <!--        </RelativeLayout>-->
-
-    <!--        <RelativeLayout-->
-    <!--            android:id="@+id/linear3"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_marginEnd="16dp"-->
-    <!--            android:orientation="vertical"-->
-    <!--            tools:ignore="UselessParent">-->
-
-    <!--            <com.google.android.material.card.MaterialCardView-->
-    <!--                android:layout_width="wrap_content"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:layout_marginHorizontal="11dp"-->
-    <!--                app:cardElevation="5dp"-->
-    <!--                app:cardUseCompatPadding="true">-->
-
-    <!--                <androidx.constraintlayout.utils.widget.ImageFilterButton-->
-    <!--                    android:id="@+id/imageRandomViewMain3"-->
-    <!--                    android:layout_width="334dp"-->
-    <!--                    android:layout_height="250dp"-->
-    <!--                    android:layout_marginStart="0dp"-->
-    <!--                    android:layout_marginTop="0dp"-->
-    <!--                    android:layout_marginEnd="0dp"-->
-    <!--                    android:layout_marginBottom="0dp"-->
-    <!--                    android:adjustViewBounds="true"-->
-    <!--                    android:scaleType="fitXY"-->
-    <!--                    android:src="@drawable/amimono"-->
-    <!--                    app:cardCornerRadius="4dp" />-->
-
-    <!--                <TextView-->
-    <!--                    android:id="@+id/textViewMain3"-->
-    <!--                    android:layout_width="wrap_content"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:layout_gravity="bottom"-->
-    <!--                    android:layout_marginStart="16dp"-->
-    <!--                    android:layout_marginTop="141dp"-->
-    <!--                    android:layout_marginEnd="152dp"-->
-    <!--                    android:layout_marginBottom="12dp"-->
-    <!--                    android:text="@string/textview"-->
-    <!--                    android:textColor="@color/white"-->
-    <!--                    android:textSize="20dp"-->
-    <!--                    android:textStyle="bold" />-->
-    <!--            </com.google.android.material.card.MaterialCardView>-->
-    <!--        </RelativeLayout>-->
-
-    <!--        <RelativeLayout-->
-    <!--            android:id="@+id/linear4"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_marginEnd="16dp"-->
-    <!--            android:orientation="vertical"-->
-    <!--            tools:ignore="UselessParent">-->
-
-    <!--            <com.google.android.material.card.MaterialCardView-->
-    <!--                android:layout_width="wrap_content"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:layout_marginHorizontal="11dp"-->
-    <!--                app:cardElevation="5dp"-->
-    <!--                app:cardUseCompatPadding="true">-->
-
-    <!--                <androidx.constraintlayout.utils.widget.ImageFilterButton-->
-    <!--                    android:id="@+id/imageRandomViewMain4"-->
-    <!--                    android:layout_width="334dp"-->
-    <!--                    android:layout_height="250dp"-->
-    <!--                    android:layout_marginStart="0dp"-->
-    <!--                    android:layout_marginTop="0dp"-->
-    <!--                    android:layout_marginEnd="0dp"-->
-    <!--                    android:layout_marginBottom="0dp"-->
-    <!--                    android:adjustViewBounds="true"-->
-    <!--                    android:scaleType="fitXY"-->
-    <!--                    android:src="@drawable/amimono"-->
-    <!--                    app:cardCornerRadius="4dp" />-->
-
-    <!--                <TextView-->
-    <!--                    android:id="@+id/textViewMain4"-->
-    <!--                    android:layout_width="wrap_content"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:layout_gravity="bottom"-->
-    <!--                    android:layout_marginStart="16dp"-->
-    <!--                    android:layout_marginTop="141dp"-->
-    <!--                    android:layout_marginEnd="152dp"-->
-    <!--                    android:layout_marginBottom="12dp"-->
-    <!--                    android:text="@string/textview"-->
-    <!--                    android:textColor="@color/white"-->
-    <!--                    android:textSize="20dp"-->
-    <!--                    android:textStyle="bold" />-->
-    <!--            </com.google.android.material.card.MaterialCardView>-->
-    <!--        </RelativeLayout>-->
-    <!--    </LinearLayout>-->
-    <!--</HorizontalScrollView>-->
 
     <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
 
@@ -361,646 +1342,5 @@
     <!--            &lt;!&ndash;あなたにおすすめ&ndash;&gt;-->
 
 
-    <!--            <TextView-->
-    <!--                android:id="@+id/RecommendTitleName"-->
-    <!--                android:layout_width="162dp"-->
-    <!--                android:layout_height="23dp"-->
-    <!--                android:layout_marginStart="16dp"-->
-    <!--                android:layout_marginTop="43dp"-->
-    <!--                android:text="@string/あなたにおすすめ"-->
-    <!--                android:textColor="@color/black"-->
-    <!--                android:textSize="20dp"-->
-    <!--                android:textStyle="bold"-->
-    <!--                app:layout_constraintEnd_toStartOf="parent"-->
-    <!--                app:layout_constraintStart_toEndOf="parent"-->
-    <!--                app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />-->
 
-    <!--            <com.google.android.material.card.MaterialCardView-->
-    <!--                android:layout_width="168dp"-->
-    <!--                android:layout_height="157dp"-->
-    <!--                app:cardElevation="5dp"-->
-    <!--                app:cardUseCompatPadding="true">-->
-
-
-    <!--                <ImageView-->
-    <!--                    android:id="@+id/recommend_image1"-->
-    <!--                    android:layout_width="158dp"-->
-    <!--                    android:layout_height="117dp"-->
-    <!--                    android:layout_marginLeft="0dp"-->
-    <!--                    android:layout_marginRight="0dp"-->
-    <!--                    android:scaleType="centerCrop"-->
-    <!--                    android:src="@mipmap/place01"-->
-    <!--                    app:cardCornerRadius="30dp" />-->
-
-
-    <!--                <TextView-->
-    <!--                    android:id="@+id/recommend_place1"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:gravity="left"-->
-    <!--                    android:text="@string/居場所1"-->
-    <!--                    android:textColor="@color/black"-->
-    <!--                    android:textSize="16dp"-->
-    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                    app:layout_constraintStart_toStartOf="parent"-->
-    <!--                    tools:ignore="RtlHardcoded" />-->
-
-    <!--            </com.google.android.material.card.MaterialCardView>-->
-
-
-    <!--            <com.google.android.material.card.MaterialCardView-->
-    <!--                android:layout_width="168dp"-->
-    <!--                android:layout_height="157dp"-->
-    <!--                app:cardElevation="5dp"-->
-    <!--                app:cardUseCompatPadding="true">-->
-
-
-    <!--                <ImageView-->
-    <!--                    android:id="@+id/recommend_image2"-->
-    <!--                    android:layout_width="158dp"-->
-    <!--                    android:layout_height="117dp"-->
-    <!--                    android:layout_marginLeft="0dp"-->
-    <!--                    android:layout_marginRight="0dp"-->
-    <!--                    android:scaleType="centerCrop"-->
-    <!--                    android:src="@mipmap/place02"-->
-    <!--                    app:cardCornerRadius="30dp" />-->
-
-    <!--                <TextView-->
-    <!--                    android:id="@+id/recommend_place2"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:fontFamily="Roboto"-->
-    <!--                    android:gravity="left"-->
-    <!--                    android:text="@string/居場所2"-->
-    <!--                    android:textColor="@color/black"-->
-    <!--                    android:textSize="16dp"-->
-    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                    app:layout_constraintStart_toStartOf="parent"-->
-    <!--                    tools:ignore="RtlHardcoded" />-->
-
-
-    <!--            </com.google.android.material.card.MaterialCardView>-->
-
-
-    <!--            <com.google.android.material.card.MaterialCardView-->
-    <!--                android:layout_width="168dp"-->
-    <!--                android:layout_height="157dp"-->
-    <!--                app:cardElevation="5dp"-->
-    <!--                app:cardUseCompatPadding="true">-->
-
-
-    <!--                <ImageView-->
-    <!--                    android:id="@+id/recommend_image3"-->
-    <!--                    android:layout_width="158dp"-->
-    <!--                    android:layout_height="117dp"-->
-    <!--                    android:layout_marginLeft="0dp"-->
-    <!--                    android:layout_marginRight="0dp"-->
-    <!--                    android:scaleType="centerCrop"-->
-    <!--                    android:src="@mipmap/place03"-->
-    <!--                    app:cardCornerRadius="30dp" />-->
-
-
-    <!--                <TextView-->
-    <!--                    android:id="@+id/recommend_place3"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:gravity="left"-->
-    <!--                    android:text="@string/居場所3"-->
-    <!--                    android:textColor="@color/black"-->
-    <!--                    android:textSize="16dp"-->
-    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                    app:layout_constraintStart_toStartOf="parent"-->
-    <!--                    tools:ignore="RtlHardcoded" />-->
-
-
-    <!--            </com.google.android.material.card.MaterialCardView>-->
-
-
-    <!--            <com.google.android.material.card.MaterialCardView-->
-    <!--                android:layout_width="168dp"-->
-    <!--                android:layout_height="157dp"-->
-    <!--                app:cardElevation="5dp"-->
-    <!--                app:cardUseCompatPadding="true">-->
-
-    <!--                <ImageView-->
-    <!--                    android:id="@+id/recommend_image4"-->
-    <!--                    android:layout_width="158dp"-->
-    <!--                    android:layout_height="117dp"-->
-    <!--                    android:layout_marginLeft="0dp"-->
-    <!--                    android:layout_marginRight="0dp"-->
-    <!--                    android:scaleType="centerCrop"-->
-    <!--                    android:src="@mipmap/place04"-->
-    <!--                    app:cardCornerRadius="30dp" />-->
-
-
-    <!--                <TextView-->
-    <!--                    android:id="@+id/recommend_place4"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:gravity="left"-->
-    <!--                    android:text="@string/居場所4"-->
-    <!--                    android:textColor="@color/black"-->
-    <!--                    android:textSize="16dp"-->
-    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                    app:layout_constraintStart_toStartOf="parent"-->
-    <!--                    tools:ignore="RtlHardcoded" />-->
-
-
-    <!--            </com.google.android.material.card.MaterialCardView>-->
-
-    <!--            <Button-->
-    <!--                android:id="@+id/seeMoreRecommendButton"-->
-    <!--                android:layout_width="328dp"-->
-    <!--                android:layout_height="36dp"-->
-    <!--                android:layout_marginStart="16dp"-->
-    <!--                android:background="@drawable/round_button_template"-->
-    <!--                android:text="@string/すべて見る"-->
-    <!--                android:textColor="@color/orange"-->
-    <!--                android:textSize="14dp"-->
-    <!--                app:backgroundTint="@null"-->
-    <!--                app:layout_constraintBottom_toTopOf="@id/Genre1TitleName"-->
-    <!--                app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                app:layout_constraintStart_toStartOf="parent"-->
-    <!--                app:layout_constraintTop_toTopOf="parent"-->
-    <!--                tools:ignore="TouchTargetSizeCheck" />-->
-
-
-    <!--            <TextView-->
-    <!--                android:id="@+id/Genre1TitleName"-->
-    <!--                android:layout_width="162dp"-->
-    <!--                android:layout_height="23dp"-->
-    <!--                android:layout_marginStart="16dp"-->
-    <!--                android:layout_marginTop="0dp"-->
-    <!--                android:text="ジャンル"-->
-    <!--                android:textColor="@color/black"-->
-    <!--                android:textSize="20dp"-->
-    <!--                android:textStyle="bold" />-->
-
-
-    <!--            <com.google.android.material.card.MaterialCardView-->
-    <!--                android:layout_width="168dp"-->
-    <!--                android:layout_height="157dp"-->
-    <!--                app:cardElevation="5dp"-->
-    <!--                app:cardUseCompatPadding="true">-->
-
-
-    <!--                <ImageView-->
-    <!--                    android:id="@+id/genre1_image1"-->
-    <!--                    android:layout_width="158dp"-->
-    <!--                    android:layout_height="117dp"-->
-    <!--                    android:layout_marginLeft="0dp"-->
-    <!--                    android:layout_marginRight="0dp"-->
-    <!--                    android:scaleType="centerCrop"-->
-    <!--                    android:src="@mipmap/place01"-->
-    <!--                    app:cardCornerRadius="30dp" />-->
-
-
-    <!--                <TextView-->
-    <!--                    android:id="@+id/genre1_place1_name"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:gravity="left"-->
-    <!--                    android:text="@string/居場所1"-->
-    <!--                    android:textColor="@color/black"-->
-    <!--                    android:textSize="16dp"-->
-    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                    app:layout_constraintStart_toStartOf="parent"-->
-    <!--                    tools:ignore="RtlHardcoded" />-->
-
-
-    <!--            </com.google.android.material.card.MaterialCardView>-->
-
-    <!--            <com.google.android.material.card.MaterialCardView-->
-    <!--                android:layout_width="168dp"-->
-    <!--                android:layout_height="157dp"-->
-    <!--                app:cardElevation="5dp"-->
-    <!--                app:cardUseCompatPadding="true">-->
-
-    <!--                <ImageView-->
-    <!--                    android:id="@+id/genre1_image2"-->
-    <!--                    android:layout_width="158dp"-->
-    <!--                    android:layout_height="117dp"-->
-    <!--                    android:layout_marginLeft="0dp"-->
-    <!--                    android:layout_marginRight="0dp"-->
-    <!--                    android:scaleType="centerCrop"-->
-    <!--                    android:src="@mipmap/place02"-->
-    <!--                    app:cardCornerRadius="30dp" />-->
-
-    <!--                <TextView-->
-    <!--                    android:id="@+id/genre1_place2_name"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:gravity="left"-->
-    <!--                    android:text="@string/居場所2"-->
-    <!--                    android:textColor="@color/black"-->
-    <!--                    android:textSize="16dp"-->
-    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                    app:layout_constraintStart_toStartOf="parent"-->
-    <!--                    tools:ignore="RtlHardcoded" />-->
-
-
-    <!--            </com.google.android.material.card.MaterialCardView>-->
-
-
-    <!--            <com.google.android.material.card.MaterialCardView-->
-    <!--                android:layout_width="168dp"-->
-    <!--                android:layout_height="157dp"-->
-    <!--                app:cardElevation="5dp"-->
-    <!--                app:cardUseCompatPadding="true">-->
-
-    <!--                <ImageView-->
-    <!--                    android:id="@+id/genre1_image3"-->
-    <!--                    android:layout_width="158dp"-->
-    <!--                    android:layout_height="117dp"-->
-    <!--                    android:layout_marginLeft="0dp"-->
-    <!--                    android:layout_marginRight="0dp"-->
-    <!--                    android:scaleType="centerCrop"-->
-    <!--                    android:src="@mipmap/place03"-->
-    <!--                    app:cardCornerRadius="30dp" />-->
-
-
-    <!--                <TextView-->
-    <!--                    android:id="@+id/genre1_place3_name"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:gravity="left"-->
-    <!--                    android:text="@string/居場所3"-->
-    <!--                    android:textColor="@color/black"-->
-    <!--                    android:textSize="16dp"-->
-    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                    app:layout_constraintStart_toStartOf="parent"-->
-    <!--                    tools:ignore="RtlHardcoded" />-->
-
-
-    <!--            </com.google.android.material.card.MaterialCardView>-->
-
-    <!--            <com.google.android.material.card.MaterialCardView-->
-    <!--                android:layout_width="168dp"-->
-    <!--                android:layout_height="157dp"-->
-    <!--                app:cardElevation="5dp"-->
-    <!--                app:cardUseCompatPadding="true">-->
-
-    <!--                <ImageView-->
-    <!--                    android:id="@+id/genre1_image4"-->
-    <!--                    android:layout_width="158dp"-->
-    <!--                    android:layout_height="117dp"-->
-    <!--                    android:layout_marginLeft="0dp"-->
-    <!--                    android:layout_marginRight="0dp"-->
-    <!--                    android:scaleType="centerCrop"-->
-    <!--                    android:src="@mipmap/place04"-->
-    <!--                    app:cardCornerRadius="30dp" />-->
-
-
-    <!--                <TextView-->
-    <!--                    android:id="@+id/genre1_place4_name"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:gravity="left"-->
-    <!--                    android:text="@string/居場所4"-->
-    <!--                    android:textColor="@color/black"-->
-    <!--                    android:textSize="16dp"-->
-    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                    app:layout_constraintStart_toStartOf="parent"-->
-    <!--                    tools:ignore="RtlHardcoded" />-->
-
-    <!--            </com.google.android.material.card.MaterialCardView>-->
-
-    <!--            <Button-->
-    <!--                android:id="@+id/seeMoreGenre1Button"-->
-    <!--                android:layout_width="328dp"-->
-    <!--                android:layout_height="36dp"-->
-    <!--                android:layout_marginStart="16dp"-->
-    <!--                android:background="@drawable/round_button_template"-->
-    <!--                android:text="@string/すべて見る"-->
-    <!--                android:textColor="@color/orange"-->
-    <!--                android:textSize="14dp"-->
-    <!--                app:backgroundTint="@null"-->
-    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--                app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                app:layout_constraintStart_toStartOf="parent"-->
-    <!--                app:layout_constraintTop_toTopOf="parent"-->
-    <!--                tools:ignore="TouchTargetSizeCheck" />-->
-    <!--        </LinearLayout>-->
-
-    <!--        <TextView-->
-    <!--            android:id="@+id/Genre2TitleName"-->
-    <!--            android:layout_width="162dp"-->
-    <!--            android:layout_height="23dp"-->
-    <!--            android:layout_marginStart="16dp"-->
-    <!--            android:layout_marginTop="0dp"-->
-    <!--            android:fontFamily="Roboto"-->
-    <!--            android:text="@string/あなたにおすすめ"-->
-    <!--            android:textColor="@color/black"-->
-    <!--            android:textSize="20dp"-->
-    <!--            android:textStyle="bold" />-->
-
-    <!--        <com.google.android.material.card.MaterialCardView-->
-    <!--            android:layout_width="168dp"-->
-    <!--            android:layout_height="157dp"-->
-    <!--            app:cardElevation="5dp"-->
-    <!--            app:cardUseCompatPadding="true">-->
-
-
-    <!--            <ImageView-->
-    <!--                android:id="@+id/genre2_image1"-->
-    <!--                android:layout_width="158dp"-->
-    <!--                android:layout_height="117dp"-->
-    <!--                android:layout_marginLeft="0dp"-->
-    <!--                android:layout_marginRight="0dp"-->
-    <!--                android:scaleType="centerCrop"-->
-    <!--                android:src="@mipmap/place01"-->
-    <!--                app:cardCornerRadius="30dp" />-->
-
-
-    <!--            <TextView-->
-    <!--                android:id="@+id/genre2_place1_name"-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:fontFamily="Roboto"-->
-    <!--                android:gravity="left"-->
-    <!--                android:text="@string/居場所1"-->
-    <!--                android:textColor="@color/black"-->
-    <!--                android:textSize="16dp"-->
-    <!--                app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                app:layout_constraintStart_toStartOf="parent"-->
-    <!--                tools:ignore="RtlHardcoded" />-->
-
-
-    <!--        </com.google.android.material.card.MaterialCardView>-->
-
-    <!--        <com.google.android.material.card.MaterialCardView-->
-    <!--            android:layout_width="168dp"-->
-    <!--            android:layout_height="157dp"-->
-    <!--            app:cardElevation="5dp"-->
-    <!--            app:cardUseCompatPadding="true">-->
-
-    <!--            <ImageView-->
-    <!--                android:id="@+id/genre2_image2"-->
-    <!--                android:layout_width="158dp"-->
-    <!--                android:layout_height="117dp"-->
-    <!--                android:layout_marginLeft="0dp"-->
-    <!--                android:layout_marginRight="0dp"-->
-    <!--                android:scaleType="centerCrop"-->
-    <!--                android:src="@mipmap/place02"-->
-    <!--                app:cardCornerRadius="30dp" />-->
-
-    <!--            <TextView-->
-    <!--                android:id="@+id/genre2_place2_name"-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:fontFamily="Roboto"-->
-    <!--                android:gravity="left"-->
-    <!--                android:text="@string/居場所2"-->
-    <!--                android:textColor="@color/black"-->
-    <!--                android:textSize="16dp"-->
-    <!--                app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                app:layout_constraintStart_toStartOf="parent"-->
-    <!--                tools:ignore="RtlHardcoded" />-->
-
-
-    <!--        </com.google.android.material.card.MaterialCardView>-->
-
-    <!--        <com.google.android.material.card.MaterialCardView-->
-    <!--            android:layout_width="168dp"-->
-    <!--            android:layout_height="157dp"-->
-    <!--            app:cardElevation="5dp"-->
-    <!--            app:cardUseCompatPadding="true">-->
-
-    <!--            <ImageView-->
-    <!--                android:id="@+id/genre2_image3"-->
-    <!--                android:layout_width="158dp"-->
-    <!--                android:layout_height="117dp"-->
-    <!--                android:layout_marginLeft="0dp"-->
-    <!--                android:layout_marginRight="0dp"-->
-    <!--                android:scaleType="centerCrop"-->
-    <!--                android:src="@mipmap/place03"-->
-    <!--                app:cardCornerRadius="30dp" />-->
-
-
-    <!--            <TextView-->
-    <!--                android:id="@+id/genre2_place3_name"-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:fontFamily="Roboto"-->
-    <!--                android:gravity="left"-->
-    <!--                android:text="@string/居場所3"-->
-    <!--                android:textColor="@color/black"-->
-    <!--                android:textSize="16dp"-->
-    <!--                app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                app:layout_constraintStart_toStartOf="parent"-->
-    <!--                tools:ignore="RtlHardcoded" />-->
-
-
-    <!--        </com.google.android.material.card.MaterialCardView>-->
-
-    <!--        <com.google.android.material.card.MaterialCardView-->
-    <!--            android:layout_width="168dp"-->
-    <!--            android:layout_height="157dp"-->
-    <!--            app:cardElevation="5dp"-->
-    <!--            app:cardUseCompatPadding="true">-->
-
-
-    <!--            <ImageView-->
-    <!--                android:id="@+id/genre2_image4"-->
-    <!--                android:layout_width="158dp"-->
-    <!--                android:layout_height="117dp"-->
-    <!--                android:layout_marginLeft="0dp"-->
-    <!--                android:layout_marginRight="0dp"-->
-    <!--                android:scaleType="centerCrop"-->
-    <!--                android:src="@mipmap/place04"-->
-    <!--                app:cardCornerRadius="30dp" />-->
-
-
-    <!--            <TextView-->
-    <!--                android:id="@+id/genre2_place4_name"-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:fontFamily="Roboto"-->
-    <!--                android:gravity="left"-->
-    <!--                android:text="@string/居場所4"-->
-    <!--                android:textColor="@color/black"-->
-    <!--                android:textSize="16dp"-->
-    <!--                app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                app:layout_constraintStart_toStartOf="parent"-->
-    <!--                tools:ignore="RtlHardcoded" />-->
-
-    <!--        </com.google.android.material.card.MaterialCardView>-->
-
-    <!--        <Button-->
-    <!--            android:id="@+id/seeMoreGenre2Button"-->
-    <!--            android:layout_width="328dp"-->
-    <!--            android:layout_height="36dp"-->
-    <!--            android:layout_marginStart="16dp"-->
-    <!--            android:background="@drawable/round_button_template"-->
-    <!--            android:fontFamily="@font/roboto"-->
-    <!--            android:text="@string/すべて見る"-->
-    <!--            android:textColor="@color/orange"-->
-    <!--            android:textSize="14dp"-->
-    <!--            app:backgroundTint="@null"-->
-    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--            app:layout_constraintEnd_toEndOf="parent"-->
-    <!--            app:layout_constraintStart_toStartOf="parent"-->
-    <!--            app:layout_constraintTop_toTopOf="parent"-->
-    <!--            tools:ignore="TouchTargetSizeCheck" />-->
-
-    <!--        <TextView-->
-    <!--            android:id="@+id/Genre3TitleName"-->
-    <!--            android:layout_width="162dp"-->
-    <!--            android:layout_height="23dp"-->
-    <!--            android:layout_marginStart="16dp"-->
-    <!--            android:layout_marginTop="0dp"-->
-    <!--            android:fontFamily="Roboto"-->
-    <!--            android:text="@string/あなたにおすすめ"-->
-    <!--            android:textColor="@color/black"-->
-    <!--            android:textSize="20dp"-->
-    <!--            android:textStyle="bold" />-->
-
-    <!--        <com.google.android.material.card.MaterialCardView-->
-    <!--            android:layout_width="168dp"-->
-    <!--            android:layout_height="157dp"-->
-    <!--            app:cardElevation="5dp"-->
-    <!--            app:cardUseCompatPadding="true">-->
-
-
-    <!--            <ImageView-->
-    <!--                android:id="@+id/genre3_image1"-->
-    <!--                android:layout_width="158dp"-->
-    <!--                android:layout_height="117dp"-->
-    <!--                android:layout_marginLeft="0dp"-->
-    <!--                android:layout_marginRight="0dp"-->
-    <!--                android:scaleType="centerCrop"-->
-    <!--                android:src="@mipmap/place01"-->
-    <!--                app:cardCornerRadius="30dp" />-->
-
-
-    <!--            <TextView-->
-    <!--                android:id="@+id/genre3_place1_name"-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:fontFamily="Roboto"-->
-    <!--                android:gravity="left"-->
-    <!--                android:text="@string/居場所1"-->
-    <!--                android:textColor="@color/black"-->
-    <!--                android:textSize="16dp"-->
-    <!--                app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                app:layout_constraintStart_toStartOf="parent"-->
-    <!--                tools:ignore="RtlHardcoded" />-->
-
-
-    <!--        </com.google.android.material.card.MaterialCardView>-->
-
-    <!--        <com.google.android.material.card.MaterialCardView-->
-    <!--            android:layout_width="168dp"-->
-    <!--            android:layout_height="157dp"-->
-    <!--            app:cardElevation="5dp"-->
-    <!--            app:cardUseCompatPadding="true">-->
-
-
-    <!--            <ImageView-->
-    <!--                android:id="@+id/genre3_image2"-->
-    <!--                android:layout_width="158dp"-->
-    <!--                android:layout_height="117dp"-->
-    <!--                android:layout_marginLeft="0dp"-->
-    <!--                android:layout_marginRight="0dp"-->
-    <!--                android:scaleType="centerCrop"-->
-    <!--                android:src="@mipmap/place02"-->
-    <!--                app:cardCornerRadius="30dp" />-->
-
-    <!--            <TextView-->
-    <!--                android:id="@+id/genre3_place2_name"-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:fontFamily="Roboto"-->
-    <!--                android:gravity="left"-->
-    <!--                android:text="@string/居場所2"-->
-    <!--                android:textColor="@color/black"-->
-    <!--                android:textSize="16dp"-->
-    <!--                app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                app:layout_constraintStart_toStartOf="parent"-->
-    <!--                tools:ignore="RtlHardcoded" />-->
-
-    <!--        </com.google.android.material.card.MaterialCardView>-->
-
-
-    <!--        <com.google.android.material.card.MaterialCardView-->
-    <!--            android:layout_width="168dp"-->
-    <!--            android:layout_height="157dp"-->
-    <!--            app:cardElevation="5dp"-->
-    <!--            app:cardUseCompatPadding="true">-->
-
-    <!--            <ImageView-->
-    <!--                android:id="@+id/genre3_image3"-->
-    <!--                android:layout_width="158dp"-->
-    <!--                android:layout_height="117dp"-->
-    <!--                android:layout_marginLeft="0dp"-->
-    <!--                android:layout_marginRight="0dp"-->
-    <!--                android:scaleType="centerCrop"-->
-    <!--                android:src="@mipmap/place03"-->
-    <!--                app:cardCornerRadius="30dp" />-->
-
-
-    <!--            <TextView-->
-    <!--                android:id="@+id/genre3_place3_name"-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:fontFamily="Roboto"-->
-    <!--                android:gravity="left"-->
-    <!--                android:text="@string/居場所3"-->
-    <!--                android:textColor="@color/black"-->
-    <!--                android:textSize="16dp"-->
-    <!--                app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                app:layout_constraintStart_toStartOf="parent"-->
-    <!--                tools:ignore="RtlHardcoded" />-->
-
-
-    <!--        </com.google.android.material.card.MaterialCardView>-->
-
-    <!--        <com.google.android.material.card.MaterialCardView-->
-    <!--            android:layout_width="168dp"-->
-    <!--            android:layout_height="157dp"-->
-    <!--            app:cardElevation="5dp"-->
-    <!--            app:cardUseCompatPadding="true">-->
-
-
-    <!--            <ImageView-->
-    <!--                android:id="@+id/genre3_image4"-->
-    <!--                android:layout_width="158dp"-->
-    <!--                android:layout_height="117dp"-->
-    <!--                android:layout_marginLeft="0dp"-->
-    <!--                android:layout_marginRight="0dp"-->
-    <!--                android:scaleType="centerCrop"-->
-    <!--                android:src="@mipmap/place04"-->
-    <!--                app:cardCornerRadius="30dp" />-->
-
-
-    <!--            <TextView-->
-    <!--                android:id="@+id/genre3_place4_name"-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:fontFamily="Roboto"-->
-    <!--                android:gravity="left"-->
-    <!--                android:text="@string/居場所4"-->
-    <!--                android:textColor="@color/black"-->
-    <!--                android:textSize="16dp"-->
-    <!--                app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                app:layout_constraintStart_toStartOf="parent"-->
-    <!--                tools:ignore="RtlHardcoded" />-->
-    <!--        </com.google.android.material.card.MaterialCardView>-->
-
-    <!--        <Button-->
-    <!--            android:id="@+id/seeMoreGenre3Button"-->
-    <!--            android:layout_width="328dp"-->
-    <!--            android:layout_height="36dp"-->
-    <!--            android:layout_marginStart="16dp"-->
-    <!--            android:background="@drawable/round_button_template"-->
-    <!--            android:fontFamily="@font/roboto"-->
-    <!--            android:text="@string/すべて見る"-->
-    <!--            android:textColor="@color/orange"-->
-    <!--            android:textSize="14dp"-->
-    <!--            app:backgroundTint="@null"-->
-    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--            app:layout_constraintEnd_toEndOf="parent"-->
-    <!--            app:layout_constraintStart_toStartOf="parent"-->
-    <!--            app:layout_constraintTop_toTopOf="parent"-->
-    <!--            tools:ignore="TouchTargetSizeCheck" />-->
 
