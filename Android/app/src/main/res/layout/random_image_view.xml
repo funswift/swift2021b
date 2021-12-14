@@ -43,10 +43,7 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/amimono"
                 app:cardCornerRadius="4dp" />
-            <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-            <!--            android:id="@+id/textLayout"-->
-            <!--            android:layout_width="match_parent"-->
-            <!--            android:layout_height="50dp">-->
+
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline_textview_start"
                 android:layout_width="wrap_content"

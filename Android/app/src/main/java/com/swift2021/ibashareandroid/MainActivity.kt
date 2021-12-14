@@ -90,10 +90,6 @@ class MainActivity : AppCompatActivity() {
 
         val seeTownButton: Button = findViewById(R.id.seeTownButton)
 
-//        // ランダム
-//        val randomTextViewList = listOf<TextView>(textViewMain1, textViewMain2, textViewMain3, textViewMain4)
-//        val randomImageViewList = listOf<ImageView>(imageRandomViewMain1, imageRandomViewMain2, imageRandomViewMain3, imageRandomViewMain4)
-
 //         コンフリクトで消えた箇所↓
 //         image1.setOnClickListener {
 //             val intent = Intent(this, MainActivity2::class.java)
@@ -156,7 +152,6 @@ class MainActivity : AppCompatActivity() {
             listOf(genre1TitleTextView, genre2TitleTextView, genre3TitleTextView)
 
         // Firebaseから居場所名をセット
-//        getPlaceName(randomTextViewList, "編み物")
         getPlaceName(recommendTextViewList, "将棋")
 
         // ジャンル名をFirestoreから
@@ -168,7 +163,6 @@ class MainActivity : AppCompatActivity() {
         getPlaceName(genre3TextViewList, "将棋")
 
         // ボタンのクリックイベント
-//        setButtonEvent(randomImageViewList, randomTextViewList)
         setButtonEvent(recommendImageViewList, recommendTextViewList)
         setButtonEvent(genre1ImageViewList, genre1TextViewList)
         setButtonEvent(genre2ImageViewList, genre2TextViewList)
@@ -205,10 +199,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Tag3Activity::class.java)
             startActivity(intent)
         }
+
         firstView.randomTextView.text = "1つめの居場所"
         secondView.randomTextView.text = "2つ目の居場所"
         thirdView.randomTextView.text = "3つめの居場所"
         fourthView.randomTextView.text = "4つめの居場所"
+
     }
 
     private fun initView() {
