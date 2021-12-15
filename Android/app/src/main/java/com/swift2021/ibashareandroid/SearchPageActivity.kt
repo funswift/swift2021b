@@ -29,7 +29,7 @@ class SearchPageActivity : AppCompatActivity() {
         }
 
         navigation_icon_search.setColorFilter(ContextCompat.getColor(this, R.color.orange), PorterDuff.Mode.SRC_IN)
-        navigation_icon_top.setColorFilter(ContextCompat.getColor(this, R.color.gray), PorterDuff.Mode.SRC_IN)
+        navigation_icon_top.setColorFilter(ContextCompat.getColor(this, R.color.gray_74), PorterDuff.Mode.SRC_IN)
         navigation_icon_search_name.setTextColor(getColor(R.color.orange))
 
     }
