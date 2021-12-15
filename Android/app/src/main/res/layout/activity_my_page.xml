@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyPageActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="マイページ"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_imageview_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_imageview_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <ImageView
+        android:id="@+id/navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="-4dp"
+        android:layout_marginEnd="-4dp"
+        android:layout_marginBottom="-4dp"
+        android:src="@drawable/navi_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/navigation_icon_top_button"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/navigation_icon_search_button"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@id/guideline_imageview_start"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView">
+
+        <ImageView
+            android:id="@+id/navigation_icon_top"
+            android:layout_width="28dp"
+            android:layout_height="19dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_top_page_icon"
+            app:layout_constraintBottom_toTopOf="@id/navigation_icon_top_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/navigation_icon_top_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="Roboto"
+            android:text="回覧板"
+            android:textColor="#747474"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/navigation_icon_top"
+            app:layout_constraintStart_toStartOf="@id/navigation_icon_top"
+            app:layout_constraintTop_toBottomOf="@id/navigation_icon_top" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/navigation_icon_search_button"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/navigation_icon_talk_button"
+        app:layout_constraintStart_toEndOf="@id/navigation_icon_top_button"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView">
+
+        <ImageView
+            android:id="@+id/navigation_icon_search"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="2dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_search_page_icon"
+            app:layout_constraintBottom_toTopOf="@id/navigation_icon_search_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/navigation_icon_search_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="Roboto"
+            android:text="検索"
+            android:textColor="#747474"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/navigation_icon_search" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/navigation_icon_talk_button"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/navigation_icon_my_page_button"
+        app:layout_constraintStart_toEndOf="@id/navigation_icon_search_button"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView">
+
+        <ImageView
+            android:id="@+id/navigation_icon_talk"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="3dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_talk_page_icon"
+            app:layout_constraintBottom_toTopOf="@id/navigation_icon_talk_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/navigation_icon_talk_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="Roboto"
+            android:text="トーク"
+            android:textColor="#747474"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/navigation_icon_talk" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/navigation_icon_my_page_button"
+        android:layout_width="71dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_imageview_end"
+        app:layout_constraintStart_toEndOf="@id/navigation_icon_talk_button"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView">
+
+        <ImageView
+            android:id="@+id/navigation_icon_my_page"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_my_page_icon"
+            app:layout_constraintBottom_toTopOf="@id/navigation_icon_my_page_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/navigation_icon_my_page_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="Roboto"
+            android:text="マイページ"
+            android:textColor="#747474"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/navigation_icon_my_page" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
