@@ -4,6 +4,7 @@ import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -115,6 +116,8 @@ class TopPageFragment : Fragment() {
             override fun run() {
                 handler.postDelayed(this, 10000)
                 if (!isTimeZero) {
+                    handler.post()
+                    // TODO: メインスレッドでUIをいじろう
                     changeCard(flipper)
                 }
                 isTimeZero = false
@@ -130,35 +133,35 @@ class TopPageFragment : Fragment() {
         locationIndex = (locationIndex % 5) + 1
         when (locationIndex) {
             1 -> {
-                point1.background = getDrawable(requireContext(), R.color.black)
-                point5.background = getDrawable(requireContext(), R.color.gray_c4)
+                point1.setImageResource(R.drawable.circle_random_image_on)
+                point5.setImageResource(R.drawable.circle_random_image)
             }
             2 -> {
-                point2.background = getDrawable(requireContext(), R.color.black)
-                point1.background = getDrawable(requireContext(), R.color.gray_c4)
+                point2.setImageResource(R.drawable.circle_random_image_on)
+                point1.setImageResource(R.drawable.circle_random_image)
             }
             3 -> {
-                point3.background = getDrawable(requireContext(), R.color.black)
-                point2.background = getDrawable(requireContext(), R.color.gray_c4)
+                point3.setImageResource(R.drawable.circle_random_image_on)
+                point2.setImageResource(R.drawable.circle_random_image)
             }
             4 -> {
-                point4.background = getDrawable(requireContext(), R.color.black)
-                point3.background = getDrawable(requireContext(), R.color.gray_c4)
+                point4.setImageResource(R.drawable.circle_random_image_on)
+                point3.setImageResource(R.drawable.circle_random_image)
             }
             5 -> {
-                point5.background = getDrawable(requireContext(), R.color.black)
-                point4.background = getDrawable(requireContext(), R.color.gray_c4)
+                point5.setImageResource(R.drawable.circle_random_image_on)
+                point4.setImageResource(R.drawable.circle_random_image)
 
             }
         }
     }
 
     private fun pointColorSet() {
-        point1.background = getDrawable(requireContext(), R.color.black)
-        point2.background = getDrawable(requireContext(), R.color.gray_c4)
-        point3.background = getDrawable(requireContext(), R.color.gray_c4)
-        point4.background = getDrawable(requireContext(), R.color.gray_c4)
-        point5.background = getDrawable(requireContext(), R.color.gray_c4)
+        point1.setImageResource(R.drawable.circle_random_image_on)
+        point2.setImageResource(R.drawable.circle_random_image)
+        point3.setImageResource(R.drawable.circle_random_image)
+        point4.setImageResource(R.drawable.circle_random_image)
+        point5.setImageResource(R.drawable.circle_random_image)
     }
 
     private fun setTextView() {
@@ -385,7 +388,7 @@ class TopPageFragment : Fragment() {
                 }
                 Log.d(TAG, "toSecondButton pressed!")
                 val secondFragment = TestFragment()
-                val fragmentTransaction = fragmentManager?.beginTransaction()
+                val fragmentTransaction = parentFragmentManager.beginTransaction()
                 fragmentTransaction?.addToBackStack(null)
                 fragmentTransaction?.replace(R.id.container, secondFragment)
                 fragmentTransaction?.commit()
