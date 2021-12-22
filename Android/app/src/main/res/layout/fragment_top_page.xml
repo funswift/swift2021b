@@ -132,25 +132,45 @@
                         app:layout_constraintBottom_toTopOf="@+id/random_image_location"
                         app:layout_constraintTop_toTopOf="parent">
 
-                        <include
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/firstView"
-                            layout="@layout/random_image_view" />
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                        <include
+                            <include layout="@layout/random_image_view" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/secondView"
-                            layout="@layout/random_image_view" />
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                        <include
+                            <include layout="@layout/random_image_view" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/thirdView"
-                            layout="@layout/random_image_view" />
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                        <include
+                            <include layout="@layout/random_image_view" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/fourthView"
-                            layout="@layout/random_image_view" />
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                        <include
+                            <include layout="@layout/random_image_view" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/fifthView"
-                            layout="@layout/random_image_view" />
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <include layout="@layout/random_image_view" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
                     </ViewFlipper>
 
                     <androidx.constraintlayout.widget.ConstraintLayout

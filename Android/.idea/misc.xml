@@ -51,7 +51,10 @@
         <entry key="app/src/main/res/layout/activity_town8.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_town9.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_townlist.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_test.xml" value="0.1766304347826087" />
+        <entry key="app/src/main/res/layout/fragment_test_top.xml" value="0.1766304347826087" />
         <entry key="app/src/main/res/layout/fragment_top_page.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/random_image_view.xml" value="0.1766304347826087" />
       </map>
     </option>
   </component>

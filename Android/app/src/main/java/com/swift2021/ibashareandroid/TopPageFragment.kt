@@ -50,6 +50,8 @@ class TopPageFragment : Fragment() {
         "料理"
     )
 
+
+
     // ActivityでのOnCreateの役割
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
@@ -105,25 +107,25 @@ class TopPageFragment : Fragment() {
 
 //         }
 
-
-    }
-
-    private fun timeEvent() {
-        var handler = Handler((Looper.getMainLooper()))
+        val handler = Handler((Looper.getMainLooper()))
         val flipper: ViewFlipper = requireActivity().findViewById(R.id.flipper)
 
         val rnb = object : Runnable {
             override fun run() {
                 handler.postDelayed(this, 10000)
                 if (!isTimeZero) {
-                    handler.post()
-                    // TODO: メインスレッドでUIをいじろう
                     changeCard(flipper)
                 }
                 isTimeZero = false
             }
         }
+
         handler.post(rnb)
+
+    }
+
+    private fun timeEvent() {
+
 
     }
 
