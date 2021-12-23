@@ -1,31 +1,27 @@
 package com.swift2021.ibashareandroid
 
 import android.content.ContentValues.TAG
-import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
-import android.graphics.PorterDuff
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
-import android.view.View
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.ViewFlipper
 import androidx.constraintlayout.utils.widget.ImageFilterButton
 import androidx.core.content.ContextCompat.getColor
-import androidx.core.content.ContextCompat.getDrawable
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.card.MaterialCardView
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_top_page.*
-import kotlinx.android.synthetic.main.fragment_top_page.view.*
 import kotlinx.android.synthetic.main.random_image_view.view.*
-import kotlinx.android.synthetic.main.toppage_genre_layout.*
 import kotlinx.android.synthetic.main.toppage_genre_layout.view.*
 
 
@@ -39,6 +35,7 @@ class TopPageFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_top_page, container, false)
     }
 
+    private lateinit var rnb: Runnable
     private var locationIndex: Int = 1
     private val db = Firebase.firestore
     private var isTimeZero = true
@@ -49,7 +46,23 @@ class TopPageFragment : Fragment() {
         "編み物",
         "料理"
     )
+    private lateinit var handler: Handler
+    private lateinit var flipper: ViewFlipper
 
+//    object : Runnable {
+//        override fun run() {
+//            handler.postDelayed(this, 10000)
+//            if (!isTimeZero) {
+//                changeCard(flipper)
+//            }
+//            isTimeZero = false
+//        }
+//    }
+
+    override fun onStop() {
+        super.onStop()
+        handler.removeCallbacks(rnb)
+    }
 
 
     // ActivityでのOnCreateの役割
@@ -106,11 +119,9 @@ class TopPageFragment : Fragment() {
 //             startActivity(intent)
 
 //         }
-
-        val handler = Handler((Looper.getMainLooper()))
-        val flipper: ViewFlipper = requireActivity().findViewById(R.id.flipper)
-
-        val rnb = object : Runnable {
+        handler = Handler((Looper.getMainLooper()))
+        flipper = this.requireActivity().findViewById(R.id.flipper)
+        rnb = object : Runnable {
             override fun run() {
                 handler.postDelayed(this, 10000)
                 if (!isTimeZero) {
@@ -371,6 +382,7 @@ class TopPageFragment : Fragment() {
         setClickEvent(genre2CardList)
         setClickEvent(genre3CardList)
     }
+
     private fun setClickEvent(cardList: List<MaterialCardView>) {
         for (i in cardList.indices) {
             cardList[i].setOnClickListener {
@@ -389,11 +401,7 @@ class TopPageFragment : Fragment() {
                     }
                 }
                 Log.d(TAG, "toSecondButton pressed!")
-                val secondFragment = TestFragment()
-                val fragmentTransaction = parentFragmentManager.beginTransaction()
-                fragmentTransaction?.addToBackStack(null)
-                fragmentTransaction?.replace(R.id.container, secondFragment)
-                fragmentTransaction?.commit()
+                findNavController().navigate(R.id.action_top_to_place_detail)
             }
 
         }

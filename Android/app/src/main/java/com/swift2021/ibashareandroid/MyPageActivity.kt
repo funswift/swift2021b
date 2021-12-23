@@ -2,10 +2,9 @@ package com.swift2021.ibashareandroid
 
 import android.content.Intent
 import android.graphics.PorterDuff
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_my_page.*
 
 class MyPageActivity : AppCompatActivity() {

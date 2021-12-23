@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.fragment.findNavController
 
 class TestTopFragment : Fragment() {
 
@@ -27,11 +28,7 @@ class TestTopFragment : Fragment() {
         val toSecondButton = view.findViewById<Button>(R.id.to_second_fragment_button)
         toSecondButton.setOnClickListener{
             Log.d(TAG, "toSecondButton pressed!")
-            val secondFragment = TestFragment()
-            val fragmentTransaction = fragmentManager?.beginTransaction()
-            fragmentTransaction?.addToBackStack(null)
-            fragmentTransaction?.replace(R.id.container, secondFragment)
-            fragmentTransaction?.commit()
+//            findNavController().navigate(R.id.action_top_to_place_detail)
         }
     }
 }
