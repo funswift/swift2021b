@@ -36,7 +36,7 @@ class TopPageFragment : Fragment() {
     }
 
 
-    private var locationIndex: Int = 1
+    private var locationIndex: Int = 0
     private val db = Firebase.firestore
     private var isTimeZero = true
     private val fujimon = UserData(
@@ -130,32 +130,58 @@ class TopPageFragment : Fragment() {
     }
 
     private fun changeCard(viewFlipper: ViewFlipper) {
-        viewFlipper.showNext()
-
         locationIndex = (locationIndex % 5) + 1
         when (locationIndex) {
+            0 -> {
+                point1.setImageResource(R.drawable.circle_random_image)
+                point2.setImageResource(R.drawable.circle_random_image)
+                point3.setImageResource(R.drawable.circle_random_image)
+                point4.setImageResource(R.drawable.circle_random_image)
+                point5.setImageResource(R.drawable.circle_random_image)
+            }
             1 -> {
                 point1.setImageResource(R.drawable.circle_random_image_on)
+                point2.setImageResource(R.drawable.circle_random_image)
+                point3.setImageResource(R.drawable.circle_random_image)
+                point4.setImageResource(R.drawable.circle_random_image)
                 point5.setImageResource(R.drawable.circle_random_image)
+                viewFlipper.showNext()
             }
             2 -> {
                 point2.setImageResource(R.drawable.circle_random_image_on)
                 point1.setImageResource(R.drawable.circle_random_image)
+                point3.setImageResource(R.drawable.circle_random_image)
+                point4.setImageResource(R.drawable.circle_random_image)
+                point5.setImageResource(R.drawable.circle_random_image)
+                viewFlipper.showNext()
             }
             3 -> {
                 point3.setImageResource(R.drawable.circle_random_image_on)
+                point1.setImageResource(R.drawable.circle_random_image)
                 point2.setImageResource(R.drawable.circle_random_image)
+                point4.setImageResource(R.drawable.circle_random_image)
+                point5.setImageResource(R.drawable.circle_random_image)
+                viewFlipper.showNext()
             }
             4 -> {
                 point4.setImageResource(R.drawable.circle_random_image_on)
+                point1.setImageResource(R.drawable.circle_random_image)
+                point2.setImageResource(R.drawable.circle_random_image)
                 point3.setImageResource(R.drawable.circle_random_image)
+                point4.setImageResource(R.drawable.circle_random_image)
+                point5.setImageResource(R.drawable.circle_random_image)
+                viewFlipper.showNext()
             }
             5 -> {
                 point5.setImageResource(R.drawable.circle_random_image_on)
+                point1.setImageResource(R.drawable.circle_random_image)
+                point2.setImageResource(R.drawable.circle_random_image)
+                point3.setImageResource(R.drawable.circle_random_image)
                 point4.setImageResource(R.drawable.circle_random_image)
-
+                viewFlipper.showNext()
             }
         }
+
     }
 
     private fun pointColorSet() {
