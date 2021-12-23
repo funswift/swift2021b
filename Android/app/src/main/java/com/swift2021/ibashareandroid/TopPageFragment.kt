@@ -35,7 +35,7 @@ class TopPageFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_top_page, container, false)
     }
 
-    private lateinit var rnb: Runnable
+
     private var locationIndex: Int = 1
     private val db = Firebase.firestore
     private var isTimeZero = true
@@ -46,18 +46,9 @@ class TopPageFragment : Fragment() {
         "編み物",
         "料理"
     )
-    private lateinit var handler: Handler
-    private lateinit var flipper: ViewFlipper
 
-//    object : Runnable {
-//        override fun run() {
-//            handler.postDelayed(this, 10000)
-//            if (!isTimeZero) {
-//                changeCard(flipper)
-//            }
-//            isTimeZero = false
-//        }
-//    }
+    private lateinit var handler: Handler
+    private lateinit var rnb: Runnable
 
     override fun onStop() {
         super.onStop()
@@ -119,8 +110,13 @@ class TopPageFragment : Fragment() {
 //             startActivity(intent)
 
 //         }
+
+
+
+    }
+
+    private fun timeEvent() {
         handler = Handler((Looper.getMainLooper()))
-        flipper = this.requireActivity().findViewById(R.id.flipper)
         rnb = object : Runnable {
             override fun run() {
                 handler.postDelayed(this, 10000)
@@ -130,14 +126,7 @@ class TopPageFragment : Fragment() {
                 isTimeZero = false
             }
         }
-
         handler.post(rnb)
-
-    }
-
-    private fun timeEvent() {
-
-
     }
 
     private fun changeCard(viewFlipper: ViewFlipper) {
