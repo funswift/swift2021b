@@ -36,7 +36,7 @@ class TopPageFragment : Fragment() {
     }
 
 
-    private var locationIndex: Int = 0
+    private var locationIndex: Int = 1
     private val db = Firebase.firestore
     private var isTimeZero = true
     private val fujimon = UserData(
@@ -53,6 +53,7 @@ class TopPageFragment : Fragment() {
     override fun onStop() {
         super.onStop()
         handler.removeCallbacks(rnb)
+        locationIndex = 1
     }
 
 
@@ -168,7 +169,6 @@ class TopPageFragment : Fragment() {
                 point1.setImageResource(R.drawable.circle_random_image)
                 point2.setImageResource(R.drawable.circle_random_image)
                 point3.setImageResource(R.drawable.circle_random_image)
-                point4.setImageResource(R.drawable.circle_random_image)
                 point5.setImageResource(R.drawable.circle_random_image)
                 viewFlipper.showNext()
             }
@@ -181,7 +181,6 @@ class TopPageFragment : Fragment() {
                 viewFlipper.showNext()
             }
         }
-
     }
 
     private fun pointColorSet() {
