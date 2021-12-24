@@ -22,6 +22,36 @@
         <action
             android:id="@+id/action_place_detail_to_top"
             app:popUpTo="@+id/topPageFragment" />
+
+        <action
+            android:id="@+id/action_place_detail_to_all_review"
+            app:destination="@id/allReviewPageFragment" />
+
+        <action
+            android:id="@+id/action_place_detail_to_participant"
+            app:destination="@+id/participantPageFragment" />
+
     </fragment>
+
+    <fragment
+        android:id="@+id/allReviewPageFragment"
+        android:name="com.swift2021.ibashareandroid.AllReviewPageFragment"
+        android:label="all_review_page_fragment"
+        android:layout="@layout/fragment_all_review_page">
+        <action
+            android:id="@+id/action_all_review_to_place_detail"
+            app:popUpTo="@id/placeDetailPageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/participantPageFragment"
+        android:name="com.swift2021.ibashareandroid.ParticipantPageFragment"
+        android:label="participant_page_fragment"
+        android:layout="@layout/fragment_participant_page">
+        <action
+            android:id="@+id/action_participant_to_place_detail"
+            app:popUpTo="@id/placeDetailPageFragment" />
+    </fragment>
+
 
 </navigation>

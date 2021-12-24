@@ -36,9 +36,11 @@ class PlaceDetailPageFragment : Fragment() {
         }
 
         seeMoreKutikomiButton.setOnClickListener {
+            findNavController().navigate(R.id.action_place_detail_to_top)
+        }
+        seeMoreParticipantButton.setOnClickListener {
 
         }
-        seeMoreParticipantButton.setOnClickListener {  }
 
         button_send.setOnClickListener {
             findNavController().navigate(R.id.action_place_detail_to_top)
