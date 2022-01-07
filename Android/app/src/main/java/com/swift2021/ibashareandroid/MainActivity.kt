@@ -201,15 +201,20 @@ class MainActivity : AppCompatActivity() {
                 genre3_layout.genre_image4
             )
 
-        // ジャンルタイトルをFirestoreから
-        getGenreName(genreTitleList)
+        val selectedGenreName =
+            listOf<String>("編み物", "囲碁", "将棋")
 
-        // 居場所名をFirestoreから
+// Firebaseから居場所名をセット
         getPlaceName(randomTextViewList, "編み物")
         getPlaceName(recommendTextViewList, "将棋")
-        getPlaceName(genre1TextViewList, "囲碁")
-        getPlaceName(genre2TextViewList, "編み物")
-        getPlaceName(genre3TextViewList, "将棋")
+
+// ジャンル名をFirestoreから
+        getGenreName(genreTitleList, selectedGenreName)
+
+// 居場所名をFirestoreから
+        getPlaceName(genre1TextViewList, selectedGenreName[0])
+        getPlaceName(genre2TextViewList, selectedGenreName[1])
+        getPlaceName(genre3TextViewList, selectedGenreName[2])
 
         // ボタンのクリックイベント
         setButtonEvent(randomImageViewList, randomTextViewList)
@@ -391,7 +396,7 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-    private fun getGenreName(genreTitleTextViewList: List<TextView>) {
+    private fun getGenreName_firebase(genreTitleTextViewList: List<TextView>) {
 
         db.collection("users").get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
@@ -410,6 +415,12 @@ class MainActivity : AppCompatActivity() {
                 Log.d(TAG, "No such document")
             }
         }
+    }
+
+    private fun getGenreName(genreTitleTextViewList: List<TextView>,selectedGenreName: List<String>) {
+        genreTitleTextViewList[0].text = selectedGenreName[0]
+        genreTitleTextViewList[1].text = selectedGenreName[1]
+        genreTitleTextViewList[2].text = selectedGenreName[2]
     }
 
     fun onBackButton(view: View?) {
