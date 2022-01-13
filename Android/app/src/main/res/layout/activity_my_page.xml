@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MyPageActivity">
-    <TextView
+
+    <ListView
+        android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="マイページ"/>
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_imageview_start"
