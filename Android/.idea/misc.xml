@@ -3,28 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.25092592592592594" />
-        <entry key="app/src/main/res/drawable/back_button.xml" value="0.24351851851851852" />
-        <entry key="app/src/main/res/drawable/button.xml" value="0.321025641025641" />
-        <entry key="app/src/main/res/drawable/button_template.xml" value="0.2782222222222222" />
         <entry key="app/src/main/res/drawable/cancel_button.xml" value="0.3260416666666667" />
-        <entry key="app/src/main/res/drawable/circle_random_image.xml" value="0.12162162162162163" />
-        <entry key="app/src/main/res/drawable/circle_random_image_on.xml" value="0.12162162162162163" />
-        <entry key="app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.25092592592592594" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3260416666666667" />
-        <entry key="app/src/main/res/drawable/ic_talk_page_icon.xml" value="0.12162162162162163" />
-        <entry key="app/src/main/res/drawable/icon.xml" value="0.11261261261261261" />
         <entry key="app/src/main/res/drawable/round_button.xml" value="0.335" />
-        <entry key="app/src/main/res/drawable/round_button_template.xml" value="0.2782222222222222" />
         <entry key="app/src/main/res/drawable/shape_rouded_corners_10dp.xml" value="0.2175925925925926" />
-        <entry key="app/src/main/res/drawable/shape_rouded_corners_5dp.xml" value="0.321025641025641" />
-        <entry key="app/src/main/res/layout/activity_all_review_page.xml" value="0.1927927927927928" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.2717391304347826" />
+        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main3.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_participant.xml" value="0.268018018018018" />
         <entry key="app/src/main/res/layout/activity_recommend.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_search_page.xml" value="0.10765765765765765" />
         <entry key="app/src/main/res/layout/activity_second.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_see.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_see_more.xml" value="0.625" />
@@ -51,13 +37,10 @@
         <entry key="app/src/main/res/layout/activity_town8.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_town9.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_townlist.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/fragment_all_review_page.xml" value="0.18432971014492755" />
-        <entry key="app/src/main/res/layout/fragment_participant_page.xml" value="0.18432971014492755" />
-        <entry key="app/src/main/res/layout/fragment_place_detail_page.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_test.xml" value="0.1766304347826087" />
-        <entry key="app/src/main/res/layout/fragment_test_top.xml" value="0.1766304347826087" />
-        <entry key="app/src/main/res/layout/fragment_top_page.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/random_image_view.xml" value="0.1766304347826087" />
+        <entry key="app/src/main/res/layout/fragment_place_detail_page.xml" value="0.10765765765765765" />
+        <entry key="app/src/main/res/layout/fragment_top_page.xml" value="0.17980072463768115" />
+        <entry key="app/src/main/res/layout/random_image_view.xml" value="0.2033514492753623" />
+        <entry key="app/src/main/res/layout/toppage_genre_layout.xml" value="0.2033514492753623" />
       </map>
     </option>
   </component>

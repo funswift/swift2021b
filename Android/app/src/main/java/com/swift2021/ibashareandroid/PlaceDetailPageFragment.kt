@@ -1,7 +1,10 @@
 package com.swift2021.ibashareandroid
 
+import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,11 +12,19 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.NavArgs
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_see_more_tag1.*
 import kotlinx.android.synthetic.main.fragment_place_detail_page.*
 
 class PlaceDetailPageFragment : Fragment() {
+
+    private val args: PlaceDetailPageFragmentArgs by navArgs()
+
+    private val db = Firebase.firestore
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,9 +57,29 @@ class PlaceDetailPageFragment : Fragment() {
             findNavController().navigate(R.id.action_place_detail_to_top)
         }
 
+        setPlaceName(args.placeName)
 
 
     }
 
+    private fun setPlaceName(placeKey: String) {
+        db.collection("place")
+            .document(placeKey)
+            .get()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val document = task.result
+                    if (document != null && document.data != null) {
+                        Log.d(TAG, "getData")
+                        placeName.text = document.data?.get("title").toString()
+                    } else {
+                        Log.d(TAG, "No such document")
+                    }
+                } else {
+                    Log.d(TAG, "get failed with " + task.exception)
+                }
+            }
+            .addOnFailureListener { e -> Log.d(TAG, "Error adding document$e") }
+    }
 
 }

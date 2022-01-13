@@ -10,7 +10,7 @@
         android:label="fragment_top"
         tools:layout="@layout/fragment_top_page">
         <action
-            android:id="@+id/action_top_to_place_detail"
+            android:id="@+id/actionTopToPlaceDetail"
             app:destination="@id/placeDetailPageFragment" />
     </fragment>
 
@@ -30,6 +30,10 @@
         <action
             android:id="@+id/action_place_detail_to_participant"
             app:destination="@+id/participantPageFragment" />
+
+        <argument
+            android:name="place_name"
+            app:argType="string" />
 
     </fragment>
 

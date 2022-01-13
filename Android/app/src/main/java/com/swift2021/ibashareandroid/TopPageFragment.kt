@@ -22,6 +22,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_top_page.*
 import kotlinx.android.synthetic.main.random_image_view.view.*
+import kotlinx.android.synthetic.main.toppage_genre_layout.*
 import kotlinx.android.synthetic.main.toppage_genre_layout.view.*
 
 
@@ -35,6 +36,7 @@ class TopPageFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_top_page, container, false)
     }
 
+    val bundle = Bundle()
 
     private var locationIndex: Int = 1
     private val db = Firebase.firestore
@@ -240,14 +242,14 @@ class TopPageFragment : Fragment() {
         )
 
         // ジャンルタイトルをFirestoreから
-        getGenreName(genreTitleList)
+        setGenreName(genreTitleList)
 
         // 居場所名をFirestoreから
-        getPlaceName(randomTextViewList, "編み物")
-        getPlaceName(recommendTextViewList, "将棋")
-        getPlaceName(genre1TextViewList, "囲碁")
-        getPlaceName(genre2TextViewList, "編み物")
-        getPlaceName(genre3TextViewList, "将棋")
+        setPlaceName(randomTextViewList, "編み物")
+        setPlaceName(recommendTextViewList, "将棋")
+        setPlaceName(genre1TextViewList, "囲碁")
+        setPlaceName(genre2TextViewList, "編み物")
+        setPlaceName(genre3TextViewList, "将棋")
     }
 
     private fun setImageView() {
@@ -315,7 +317,7 @@ class TopPageFragment : Fragment() {
         setImage(genre3ImageViewList, genre3ImagePath)
     }
 
-    private fun getPlaceName(placeViewList: List<TextView>, genreName: String) {
+    private fun setPlaceName(placeViewList: List<TextView>, genreName: String) {
         db.collection("place").whereEqualTo("genre", genreName).limit(4)
             .get()
             .addOnCompleteListener { task ->
@@ -325,6 +327,8 @@ class TopPageFragment : Fragment() {
                         val placeList = document.toObjects(PlaceData::class.java)
                         Log.d(TAG, "getDataAll")
                         Log.d(TAG, "placeList.size " + placeList.size)
+                        var placeKey: List<String> = listOf()
+
                         for (i in 0 until placeList.size) {
                             placeViewList[i].text = placeList[i].title
                         }
@@ -335,7 +339,7 @@ class TopPageFragment : Fragment() {
             }
     }
 
-    private fun getGenreName(genreTitleTextViewList: List<TextView>) {
+    private fun setGenreName(genreTitleTextViewList: List<TextView>) {
 
         db.collection("users").get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
@@ -390,14 +394,38 @@ class TopPageFragment : Fragment() {
             genre3_layout.genre_place3_card,
             genre3_layout.genre_place4_card
         )
-        setClickEvent(randomCardList)
-        setClickEvent(recommendCardList)
-        setClickEvent(genre1CardList)
-        setClickEvent(genre2CardList)
-        setClickEvent(genre3CardList)
+        setClickEvent(randomCardList, "編み物")
+        setClickEvent(recommendCardList, "将棋")
+        setClickEvent(genre1CardList, "囲碁")
+        setClickEvent(genre2CardList, "編み物")
+        setClickEvent(genre3CardList, "将棋")
     }
 
-    private fun setClickEvent(cardList: List<MaterialCardView>) {
+    private fun getPlaceKey(genreName: String):List<String>{
+        var placeKey: MutableList<String> = mutableListOf()
+        db.collection("place").whereEqualTo("genre", genreName).limit(4)
+            .get()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val document = task.result
+                    if (document?.toObjects(PlaceData::class.java) != null) {
+                        val placeList = document.toObjects(PlaceData::class.java)
+                        for (i in 0 until placeList.size) {
+                            placeKey.add(placeList[i].id)
+                            Log.d(TAG, "placekey:$placeKey")
+                            Log.d(TAG, "placekeyname:" + placeList[i].title)
+                        }
+                    }
+                } else {
+                    Log.d(TAG, "No such document")
+                }
+            }
+        return placeKey
+    }
+
+    private fun setClickEvent(cardList: List<MaterialCardView>, genreTitle:String) {
+        var placeKeyList = getPlaceKey(genreTitle)
+        Log.d(TAG, "placeKeyList:$placeKeyList")
         for (i in cardList.indices) {
             cardList[i].setOnClickListener {
                 when (i) {
@@ -415,7 +443,8 @@ class TopPageFragment : Fragment() {
                     }
                 }
                 Log.d(TAG, "toSecondButton pressed!")
-                findNavController().navigate(R.id.action_top_to_place_detail)
+                val action = TopPageFragmentDirections.actionTopToPlaceDetail("")
+                findNavController().navigate(action)
             }
 
         }
