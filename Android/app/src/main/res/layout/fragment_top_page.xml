@@ -137,7 +137,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <include layout="@layout/random_image_view" />
+                            <include
+                                android:id="@+id/random_image_include1"
+                                layout="@layout/random_image_view" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
@@ -145,7 +147,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <include layout="@layout/random_image_view" />
+                            <include
+                                android:id="@+id/random_image_include2"
+                                layout="@layout/random_image_view" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
@@ -153,7 +157,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <include layout="@layout/random_image_view" />
+                            <include
+                                android:id="@+id/random_image_include3"
+                                layout="@layout/random_image_view" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
@@ -161,7 +167,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <include layout="@layout/random_image_view" />
+                            <include
+                                android:id="@+id/random_image_include4"
+                                layout="@layout/random_image_view" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
@@ -169,7 +177,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <include layout="@layout/random_image_view" />
+                            <include
+                                android:id="@+id/random_image_include5"
+                                layout="@layout/random_image_view" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </ViewFlipper>
 

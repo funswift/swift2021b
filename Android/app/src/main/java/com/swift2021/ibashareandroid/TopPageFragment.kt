@@ -17,13 +17,19 @@ import androidx.constraintlayout.utils.widget.ImageFilterButton
 import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.gms.tasks.Task
 import com.google.android.material.card.MaterialCardView
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_top_page.*
+import kotlinx.android.synthetic.main.fragment_top_page.view.*
 import kotlinx.android.synthetic.main.random_image_view.view.*
 import kotlinx.android.synthetic.main.toppage_genre_layout.*
 import kotlinx.android.synthetic.main.toppage_genre_layout.view.*
+import kotlin.coroutines.cancellation.CancellationException
+import kotlin.coroutines.resume
+import kotlin.coroutines.resumeWithException
+import kotlin.coroutines.suspendCoroutine
 
 
 class TopPageFragment : Fragment() {
@@ -113,7 +119,6 @@ class TopPageFragment : Fragment() {
 //             startActivity(intent)
 
 //         }
-
 
 
     }
@@ -327,7 +332,6 @@ class TopPageFragment : Fragment() {
                         val placeList = document.toObjects(PlaceData::class.java)
                         Log.d(TAG, "getDataAll")
                         Log.d(TAG, "placeList.size " + placeList.size)
-                        var placeKey: List<String> = listOf()
 
                         for (i in 0 until placeList.size) {
                             placeViewList[i].text = placeList[i].title
@@ -369,12 +373,12 @@ class TopPageFragment : Fragment() {
             recommend_layout.genre_place3_card,
             recommend_layout.genre_place4_card
         )
-        val randomCardList = listOf<MaterialCardView>(
-            firstView.randomImageCard,
-            secondView.randomImageCard,
-            thirdView.randomImageCard,
-            fourthView.randomImageCard,
-            fifthView.randomImageCard
+        val randomCardList = listOf<ImageFilterButton>(
+            random_image_include1.randomImageCard.randomImageButton,
+            random_image_include2.randomImageCard.randomImageButton,
+            random_image_include3.randomImageCard.randomImageButton,
+            random_image_include4.randomImageCard.randomImageButton
+//            random_image_include5.randomImageCard.randomImageButton
         )
         val genre1CardList = listOf<MaterialCardView>(
             genre1_layout.genre_place1_card,
@@ -394,15 +398,16 @@ class TopPageFragment : Fragment() {
             genre3_layout.genre_place3_card,
             genre3_layout.genre_place4_card
         )
-        setClickEvent(randomCardList, "編み物")
+        setClickEventRandom(randomCardList, "編み物")
         setClickEvent(recommendCardList, "将棋")
         setClickEvent(genre1CardList, "囲碁")
         setClickEvent(genre2CardList, "編み物")
         setClickEvent(genre3CardList, "将棋")
     }
 
-    private fun getPlaceKey(genreName: String):List<String>{
-        var placeKey: MutableList<String> = mutableListOf()
+    // ジャンル内の4つの居場所idを取る
+    private fun getPlaceId(genreName: String, listener: (list_for_listener: MutableList<String>) -> Unit) {
+        var placeIdList: MutableList<String> = mutableListOf()
         db.collection("place").whereEqualTo("genre", genreName).limit(4)
             .get()
             .addOnCompleteListener { task ->
@@ -411,42 +416,73 @@ class TopPageFragment : Fragment() {
                     if (document?.toObjects(PlaceData::class.java) != null) {
                         val placeList = document.toObjects(PlaceData::class.java)
                         for (i in 0 until placeList.size) {
-                            placeKey.add(placeList[i].id)
-                            Log.d(TAG, "placekey:$placeKey")
-                            Log.d(TAG, "placekeyname:" + placeList[i].title)
+                            placeIdList.add(placeList[i].id)
                         }
                     }
                 } else {
                     Log.d(TAG, "No such document")
                 }
+            }.addOnSuccessListener {
+                listener(placeIdList)
             }
-        return placeKey
     }
 
-    private fun setClickEvent(cardList: List<MaterialCardView>, genreTitle:String) {
-        var placeKeyList = getPlaceKey(genreTitle)
-        Log.d(TAG, "placeKeyList:$placeKeyList")
-        for (i in cardList.indices) {
-            cardList[i].setOnClickListener {
-                when (i) {
-                    0 -> {
-                        fujimon.tapAmimono()
+    // randomImage以外
+    private fun setClickEvent(cardList: List<MaterialCardView>, genreTitle: String) {
+        // placeIdListに値が入るまで処理が止まるはず
+        getPlaceId(genreTitle) { placeIdList ->
+            // Log.d(TAG, "placeIdList:$placeIdList")
+            for (i in cardList.indices) {
+                cardList[i].setOnClickListener {
+                    when (i) {
+                        0 -> {
+                            fujimon.tapAmimono()
+                        }
+                        1 -> {
+                            fujimon.tapIgo()
+                        }
+                        2 -> {
+                            fujimon.tapShogi()
+                        }
+                        3 -> {
+                            fujimon.tapIgo()
+                        }
                     }
-                    1 -> {
-                        fujimon.tapIgo()
-                    }
-                    2 -> {
-                        fujimon.tapShogi()
-                    }
-                    3 -> {
-                        fujimon.tapIgo()
-                    }
+                    Log.d(TAG, "toSecondButton pressed!")
+                    val action = TopPageFragmentDirections.actionTopToPlaceDetail(placeIdList[i])
+                    findNavController().navigate(action)
                 }
-                Log.d(TAG, "toSecondButton pressed!")
-                val action = TopPageFragmentDirections.actionTopToPlaceDetail("")
-                findNavController().navigate(action)
             }
-
         }
     }
+
+    // randomImageの場合、上の関数でクリックできなかった為
+    private fun setClickEventRandom(cardList: List<ImageFilterButton>, genreTitle: String) {
+        // placeIdListに値が入るまで処理が止まるはず
+        getPlaceId(genreTitle) { placeIdList ->
+            // Log.d(TAG, "placeIdList:$placeIdList")
+            for (i in cardList.indices) {
+                cardList[i].setOnClickListener {
+                    when (i) {
+                        0 -> {
+                            fujimon.tapAmimono()
+                        }
+                        1 -> {
+                            fujimon.tapIgo()
+                        }
+                        2 -> {
+                            fujimon.tapShogi()
+                        }
+                        3 -> {
+                            fujimon.tapIgo()
+                        }
+                    }
+                    Log.d(TAG, "toSecondButton pressed!")
+                    val action = TopPageFragmentDirections.actionTopToPlaceDetail(placeIdList[i])
+                    findNavController().navigate(action)
+                }
+            }
+        }
+    }
+
 }

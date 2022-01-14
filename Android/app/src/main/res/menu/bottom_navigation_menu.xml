@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@+id/navi_top"
+            android:icon="@drawable/ic_top_page_icon"
+            android:title="回覧板"/>
+        <item
+            android:id="@+id/navi_search"
+            android:icon="@drawable/ic_search_page_icon"
+            android:title="検索"/>
+        <item
+            android:id="@+id/navi_talk"
+            android:icon="@drawable/ic_talk_page_icon"
+            android:title="トーク"/>
+        <item
+            android:id="@+id/navi_my_page"
+            android:icon="@drawable/ic_my_page_icon"
+            android:title="マイページ"/>
+</menu>

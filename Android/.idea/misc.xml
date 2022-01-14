@@ -37,10 +37,12 @@
         <entry key="app/src/main/res/layout/activity_town8.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_town9.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_townlist.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/bottom_navigation_menu.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_place_detail_page.xml" value="0.10765765765765765" />
         <entry key="app/src/main/res/layout/fragment_top_page.xml" value="0.17980072463768115" />
         <entry key="app/src/main/res/layout/random_image_view.xml" value="0.2033514492753623" />
         <entry key="app/src/main/res/layout/toppage_genre_layout.xml" value="0.2033514492753623" />
+        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2463963963963964" />
       </map>
     </option>
   </component>
