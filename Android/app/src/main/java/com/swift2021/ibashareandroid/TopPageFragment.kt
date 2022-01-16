@@ -199,8 +199,6 @@ class TopPageFragment : Fragment() {
     }
 
     private fun setTextView() {
-        // 町名オレンジ
-        navigation_icon_top_name.setTextColor(getColor(requireContext(), R.color.orange))
 
         // 各ジャンルTitleのTextView
         val genre1TitleTextView = genre1_layout.GenreTitleName
