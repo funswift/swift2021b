@@ -15,10 +15,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.ViewFlipper
 import androidx.constraintlayout.utils.widget.ImageFilterButton
-import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.google.android.gms.tasks.Task
 import com.google.android.material.card.MaterialCardView
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -27,10 +25,6 @@ import kotlinx.android.synthetic.main.fragment_top_page.view.*
 import kotlinx.android.synthetic.main.random_image_view.view.*
 import kotlinx.android.synthetic.main.toppage_genre_layout.*
 import kotlinx.android.synthetic.main.toppage_genre_layout.view.*
-import kotlin.coroutines.cancellation.CancellationException
-import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
-import kotlin.coroutines.suspendCoroutine
 
 
 class TopPageFragment : Fragment() {
@@ -245,15 +239,20 @@ class TopPageFragment : Fragment() {
             genre3_layout.genre_place4
         )
 
-        // ジャンルタイトルをFirestoreから
-        setGenreName(genreTitleList)
+        val selectedGenreName =
+            listOf<String>("囲碁", "編み物", "将棋")
 
-        // 居場所名をFirestoreから
+        // Firebaseから居場所名をセット
         setPlaceName(randomTextViewList, "編み物")
         setPlaceName(recommendTextViewList, "将棋")
-        setPlaceName(genre1TextViewList, "囲碁")
-        setPlaceName(genre2TextViewList, "編み物")
-        setPlaceName(genre3TextViewList, "将棋")
+
+        // ジャンル名をFirestoreから
+        setGenreName(genreTitleList, selectedGenreName)
+
+        // 居場所名をFirestoreから
+        setPlaceName(genre1TextViewList, selectedGenreName[0])
+        setPlaceName(genre2TextViewList, selectedGenreName[1])
+        setPlaceName(genre3TextViewList, selectedGenreName[2])
     }
 
     private fun setImageView() {
@@ -342,7 +341,7 @@ class TopPageFragment : Fragment() {
             }
     }
 
-    private fun setGenreName(genreTitleTextViewList: List<TextView>) {
+    private fun setGenreName_firebase(genreTitleTextViewList: List<TextView>) {
 
         db.collection("users").get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
@@ -357,6 +356,15 @@ class TopPageFragment : Fragment() {
                 Log.d(TAG, "No such document")
             }
         }
+    }
+
+    private fun setGenreName(
+        genreTitleTextViewList: List<TextView>,
+        selectedGenreName: List<String>
+    ) {
+        genreTitleTextViewList[0].text = selectedGenreName[0]
+        genreTitleTextViewList[1].text = selectedGenreName[1]
+        genreTitleTextViewList[2].text = selectedGenreName[2]
     }
 
     private fun setImage(ImageViewList: List<ImageView>, ImagePath: List<Int>) {
