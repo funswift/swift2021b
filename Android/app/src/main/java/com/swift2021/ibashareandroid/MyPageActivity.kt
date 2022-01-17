@@ -37,6 +37,7 @@ class MyPageActivity : AppCompatActivity() {
 
         val myGenreList = mutableListOf("将棋","囲碁","編み物","料理")
 
+
         val listView = findViewById<ListView>(R.id.list_view)
 
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myGenreList)

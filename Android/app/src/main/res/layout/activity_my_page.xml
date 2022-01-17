@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         />
     <CheckBox
-        android:id="@+id/check_box1"
+        android:id="@+id/check_box_shogi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:focusable="false"
@@ -23,38 +23,38 @@
         android:layout_marginEnd="5dp"
         />
     <CheckBox
-        android:id="@+id/check_box2"
+        android:id="@+id/check_box_igo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:layout_gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/check_box1"
+        app:layout_constraintTop_toTopOf="@id/check_box_shogi"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="5dp"
         />
     <CheckBox
-        android:id="@+id/check_box3"
+        android:id="@+id/check_box_amimono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:layout_gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/check_box2"
+        app:layout_constraintTop_toTopOf="@id/check_box_igo"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="5dp"
         />
     <CheckBox
-        android:id="@+id/check_box4"
+        android:id="@+id/check_box_cook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:layout_gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/check_box3"
+        app:layout_constraintTop_toTopOf="@id/check_box_amimono"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="5dp"
         />
