@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
         <item
-            android:id="@+id/navi_top"
+            android:id="@+id/topPageFragment"
             android:icon="@drawable/ic_top_page_icon"
             android:title=" "/>
         <item
-            android:id="@+id/navi_search"
+            android:id="@+id/searchPageFragment"
             android:icon="@drawable/ic_search_page_icon"
             android:title=" "/>
         <item
-            android:id="@+id/navi_talk"
+            android:id="@+id/talkPageFragment"
             android:icon="@drawable/ic_talk_page_icon"
             android:title=" "/>
         <item
-            android:id="@+id/navi_my_page"
+            android:id="@+id/myPageFragment"
             android:icon="@drawable/ic_my_page_icon"
             android:title=" "/>
 </menu>

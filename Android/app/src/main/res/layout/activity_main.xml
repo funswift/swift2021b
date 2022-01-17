@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
@@ -28,7 +28,8 @@
         app:menu="@menu/bottom_navigation_menu"
         app:itemIconTint="@color/bottom_navigation_color"
         app:elevation="16dp"
-        app:itemIconSize="48dp"
+        app:barrierMargin="100dp"
+        app:itemIconSize="55dp"
         app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
         app:itemTextAppearanceInactive="@style/BottomNavigationView"
         app:itemTextColor="@color/bottom_navigation_color"

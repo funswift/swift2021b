@@ -12,6 +12,15 @@
         <action
             android:id="@+id/actionTopToPlaceDetail"
             app:destination="@id/placeDetailPageFragment" />
+        <action
+            android:id="@+id/action_top_to_search"
+            app:popUpTo="@id/searchPageFragment" />
+        <action
+            android:id="@+id/action_top_to_talk"
+            app:popUpTo="@id/talkPageFragment" />
+        <action
+            android:id="@+id/action_my_page_to_top"
+            app:popUpTo="@id/myPageFragment" />
     </fragment>
 
     <fragment
@@ -55,6 +64,45 @@
         <action
             android:id="@+id/action_participant_to_place_detail"
             app:popUpTo="@id/placeDetailPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchPageFragment"
+        android:name="com.swift2021.ibashareandroid.SearchPageFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search_page">
+        <action
+            android:id="@+id/action_search_to_top"
+            app:popUpTo="@id/topPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/talkPageFragment"
+        android:name="com.swift2021.ibashareandroid.TalkPageFragment"
+        android:label="fragment_talk"
+        tools:layout="@layout/fragment_talk_page">
+        <action
+            android:id="@+id/action_talk_to_top"
+            app:popUpTo="@id/topPageFragment" />
+        <action
+            android:id="@+id/action_talk_to_search"
+            app:popUpTo="@id/searchPageFragment" />
+        <action
+            android:id="@+id/action_talk_to_my_page"
+            app:popUpTo="@id/myPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPageFragment"
+        android:name="com.swift2021.ibashareandroid.MyPageFragment"
+        android:label="fragment_my_page"
+        tools:layout="@layout/fragment_my_page">
+        <action
+            android:id="@+id/action_my_page_to_top"
+            app:popUpTo="@id/topPageFragment" />
+        <action
+            android:id="@+id/action_top_to_search"
+            app:popUpTo="@id/searchPageFragment" />
+        <action
+            android:id="@+id/action_my_page_to_talk"
+            app:popUpTo="@id/talkPageFragment" />
     </fragment>
 
 
