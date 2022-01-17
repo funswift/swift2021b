@@ -4,50 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ParticipantActivity">
+    tools:context=".AllReviewPageFragment">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
 
         <Button
-            android:id="@+id/button_send"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:drawableTop="@drawable/back_button"
+            android:id="@+id/button_back"
             style="?android:attr/borderlessButtonStyle"
-            android:onClick="onBackPageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-10dp"
+            android:drawableTop="@drawable/back_button"
+            android:drawablePadding="0dp"
             android:text="戻る"
-            android:textSize="12dp"
             android:textColor="@color/black"
-            android:drawablePadding="0dp" />
+            android:textSize="12dp" />
+
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:ignore="MissingConstraints"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="20dp"
-            android:layout_marginTop="30dp">
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/usericon"
                 android:layout_marginLeft="10dp"
-                />
+                app:srcCompat="@drawable/usericon" />
 
             <TextView
-                android:id="@+id/participantName1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="12dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:fontFamily="Roboto"
-                android:text="美原町の塚田洋二"
+                android:text="孫を連れて日曜日行きました。周りの雰囲気も良くまた来たいです。"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/usericon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="Roboto"
+                android:text="10年間通っていますが、飽きません。ただ前より人が少ないのでもう少し活気が欲しいです。"
                 android:textColor="@color/black"
                 android:textSize="16dp" />
 
@@ -56,25 +77,22 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:ignore="MissingConstraints"
-            android:layout_marginBottom="20dp" >
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/usericon"
                 android:layout_marginLeft="10dp"
-                />
+                app:srcCompat="@drawable/usericon" />
 
             <TextView
-                android:id="@+id/participantName2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="12dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:fontFamily="Roboto"
-                android:text="富岡町3丁目の竹内健斗"
+                android:text="コロナ禍になり暇だったので、いばしぇあで見つけて来てみました。非常に楽しく今後も行きたいと思える場所でした。"
                 android:textColor="@color/black"
                 android:textSize="16dp" />
 
@@ -83,25 +101,22 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:ignore="MissingConstraints"
-            android:layout_marginBottom="20dp" >
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/usericon"
                 android:layout_marginLeft="10dp"
-                />
+                app:srcCompat="@drawable/usericon" />
 
             <TextView
-                android:id="@+id/participantName3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="12dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:fontFamily="Roboto"
-                android:text="鍛冶町の石田涼"
+                android:text="よく将棋は男性がやっているイメージですが、ここでは女性の方もちらほら見えます。また、初心者も多く見えるので、新規の方も入りやすいと思います。"
                 android:textColor="@color/black"
                 android:textSize="16dp" />
 
@@ -110,56 +125,29 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:ignore="MissingConstraints"
-            android:layout_marginBottom="20dp" >
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/usericon"
                 android:layout_marginLeft="10dp"
-                />
+                app:srcCompat="@drawable/usericon" />
 
             <TextView
-                android:id="@+id/participantName4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="12dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:fontFamily="Roboto"
-                android:text="弥生町の今井太郎"
+                android:text="これまでさまざまな場所に出向いて来ましたが、ここが一番良かったです。リピ確定です。"
                 android:textColor="@color/black"
                 android:textSize="16dp" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:ignore="MissingConstraints"
-            android:layout_marginBottom="20dp" >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/usericon"
-                android:layout_marginLeft="10dp"
-                />
-
-            <TextView
-                android:id="@+id/participantName5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="12dp"
-                android:fontFamily="Roboto"
-                android:text="鍛冶町の小林洋子"
-                android:textColor="@color/black"
-                android:textSize="16dp" />
 
         </LinearLayout>
+
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
