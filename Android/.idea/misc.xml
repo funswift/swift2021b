@@ -45,9 +45,13 @@
         <entry key="app/src/main/res/layout/activity_town9.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_townlist.xml" value="0.335" />
         <entry key="app/src/main/res/layout/bottom_navigation_menu.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_all_review_page.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_my_page.xml" value="0.11756756756756757" />
         <entry key="app/src/main/res/layout/fragment_place_detail_page.xml" value="0.10765765765765765" />
         <entry key="app/src/main/res/layout/fragment_search_page.xml" value="0.13063063063063063" />
+        <entry key="app/src/main/res/layout/fragment_see_more_page.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_select_town.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_select_town_page.xml" value="0.13063063063063063" />
         <entry key="app/src/main/res/layout/fragment_talk_page.xml" value="0.13063063063063063" />
         <entry key="app/src/main/res/layout/fragment_top_page.xml" value="0.17980072463768115" />
         <entry key="app/src/main/res/layout/random_image_view.xml" value="0.2033514492753623" />

@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.ViewFlipper
@@ -401,10 +402,17 @@ class TopPageFragment : Fragment() {
         setClickEvent(genre1CardList, "囲碁")
         setClickEvent(genre2CardList, "編み物")
         setClickEvent(genre3CardList, "将棋")
+
+
+        setClickEventSeeMore()
+        setClickEventSeeTown()
     }
 
     // ジャンル内の4つの居場所idを取る
-    private fun getPlaceId(genreName: String, listener: (list_for_listener: MutableList<String>) -> Unit) {
+    private fun getPlaceId(
+        genreName: String,
+        listener: (list_for_listener: MutableList<String>) -> Unit
+    ) {
         var placeIdList: MutableList<String> = mutableListOf()
         db.collection("place").whereEqualTo("genre", genreName).limit(4)
             .get()
@@ -480,6 +488,26 @@ class TopPageFragment : Fragment() {
                     findNavController().navigate(action)
                 }
             }
+        }
+    }
+
+    private fun setClickEventSeeMore() {
+        val seeMoreList = listOf<Button>(
+            recommend_layout.seeMoreGenreButton,
+            genre1_layout.seeMoreGenreButton,
+            genre2_layout.seeMoreGenreButton,
+            genre3_layout.seeMoreGenreButton
+        )
+        for (i in seeMoreList.indices) {
+            seeMoreList[i].setOnClickListener {
+                findNavController().navigate(R.id.action_top_to_see_more)
+            }
+        }
+    }
+
+    private fun setClickEventSeeTown() {
+        seeTownButton.setOnClickListener {
+            findNavController().navigate(R.id.action_top_to_select)
         }
     }
 

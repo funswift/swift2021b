@@ -10,17 +10,27 @@
         android:label="fragment_top"
         tools:layout="@layout/fragment_top_page">
         <action
-            android:id="@+id/actionTopToPlaceDetail"
-            app:destination="@id/placeDetailPageFragment" />
+            android:id="@+id/action_top_to_place_detail"
+            app:destination="@id/placeDetailPageFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
-            android:id="@+id/action_top_to_search"
-            app:popUpTo="@id/searchPageFragment" />
+            android:id="@+id/action_top_to_see_more"
+            app:destination="@id/seeMorePageFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
-            android:id="@+id/action_top_to_talk"
-            app:popUpTo="@id/talkPageFragment" />
-        <action
-            android:id="@+id/action_my_page_to_top"
-            app:popUpTo="@id/myPageFragment" />
+            android:id="@+id/action_top_to_select"
+            app:destination="@id/selectTownPageFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
     </fragment>
 
     <fragment
@@ -30,20 +40,60 @@
         tools:layout="@layout/fragment_place_detail_page">
         <action
             android:id="@+id/action_place_detail_to_top"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@+id/topPageFragment" />
 
         <action
             android:id="@+id/action_place_detail_to_all_review"
-            app:destination="@id/allReviewPageFragment" />
+            app:destination="@id/allReviewPageFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
 
         <action
             android:id="@+id/action_place_detail_to_participant"
-            app:destination="@+id/participantPageFragment" />
+            app:destination="@+id/participantPageFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
 
         <argument
             android:name="place_name"
             app:argType="string" />
 
+    </fragment>
+
+    <fragment
+        android:id="@+id/seeMorePageFragment"
+        android:name="com.swift2021.ibashareandroid.SeeMorePageFragment"
+        android:label="fragment_see_more"
+        tools:layout="@layout/fragment_see_more_page">
+        <action
+            android:id="@+id/action_see_more_to_top"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/topPageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/selectTownPageFragment"
+        android:name="com.swift2021.ibashareandroid.SelectTownPageFragment"
+        android:label="fragment_select_town"
+        tools:layout="@layout/fragment_select_town_page">
+        <action
+            android:id="@+id/action_select_town_to_top"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/topPageFragment" />
     </fragment>
 
     <fragment
@@ -53,6 +103,10 @@
         android:layout="@layout/fragment_all_review_page">
         <action
             android:id="@+id/action_all_review_to_place_detail"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/placeDetailPageFragment" />
     </fragment>
 
@@ -63,47 +117,27 @@
         android:layout="@layout/fragment_participant_page">
         <action
             android:id="@+id/action_participant_to_place_detail"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/placeDetailPageFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchPageFragment"
         android:name="com.swift2021.ibashareandroid.SearchPageFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search_page">
-        <action
-            android:id="@+id/action_search_to_top"
-            app:popUpTo="@id/topPageFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_search_page" />
     <fragment
         android:id="@+id/talkPageFragment"
         android:name="com.swift2021.ibashareandroid.TalkPageFragment"
         android:label="fragment_talk"
-        tools:layout="@layout/fragment_talk_page">
-        <action
-            android:id="@+id/action_talk_to_top"
-            app:popUpTo="@id/topPageFragment" />
-        <action
-            android:id="@+id/action_talk_to_search"
-            app:popUpTo="@id/searchPageFragment" />
-        <action
-            android:id="@+id/action_talk_to_my_page"
-            app:popUpTo="@id/myPageFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_talk_page" />
     <fragment
         android:id="@+id/myPageFragment"
         android:name="com.swift2021.ibashareandroid.MyPageFragment"
         android:label="fragment_my_page"
-        tools:layout="@layout/fragment_my_page">
-        <action
-            android:id="@+id/action_my_page_to_top"
-            app:popUpTo="@id/topPageFragment" />
-        <action
-            android:id="@+id/action_top_to_search"
-            app:popUpTo="@id/searchPageFragment" />
-        <action
-            android:id="@+id/action_my_page_to_talk"
-            app:popUpTo="@id/talkPageFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_my_page" />
 
 
 </navigation>
