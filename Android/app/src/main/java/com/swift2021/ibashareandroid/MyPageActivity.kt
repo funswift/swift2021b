@@ -47,20 +47,44 @@ class MyPageActivity : AppCompatActivity() {
         val cookEditor = checkShogi.edit()
 
         check_box_shogi.setOnClickListener{
+            if(checkedShogi==false){
             shogiEditor.putBoolean("DataShogi",true)
             shogiEditor.apply()
+            }
+            if(checkedShogi==true){
+                shogiEditor.putBoolean("DataShogi",false)
+                shogiEditor.apply()
+            }
         }
         check_box_igo.setOnClickListener{
-            igoEditor.putBoolean("DataIgo",true)
-            igoEditor.apply()
+            if(checkedIgo ==false) {
+                igoEditor.putBoolean("DataIgo", true)
+                igoEditor.apply()
+            }
+            if(checkedIgo ==true) {
+                igoEditor.putBoolean("DataIgo", false)
+                igoEditor.apply()
+            }
         }
         check_box_amimono.setOnClickListener{
-            amimonoEditor.putBoolean("DataAmimono",true)
-            amimonoEditor.apply()
+            if(checkedAmimono ==false) {
+                amimonoEditor.putBoolean("DataAmimono", true)
+                amimonoEditor.apply()
+            }
+            if(checkedAmimono ==true) {
+                amimonoEditor.putBoolean("DataAmimono", false)
+                amimonoEditor.apply()
+            }
         }
         check_box_cook.setOnClickListener{
-            cookEditor.putBoolean("DataCook",true)
-            cookEditor.apply()
+            if(checkedAmimono ==false) {
+                cookEditor.putBoolean("DataCook", true)
+                cookEditor.apply()
+            }
+            if(checkedAmimono ==true) {
+                cookEditor.putBoolean("DataCook", false)
+                cookEditor.apply()
+            }
         }
         //ナビゲーション
         navigation_icon_search_button.setOnClickListener {
